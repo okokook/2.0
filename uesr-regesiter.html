@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>注册 - 慢友帮—中国最大慢性病病友互帮社区</title>
+        <meta name="description" content="" />
+		<link rel="shortcut icon" href="http://www.manyoubang.com/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="/css/base.css" />
+	<script>
+		 var OP_CONFIG={"module":"regesiter","page":"regesiter"};
+	</script>
+	</head>
+
+<body class="login-wrapper">
+
+		<div class="top container">
+			<a href="http://www.manyoubang.com/" class="index"><img src="http://www.manyoubang.com/theme/sample/img/logo.png"></a>
+			<a href=""><img src="http://www.manyoubang.com/theme/sample/img/jieshi.png" height="33" width="398" alt="慢友帮，中国最大的慢性病友互助社区"></a>
+		</div>
+		
+		<div class="login container">
+			<div class="login-hd">会员注册<span><i>*</i>为必填项</span></div>
+			<div class="login-bd">
+				<div class="login-bd_main">
+					<div class="login-con">
+						<form method="POST" id="login_form"  action="http://www.manyoubang.com/user-register-ts-do.html">
+							<ul>
+								<li>
+									<label class="k" for="uemail"><i>*</i>邮箱：</label>
+									<input type="text"  id="uemail" name="email" errormsg="邮箱错误"  nullmsg="请输入邮箱" sucmsg=" " datatype="e" ajaxurl="http://www.manyoubang.com/index.php?app=user&ac=check&ts=inemail">
+									<div class="Validform_checktip"></div>
+
+								</li>
+								<li>
+									<label class="k" for="password"  ><i>*</i>密码：</label>
+									<input type="password" errormsg="密码错误" nullmsg="请输入密码" datatype="*" plugin="passwordStrength" class="inputxt" name="pwd" value="" id="password">
+									<div class="passwordStrength"><span>弱</span><span>中</span><span class="last">强</span></div>
+								</li>
+								<li>
+									<label class="k" for="recpassword"  ><i>*</i>确认密码：</label>
+									<input type="password" errormsg="两次密码不一样" datatype="*"  recheck="pwd" class="inputxt" name="repwd" value="" id="recpassword" sucmsg=" "> 
+									<div class="Validform_checktip"></div>
+								</li>
+								<li>
+									<label class="k" for="uname"><i>*</i>用户名：</label>
+									<input type="text"  id="uname" name="username" errormsg="用户名已被使用"  nullmsg="请输入用户名" sucmsg=" " datatype="*" ajaxurl="http://www.manyoubang.com/index.php?app=user&ac=check&ts=isusername">
+									<div class="Validform_checktip"></div>
+
+
+								</li>
+								<li>
+									<label class="k" for="uqr"><i>*</i>验证码：</label>
+									<input type="text"  id="uqr" name="authcode" errormsg="验证码错误"  nullmsg="请输入验证码" sucmsg=" " datatype="*" ajaxurl="http://www.manyoubang.com/index.php?app=user&ac=check&ts=code" />
+									<img  src="http://www.manyoubang.com/user-code-ts-reg.html" onclick="javascript:newgdcode(this,this.src);" title="点击刷新验证码" alt="点击刷新验证码" style="cursor:pointer;float:left;margin-left:10px;" />
+									<div class="Validform_checktip"></div>
+
+
+								</li>
+		                        <li>
+		                        	<label class="k"></label>
+									<input type="checkbox" id="agree"
+									name="agreement"  datatype="*" nullmsg="请阅读并同意" sucmsg=" " value="agree" checked><label for="agree" class="agree">我已阅读并同意<a href="" class="concent">《慢友帮使用协议》</a></label>
+									<div class="Validform_checktip"></div>
+		                        </li>
+								 <li>
+								 	<input type="hidden" name="fuserid" value="0" />
+									<input type="hidden" name="token" value="9f991ed67fde928b79517551218134b3cc312ecb" />
+									 <label class="k"></label>
+									 <input type="submit" value="注册" id="btn_reg_submit" class="btn-reg">
+								</li>
+						</form>
+					</div>
+				</div>
+				<div class="login-bd_side regesiter-side">
+					<div class="regesiter-tip"><i></i>已是慢友帮用户？<a href="http://www.manyoubang.com/user-login.html" class="enter">登录</a></div>
+					<div class="login-other"><i></i>其他账号登录&nbsp;:&nbsp;
+						<div class="login-other_bd">
+							<a href="http://www.manyoubang.com/index.php?app=pubs&ac=plugin&plugin=weibo&in=login" id="weibo" title="微博登录"><em></em>新浪微博登录</a>
+							<a href="http://www.manyoubang.com/index.php?app=pubs&ac=plugin&plugin=qq&in=login" id="qq" title="qq登录"><em></em>QQ账号登录</a></div>
+						</div>
+					
+					<img src="http://www.manyoubang.com/theme/sample/img/jiankangshu.png" height="155" width="129" alt="">
+				</div>
+			</div>
+		</div>
+		
+		<div class="popup-loginbox_wrapper">
+		<div class="uploadbox">
+
+		<div class="agreement">
+		<div class="login-close"><a href=""></a></div>
+			<p>欢迎使用慢友帮，您在接受慢友帮提供的服务前，请仔细阅读本原则，如果您对本原则的任何条款表示异议，您可以选择不使用慢友帮，您使用慢友帮，则意味着您将自愿遵守以下原则，并完全服从于慢友帮的统一管理。</p>
+			<ol>
+				<li>慢友帮栏目的问答仅是用户之间的自主交流，回答者依据提问者描述的症候提供的建议性内容，不能作为诊断及医疗的依据。如自行使用慢友帮发现偏差，慢友帮概不负责，亦不负任何法律责任</li>
+				<li>慢友帮致力于提供正确、完整的健康咨询，但不保证信息的不正确或遗漏导致的任何损失或损害承担任何责任。</li>
+				<li>由于仅依据提问者描述而提供建议，不能作为诊断及医疗的依据。</li>
+				<li>是否采用病友的意见为提问者个人行为，慢友帮不承担任何可能产生的责任。</li>
+				<li>慢友帮保留对本政策作出不定时修改的权利。</li>
+				<li>非慢友帮版权的内容无法一一和版权所有人联系，如版权所有人认为不应免费使用，或有其他要求，请及时联系慢友帮。</li>
+				<li>慢友帮内容受知识产权法保护，不得擅自复制传播或者用于其他商业用途，本公司保留相应的法律权利。</li>
+				<li>慢友帮声明及修改、更新、最终解释权归慢友帮所有。</li>
+			</ol>
+		</div>
+		</div>
+		</div>
+<div class="footer">
+
+	<div class="container">
+
+	<a href="http://www.manyoubang.com/home-info-key-about.html">关于我们</a> | <a href="http://www.manyoubang.com/home-info-key-agreement.html">免责声明</a> | <a href="http://www.manyoubang.com/home-info-key-privacy.html">隐私申明</a>
+
+	 | <a href="http://www.manyoubang.com/home-info-key-job.html">加入我们</a> | <a href="http://app.manyoubang.com/">手机客户端</a>
+
+	 <br>
+
+	Copyright © 2011-2014　www.manyoubang.com　All rights reserved 浙ICP备12043549号 
+
+	</div>
+
+</div>
+<script src="/public/lib/seajs/sea.js"></script>
+<script src="/public/lib/seajs/sea_config.js"></script>
+<script>
+    seajs.use("/public/page/"+OP_CONFIG.module+"/"+OP_CONFIG.page);
+</script>
+</body>
+
+</html>
+

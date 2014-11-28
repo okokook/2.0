@@ -1,0 +1,16 @@
+<li>
+	{{each list as value i}}
+		<div class="tagItem">
+			<div class="tagItem-hd">{{value.tagCat}}</div>
+			<div class="tagItem-bd">
+				{{each value.tagList as value i}}
+					{{if value.isSelected}}
+					 <a href="javascript:;" data-cat="{{value.cat}}" data-id="{{value.tagId}}" class="selected">{{value.tagName}}</a>
+					 {{else}}
+					 <a href="javascript:;" data-cat="{{value.cat}}" data-id="{{value.tagId}}">{{value.tagName}}</a>
+					{{/if}}
+				{{/each}}
+			</div>
+		</div>
+	{{/each}}
+</li>

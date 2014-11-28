@@ -1,0 +1,42 @@
+<div class="tooltip-inner">
+	<div class="info">
+		<div class="card">
+			<div class="headpic">
+				<a href="{{spaceLink}}" target="_blank">
+					<img src="{{picLink}}" alt="{{personName}}" width="50px" height="50px">
+				</a>
+			</div>
+			<div class="content">
+				<div class="item">
+					<a href="{{spacLink}}" target="_blank" class="name">{{personName}}</a>
+				</div>
+				<div class="item">
+					<span class="m head">{{sex}}</span>&nbsp;&nbsp;{{loc}}
+				</div>
+				<div class="item">
+					<span>小组&nbsp;<a href="{{groupLink}}" target="_blank">{{groupNum}}</a></span>&nbsp;&nbsp;&nbsp;
+					<span>关注&nbsp;<a href="{{followLink}}" target="_blank">{{followNum}}</a></span>&nbsp;&nbsp;&nbsp;
+					<span>粉丝&nbsp;<a href="{{fansLink}}" target="_blank">{{fansNum}}</a></span>
+				</div>
+			</div>
+		</div>
+		<div class="desc"><label>个人简介：</label><span>{{profile}}</span>
+		</div>
+	</div>
+	<div class="operations">
+		<div class="relations">
+		{{if isFollowed}} 
+			<div class="followed">
+				<span class="onefollow">已关注&nbsp;|&nbsp;</span><a data-uid="{{uid}}" class="removeFriend" href="javascript:;">取消</a>
+				<a href="javascript:;" class="addFriend" data-uid="{{uid}}">加关注</a>
+			</div>
+		{{else}}
+			<div class="follow">
+				<span class="onefollow">已关注&nbsp;|&nbsp;</span><a data-uid="{{uid}}" class="removeFriend">取消</a>
+				<a href="javascript:;" class="addFriend" data-uid="{{uid}}">加关注</a>
+			</div>
+		{{/if}}
+		</div>
+		<div class="send-msg-wrapper"><a href="javascript:;" data-uid="{{uid}}" data-user="{{personName}}" class="send-msg">私信</a></div>
+	</div>
+</div>

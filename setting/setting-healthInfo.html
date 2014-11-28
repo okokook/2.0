@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta  charset="utf-8">
+<title>健康信息设置  慢友帮—中国最大慢性病病友互帮社区</title>
+<meta name="keywords" content="慢性病,慢性病论坛,慢性病治疗" /> 
+<meta name="description" content="慢友帮是目前中国最大的慢性病病友交流家园。慢友帮论坛为网友提供慢性病预防知识,治疗经验方法等交流服务,是结识病友、分享经验、相互勉励的公益性网络平台。" /> 
+<link rel="stylesheet" href="/css/base.css" />
+<link rel="stylesheet" href="/css/person.css">
+</head>
+<body>
+<script>
+	 var OP_CONFIG={"module":"setting","page":"setting-healthInfo"};
+</script>
+<!-- 头部 -->
+<div class="header">
+	<div class="header-content container">
+		<div class="left">
+			<a href="http://www.manyoubang.com/" title="慢友帮—中国最大慢性病病友互帮社区"><img src="/images/logo.png"  alt="慢友帮—中国最大慢性病病友互帮社区"  class="logo"></a>
+		</div>
+		<div class="nav">
+			<ul>
+				<li class="cur"><a href="#">我的主页</a></li>
+				<li><a href="square.html">广场</a></li>		
+				<li ><a href="group.html">小组</a></li>
+				<li ><a href="feed.html">专题</a></li>
+				<li ><a href="searchfriend.html">找病友</a></li>
+			</ul>
+		</div>
+		<div class="tsearch">
+			<form method="GET" action="search.html">
+				<input type="hidden" name="app" value="search" />
+				<input type="hidden" name="ac" value="s" />
+				<input type="text" class="inputtext" id="searchkw" name="kw" value="" placeholder="小组 | 话题 | 用户">
+
+				<input id="searchto" type="submit" class="searchbt" value=" " />
+			</form>
+		</div>
+		<div class="user-box-wrapper">
+				<ul class="user-box"> 
+					<li class="user-name">二哥e</li>
+					<li class="user-info">
+						<a href="javascript:void(0)" class="user-info_icon"><i class="message-num">5</i></a>
+						<div class="user-info_popup">
+							<a href="http://www.manyoubang.com/message-my.html">评论我的(<span class="num-color">2</span>)</a>
+							<a href="http://www.manyoubang.com/message-my.html">私信我的(<span class="num-color">3</span>)</a>
+							<a href="http://www.manyoubang.com/user-login-ts-out.html">退出</a></div>
+					</li>
+					<li class="user-setting"><a href="http://www.manyoubang.com/user-set-ts-base.html" title="设置"></a></li>
+				</ul>
+		</div>
+	</div>
+	<div class="greenbg"></div>
+</div>
+<!-- 头部结束 -->
+
+<!--中间推荐热区-->
+<div class="container-wrapper  setting">
+	<div class="container">
+		<div class="my-middle">
+			<!-- 主内容区开始 -->
+		    <div class="cleft">
+				<div class="my-box">
+					<div class="my-pro">
+						<div class="my-photo"><img src="http://www.2qqtouxiang.cn/uploads/qqtouxiang/2012-06/07-142609_281.jpg" alt="草莓公主"><span>草莓公主</span></div>
+						<div class="my-level">
+							<span>LV12:</span>
+							<div class="level-number">
+								<div class="number-inner">
+									<i>75/100</i>
+									<!-- em内的width为变值，需后台加上 -->
+									<em style="width:75%"></em>
+								</div>
+							</div>
+						</div>
+						<div class="my-authentication">
+							<span>认证:</span>
+							<div class="my-authentication-item">
+							<!-- 已认证为类authened 未认证为类unauthen -->
+								<a class="item-phone unauthen" href="#" title="还未认证，去认证"></a>
+								<a class="item-email authened" href="#" title="已认证"></a>
+							</div>
+						</div>
+					</div>
+					<div class="my-nav">
+						<ul>
+							<li><a href="setting-personInfo.html">账号信息<i class="icon51"></i></a></li>
+							<li><a href="setting-personInfo.html" class="selected">健康信息<i class="icon60"></i></a></li>
+							<li><a href="setting-face.html">头像<i class="icon52"></i></a></li>
+						</ul>
+						<ul>
+							<li><a href="setting-idSafe.html">密码修改<i class="icon56"></i></a></li>
+							<li><a href="setting-remind.html">信息提醒<i class="icon36"></i></a></li>
+							<li><a href="">标签设置<i class="icon37"></i></a></li>
+							<li><a href="setting-blackList.html">黑名单<i class="icon57"></i></a></li>
+						</ul>
+						<ul>
+							<li><a href="setting-authentic.html">认证信息<i class="icon58"></i></a></li>
+							<li><a href="setting-idBind.html">账号绑定<i class="icon59"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="my-setting">
+				<div class="hd">健康信息设置</div>
+				<div class="bd info-setting">
+					<!-- 异步传值 分别传入各项选择项 -->
+						<div class="input-item">
+							<span class=" indicator"><label for="name">真实姓名</label></span>
+							<span class="input-wrapper"><input type="text" id="name" value=""></span>
+						</div>
+						<div class="input-item">
+							<span class=" indicator">性别</span>
+							<span class="input-wrapper radio"><input type="radio" id="male" name="gender" value="男"><label for="male">男</label><input type="radio" id="female" name="gender" value="女"><label for="female">女</label><input type="radio" id="secret" name="gender" value="保密"><label for="secret">保密</label></span>
+						</div>
+						<!-- 用户设置的出生日期作为data-num的属性值 没有为空-->
+						<div class="input-item">
+							<span class=" indicator">出生日期</span>
+							<span class="input-wrapper radio">
+								<select class="sel_year" data-num="1988"></select>年
+								<select class="sel_month"></select>月
+								<select class="sel_day"></select>日
+							</span>
+						</div>
+						<div class="input-item">
+							<span class=" indicator"><label for="name">居住地</label></span>
+							<!-- 上一次保存的城市作为相应的data-province data-city data-district的值 -->
+							<span class="input-wrapper radio">
+								<div distpicker class="dist">
+									<select data-province="山东省" id="province"></select>
+									<select data-city="青岛市" id="city"></select>
+									<select data-district="市北区" id="district"></select>
+								</div>
+								<input type="text" placeholder="清水街48号" id="address">
+							</span>
+						</div>
+						<div class="input-item">
+							<span class=" indicator">血型</span>
+							<span class="input-wrapper">
+								<select id="blood-type">
+									<option value="a">A型血</option>
+									<option value="b">B型血</option>
+									<option value="o">O型血</option>
+									<option value="ab">AB型血</option>
+								</select>
+							</span>
+						</div>
+						<div class="input-item">
+							<span class=" indicator"><label for="name">身高</label></span>
+							<span class="input-wrapper"><input type="text" id="height" value="" placeholder="CM"></span>
+						</div>
+						<div class="input-item">
+							<span class=" indicator"><label for="name">体重</label></span>
+							<span class="input-wrapper"><input type="text" id="weight" value="" placeholder="KG"></span>
+						</div>
+						<div class="input-item">
+							<span class=" indicator">身份</span>
+							<span class="input-wrapper">
+								<select id="identity">
+									<option value="a">患者本人</option>
+									<option value="b">患者家属</option>
+								</select>
+							</span>
+						</div>
+						<div class="input-item">
+							<span class=" indicator"></span>
+							<span class="input-wrapper"><input type="submit" value="保存" class="submit"></span>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- 主内容区结束 -->
+		</div>
+	</div>
+</div>
+<!-- 中间推荐结束 -->
+
+<!-- 尾部开始 -->
+<div class="footer">
+
+	<div class="container">
+	<a href="http://www.manyoubang.com/home-info-key-about.html">关于我们</a> | <a href="http://www.manyoubang.com/home-info-key-agreement.html">免责声明</a> | <a href="http://www.manyoubang.com/home-info-key-privacy.html">隐私申明</a> | <a href="http://www.manyoubang.com/home-info-key-job.html">加入我们</a> | <a href="http://app.soujibing.com/">手机客户端</a><br>
+	Copyright © 2010-2013　www.manyoubang.com　All rights reserved 浙ICP备12043549号 
+	</div>
+</div>
+<!-- 尾部结束 -->
+<script src="/public/lib/seajs/sea.js"></script>
+<script src="/public/lib/seajs/sea_config.js"></script>
+<script>
+	seajs.use("/public/page/"+OP_CONFIG.module+"/"+OP_CONFIG.page);
+</script>
+<script>
+// 加载 Mock
+seajs.use('mock', function(Mock){
+	Mock.mock('test',{"status":true});
+});
+</script>
+</body>
+</html>
+

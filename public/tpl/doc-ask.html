@@ -1,0 +1,14 @@
+<ul>
+    {{each list as value i}}
+        <li>
+			<div class="doc-pic">
+				<a href=""><img src="{{value.img_link}}" alt=""></a>
+			</div>
+			<div class="doc-con authentic">
+				<div class="doc_name">{{value.doc_name}}<i></i></div>
+				<div class="doc-ask_box"><a href="" class="doc-follow">关注</a></div>
+				<div class="doc-ins">{{value.doc_ins}}</div>
+			</div>
+		</li>
+    {{/each}}
+</ul>

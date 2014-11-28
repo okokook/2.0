@@ -1,0 +1,32 @@
+<ul id="comment-dialog">
+	        {{each list as value i}}
+	        <li class="quick-comment_wrapper" data-cid="{{value.quick_cId}}">
+	        	<div class="quick-comment_author">
+	        		<a href="{{value.quick_link}}">
+	        			<img src="{{value.quick_Piclink}}" title="{{value.quick_author}}">
+	        		</a>
+	        	</div>
+	        	<div class="quick-comment_conWrapper">
+	        	{{if (value.isConversation)}}
+	        		<p>
+	        			<a href="{{value.quick_link}}" class="quick-comment_nick">{{value.quick_author}}</a>回复<a href="{{value.quickTo_link}}" class="quick-comment_to">{{value.quickTo_author}}</a>:
+	        		</p>
+	        	{{else}}
+	        		<p>
+	        			<a href="{{value.quick_link}}" class="quick-comment_nick">{{value.quick_author}}</a>:
+	        		</p>
+	        	{{/if}}
+	        		<p class="quick-comment-con">
+	        			{{value.quick_con}}
+	        		</p>
+	        	</div>
+	        	<div class="quick-comment_opsWrapper">
+	        		<div class="published-time">{{value.quick_time}}</div>
+	        		<div class="quick-comment_ops">
+	        			<a href="javascript:;" class="hug">喜欢</a>
+	        			<a href="" class="quick-replay_btn last">回复</a>
+	        		</div>
+	        	</div>
+	        </li>
+	        {{/each}}
+	</ul>

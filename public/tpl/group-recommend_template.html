@@ -1,0 +1,56 @@
+<li class="item">
+				<div class="list-item" data-id="{{cat}}">
+					<div class="bd">
+						{{if hasDoc}}
+						    <dl>
+						    	<dt>活跃{{group}}医生({{doc.number}})</dt>
+						    	<dd>
+						    		<ul>
+						    			{{each doc.list as value}}
+						    			    <li>
+						    			    	<div class="face"><a href="{{value.face}}"><img src="{{value.img_link}}" alt="{{value.name}}"></a></div>
+						    			    	<div class="info">
+										    		<div class="name">{{value.name}}</div>
+										    		{{if value.followed}}
+										    			<div class="followed" data-id="{{value.cid}}">已关注</div>
+										    			{{else}}
+										    			<div class="follow" data-id="{{value.cid}}">关注</div>
+										    		{{/if}}
+										    	</div>
+						    			    </li>
+						    			{{/each}}
+						    		</ul>
+						    		{{if hasMore}}
+						    		<a href="{{doc.more}}" class="more" data-type="{{type}}">更多...</a>
+						    		{{/if}}
+						    	</dd>
+						    </dl>
+						{{/if}}
+						{{if hasPatient}}
+							<dl>
+								<dt>活跃{{group}}病友({{patient.number}})</dt>
+								<dd>
+									<ul>
+										{{each patient.list as value}}
+										    <li>
+										    	<div class="face"><a href="{{value.face}}"><img src="{{value.img_link}}" alt="{{value.name}}"></a></div>
+										    	<div class="info">
+										    		<div class="name">{{value.name}}</div>
+										    		{{if value.followed}}
+										    			<div class="followed" data-id="{{value.cid}}">已关注</div>
+										    			{{else}}
+										    			<div class="follow" data-id="{{value.cid}}">关注</div>
+										    		{{/if}}
+										    	</div>
+										    </li>
+										{{/each}}
+									</ul>
+									{{if hasMore}}
+									<a href="{{patient.more}}" class="more" data-type="{{type}}">更多...</a>
+									{{/if}}
+								</dd>
+							</dl>
+						{{/if}}
+					</div>
+				</div>
+			</li>

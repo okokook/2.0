@@ -1,0 +1,30 @@
+<li class="quick-comment_wrapper" data-id="{{quick_cId}}">
+	    	<div class="quick-comment_author">
+	    		<a href="{{quick_link}}">
+	    			<img src="{{quick_Piclink}}" title="{{quick_author}}">
+	    		</a>
+	    	</div>
+	    	<div class="quick-comment_conWrapper">
+	    	{{if (isConversation)}}
+	    		<p>
+	    			<a href="{{quick_link}}" class="quick-comment_nick">{{quick_author}}</a>回复<a href="{{quickTo_link}}" class="quick-comment_to">{{quickTo_author}}</a>:
+	    		</p>
+	    	{{else}}
+	    		<p>
+	    			<a href="{{quick_link}}" class="quick-comment_nick">{{quick_author}}</a>:
+	    		</p>
+	    	{{/if}}
+	    		<p class="quick-comment-con">
+	    			{{quick_con}}
+	    		</p>
+	    	</div>
+	    	<div class="quick-comment_opsWrapper">
+	    		<div class="published-time">{{quick_time}}</div>
+	    		<div class="quick-comment_ops">
+	    			{{if (isConversation)}}
+						<a href="" class="see-all_dialog" data-diaid="{{quick_diaId}}">查看所有对话</a>
+	    			{{/if}}
+	    			<a href="" class="delete-comment last">删除</a>
+	    		</div>
+	    	</div>
+	    </li>

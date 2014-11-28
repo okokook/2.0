@@ -1,0 +1,11 @@
+{{each list as value i}}
+	<div class="user-item">
+		<div class="avator"><a href="{{value.recomLink}}"><img src="{{value.recomPicLink}}"></a></div>
+		<div class="info-wrapper">
+			<div class="name">{{value.recomName}}</div>
+			<div class="follow-btn" data-id = "{{value.recomId}}">
+				+加关注
+			</div>
+		</div>
+	</div>
+{{/each}}
