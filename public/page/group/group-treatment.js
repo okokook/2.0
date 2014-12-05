@@ -56,7 +56,7 @@ define(function  (require,exports,module) {
 			if (checkcomm(data)) {
 				$.getJSON('test',{'data':data}).done(function  () {
 					var html = htmltpl(data);
-					$('.group-comment ul').prepend(html);
+					$('.group-comment .bd ul').prepend(html);
 					$('#b_comment').val(' ');
 					addUsed();
 				})

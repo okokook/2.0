@@ -1,9 +1,9 @@
 define(function(require, exports, module) {
 	var WebUploader = require('webuploader');
+	var fileCount = 0,imgList = [];
 
 	function picupload(data) {
-	var fileCount = 0,
-		imgList = [],
+	var 
 		thumbnailWidth = 70,
 		thumbnailHeight = 70;
 
@@ -105,14 +105,26 @@ define(function(require, exports, module) {
 		$('#' + file.id).find('.progress').remove();
 	});
 
-	$(document).on('click', '.remove', function() {
+	$(document).on('click', '.upload-state-done .remove', function() {
 		var $item = $(this).closest('li');
+		var id = $item.attr('id');
+		uploader.removeFile(id,true);
 		var index = $item.index();
 		imgList.splice(index, 1);
 		$item.remove();
 		fileCount--;
+		if (fileCount == 7) {
+			$('.pic-add-btn').show();
+		}
 	})
 
 	}
+
+	function reset (){
+		$('.upload-state-done .remove').click();
+	}
+
 	exports.imgupload =  picupload;
+	exports.reset =  reset;
+	exports.imgList = imgList;
 })

@@ -10,7 +10,16 @@
 <link rel="stylesheet" href="/css/skinstyle.css">
 <link rel="stylesheet" href="/css/person.css">
 <script>
-	var OP_CONFIG={"module":"group","page":"group-treatment","user_name":"草莓公主","user_pic":"www.baidu.com","user_link":"#"};
+	var OP_CONFIG={
+		"module":"group",//勿改
+		"page":"group-treatment",//勿改
+		"user_name":"草莓公主",//后台填写 用户姓名
+		"user_pic":"www.baidu.com",//后台填写 用户头像图片链接
+		"user_link":"#",//用户个人空间了解 后台填写
+		'totalPages':22,//此种药物下评论的页数 后台填写
+		"pageURL":"test",//ajax加载时后台的地址 具体返回的评论数据见页面底部的test模板数据 后台填写
+		"pageTem":"treatment-comment-template"//勿改
+	};
 </script>
 </head>
 <body>
@@ -149,34 +158,34 @@
 							<div class="hd">所有评价</div>
 							<div class="bd">
 								<ul>
-									<li>
-										<div class="pic"><a href="http://www.manyoubang.com/user-space-id-1072.html">
+									<li class="post-item" data-id="xxx">
+										<div class="pic"><a href="http://www.manyoubang.com/user-space-id-1072.html" class="cardInfo" data-id="xxx">
 												<img src="http://www.manyoubang.com/cache/user/0/1/48/868b9bdac1_48_48.jpg" alt="">
 											</a></div>
 										<div class="detail">
-											<div class="name"><a href="http://www.manyoubang.com/user-space-id-1072.html">LG123</a></div>
+											<div class="name"><a href="http://www.manyoubang.com/user-space-id-1072.html" class="cardInfo" data-id="xxx">LG123</a></div>
 											<div class="effect"><span class="help">有帮助</span>使用&nbsp;:&nbsp;<span class="time">半年以上</span></div>
 
 											<div class="con">现在每天杯不离手</div>
 										</div>
 									</li>
-									<li>
-										<div class="pic"><a href="http://www.manyoubang.com/user-space-id-73.html">
+									<li class="post-item" data-id="xxx">
+										<div class="pic"><a href="http://www.manyoubang.com/user-space-id-73.html" class="cardInfo" data-id="xxx">
 												<img src="http://www.manyoubang.com/cache/user/0/0/48/fbb6dccda2_48_48.jpg" alt="">
 											</a></div>
 										<div class="detail">
-											<div class="name"><a href="http://www.manyoubang.com/user-space-id-73.html">董小姐</a></div>
+											<div class="name"><a href="http://www.manyoubang.com/user-space-id-73.html" class="cardInfo" data-id="xxx">董小姐</a></div>
 											<div class="effect"><span class="help">有帮助</span>使用&nbsp;:&nbsp;<span class="time">一年以上</span></div>
 
 											<div class="con">高尿酸血症或痛风患者，每天要喝3000毫升水甚至更多，这样才能达到稀释血液，促进尿酸从尿中排泄的作用。其中1000毫升为苏打水，由于苏打水为碱性，尿酸为酸性，苏打水可以碱化血液，减少尿酸沉积，也就可以减轻痛风发作的几率。</div>
 										</div>
 									</li>
-									<li>
-										<div class="pic"><a href="http://www.manyoubang.com/user-space-id-72.html">
+									<li class="post-item" data-id="xxx">
+										<div class="pic"><a href="http://www.manyoubang.com/user-space-id-72.html" class="cardInfo" data-id="xxx">
 												<img src="http://www.manyoubang.com/cache/user/0/0/48/6e934aade2_48_48.jpg" alt="">
 											</a></div>
 										<div class="detail">
-											<div class="name"><a href="http://www.manyoubang.com/user-space-id-72.html">alibaba</a></div>
+											<div class="name"><a href="http://www.manyoubang.com/user-space-id-72.html" class="cardInfo" data-id="xxx">alibaba</a></div>
 											<div class="effect"><span class="help">有帮助</span>使用&nbsp;:&nbsp;<span class="time">一年以上</span></div>
 
 											<div class="con">痛风患者应多饮水，可以增加尿量，有助于尿酸的排出。使用药物期间，会有大量的尿酸盐从尿液中排出，容易导致泌尿系结石，更要保证饮水量，最好每日饮水超过2500毫升。喝水时以弱碱性水为好，如天然矿泉水、苏打水等，其中含有多种矿物质，可以清除人体内酸性代谢物，改善痛风患者的酸性体质，更好地促进尿酸排出。欢迎专业人士交流，我在佛山这边的医院。</div>
@@ -184,8 +193,9 @@
 									</li>
 								</ul>
 							</div>
+							<!-- 下一页 -->
+							<ul id="pagination"></ul>
 						</div>
-						<div class="page"> <span class="current">1</span> <a href="http://www.manyoubang.com/cure-yaowu-ts-detail-id-29-groupid-34-page-2.html">2</a></div>
 					</div>
 				</div>
 			</div>
@@ -357,8 +367,28 @@
 <script>
 	seajs.use('mock', function(Mock){
 		Mock.mock('test', {
-				"疗法":[{"tag-1234":"穴位按摩"},{"tag-2345":"针灸"}],
-			 	"相关疾病":[{"tag-12345":"心脏"},{"tag-23456":"肝脏病"}],
+				list:[
+                    {
+	    			"postId":"234",//帖子唯一标识
+	    			"authorLink":"www.baidu.com",//作者的空间链接
+	    			"authorId":"342",//作者id
+	    			"authorPicLink":"http://www.manyoubang.com/cache/user/0/0/48/a1c9b4f4b5_48_48.jpg",//作者头像链接
+	    			"authorName":"淑女范",//作者姓名
+	    			"postCon":'我也用过这种疗法 效果确实不错<a href="" class="repost-user-name cardInfo" data-id="342">//@李明:</a>我之前用过这种疗法，效果不错。',//转发的评论
+	    			"effectNum":3.6,//药效均值
+	    			"safetyNum":4.5,//安全度均值
+	    			"priceNum":4.5,//价格均值
+	    			"postTime":"11-09 02:04",//帖子时间
+	    			"postGroLink":"www.xxx.xx",//帖子所属小组链接
+	    			"postGroName":"糖尿病",//帖子所属小组
+	    			"hashuged":true,//此贴是否之前被拥抱过
+	    			"hugNum":"4",//拥抱的个数
+	    			"hasCollected":false,//此贴是否之前被收藏过
+	    			"repostNum":"4",//转发数量
+	    			"hasComment":'comment',//此贴是否被评论过
+	    			"CommentNum":"5"//评论个数
+	    		}
+				]
 			});
 	})
 </script>

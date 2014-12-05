@@ -1,0 +1,35 @@
+{{each list as value i}}
+<li class="post-item" data-id="{{value.postId}}">
+	<div class="pic"><a href="{{value.authorLink}}" class="cardInfo" data-id="{{value.authorId}}">
+			<img src="{{value.authorPicLink}}">
+		</a>
+	</div>
+	<div class="detail">
+		<div class="name"><a href="{{value.authorLink}}" class="cardInfo" data-id="{{value.authorId}}">{{value.authorName}}</a></div>
+		<div class="effect"><span class="help">{{value.hashelp}}</span>使用&nbsp;:&nbsp;<span class="time">{{value.useTime}}</span></div>
+		<div class="con">{{value.therapycon}}</div>
+		<div class="post-item_info">
+				<div class="info-group">{{value.postTime}} <span class="post-from">来自<a href="{{value.postGroLink}}">{{value.postGroName}}</a></span>
+					<a href="" class="reportPost">举报</a>
+				</div>
+				<div class="info-ops">
+					{{if (value.hashuged)}}
+						<a class="huged" href="javascript:;" title="喜欢" data-repeat=true>已喜欢(<span class="num">{{value.hugNum}}</span>)</a>
+						{{else}}
+						<a class="hug" href="javascript:;" title="喜欢"><span class="tit">喜欢</span>(<span class="num">{{value.hugNum}}</span>)</a>
+					{{/if}}
+					{{if (value.hasCollected)}}
+					<a class="collect collected" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
+					<a class="un-collect collected" href="javascript:;">取消收藏</a>
+					{{else}}
+					<a class="collect" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
+					<a class="un-collect" href="javascript:;">取消收藏</a>
+					{{/if}}
+					<a href="javascript:;" class="repost" >转发(<span class="num">{{value.repostNum}}</span>)</a>
+					<a class="post-comment last" href="javascript:;" title="我要评论" data-comment="{{value.hasComment}}">评论(<span class="num">{{value.CommentNum}}</span>)</a>
+					<a href="javascript:;" class="post-comment_up last">收起评论</a>
+				</div>
+			</div>
+	</div>
+</li>
+{{/each}}

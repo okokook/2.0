@@ -1,8 +1,11 @@
 define(function  (require,exports,module) {
 	require('./common');
-	var dialog = require('dialog'),
-		data = {};
+	var dialog = require('dialog');
 
+	var	data = {};
+
+	
+	
 	//检查是否登陆 用cookie防止其它页登出本页不响应
 	function isLogin () {
 		var loginstate=document.cookie.match(/(?:;|^)\s*loginState=([^;])/);
@@ -48,6 +51,7 @@ define(function  (require,exports,module) {
 		});
 		}
 	})(jQuery);
+
 	// 动态百分比
 		$('.medicine .percent').each(function() {
 			var percent=$(this).attr('number');
@@ -65,7 +69,6 @@ define(function  (require,exports,module) {
 		.on('click','.submit a',function  (e) {
 			e.preventDefault();
 			if (isLogin()) {
-				
 				data.liaoxiaoval = $(".effect .active").text();;
 				data.fuzuyongval = $(".safety .active").text();
 				data.jiageval = $(".price .active").text();
@@ -73,7 +76,7 @@ define(function  (require,exports,module) {
 				if (checkcomm(data)) {
 					$.getJSON('test',{'data':data}).done(function  () {
 						var html = htmltpl(data);
-						$('.group-comment ul').prepend(html);
+						$('.group-comment .bd ul').prepend(html);
 						$('.inp-score .active').removeClass('active');
 						$('.hint').text(' ');
 						$('#b_comment').val(' ');
@@ -87,7 +90,7 @@ define(function  (require,exports,module) {
 				})
 			}
 		})
-		.on('click','.use',function  (e) {
+		/*.on('click','.use',function  (e) {
 			e.preventDefault();
 			var $ele = $(this);
 			var text = $ele.find('span').text();
@@ -101,7 +104,7 @@ define(function  (require,exports,module) {
 				})
 
 			}
-		});
+		});*/
 	})
 
 	function htmltpl (data) {

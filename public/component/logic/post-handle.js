@@ -3,7 +3,6 @@ define(function(require, exports, module) {
 	var dialog = require('dialog');
 	var template = require('template');
 	var qqFace = require('qqFace');
-	var Pagination = require('Pagination');
 	var atwho = require('atWho').atWho;
 
 
@@ -14,8 +13,6 @@ define(function(require, exports, module) {
 		'quick_time': "3秒前"
 	}
 	var data = {};
-
-	
 
 	//检查是否登陆 用cookie防止其它页登出本页不响应
 	function isLogin() {
@@ -52,6 +49,7 @@ define(function(require, exports, module) {
 		*/
 	}
 
+
 	function quickcommentTpl() {
 		/*<div class="post-comment_box edit-box_wrapper">
 			<div class="input-box comment_replay">
@@ -83,9 +81,117 @@ define(function(require, exports, module) {
 	}
 
 	function getTpl(m) {
-		var r = /\/\*([\S\s]*?)\*\//m,
-			m = r.exec(tpl[m].toString());
-		return m && m[1] || m;
+			var r = /\/\*([\S\s]*?)\*\//m,
+				m = r.exec(tpl[m].toString());
+			return m && m[1] || m;
+		}
+		//数目增加
+	function numAdd(ele) {
+			var $ele = ele.find('.num');
+			$ele.text(parseInt($ele.text()) + 1);
+		}
+		//数目减少
+	function numMinus(ele) {
+		var $ele = ele.find('.num');
+		$ele.text(parseInt($ele.text()) - 1);
+	}
+
+	//快速提示
+	function quickTip(con) {
+		var d = dialog({
+			content: con
+		});
+		d.show();
+		setTimeout(function() {
+			d.close().remove;
+		}, 1000);
+	}
+
+	//数据传递 返回
+	function postId(data) {
+		$.ajax({
+			url: data.url,
+			data: {
+				iddd: "xxx"
+			},
+			dataType: "json"
+		}).done(function() {
+			quickTip(data.quickTip);
+			data.ele.hide();
+			data.ele.prev().show();
+		});
+	}
+
+	//选择提示
+	function selectTip(data) {
+		var d = dialog({
+			skin: 'select-dialog',
+			title: '',
+			content: data.con,
+			okValue: '确定',
+			ok: function() {
+				postId(data);
+			},
+			cancelValue: '取消',
+			cancel: function() {}
+		});
+		d.show();
+	}
+
+	//textarea中换行
+	function replaceTextarea(str) {
+		var reg = new RegExp("<br>", "g");
+		str = str.replace(reg, "\r\n");
+
+		return str;
+	}
+
+	//显示修改框
+	function showEditBox(data) {
+		$('.my-shareBox .editor-post_title input[type="text"]').val(data.title);
+		$('.my-shareBox .editor-post_con .con-wrapper').val(data.con);
+		$('.editor-post_group .group-item').each(function() {
+			var $ele = $(this);
+			var text = $ele.text() + '互助帮';
+
+			if (text == data.group) {
+				$ele.addClass('J-clicked');
+				return;
+			}
+		})
+		$('.changwen').click();
+	}
+
+	//显示快捷操作
+	function showOps(ele) {
+		var $parent = ele.closest('.post-item');
+		var $ele = $parent.find('.ops-menu').show();
+	}
+
+	//删除我的帖子
+	function removePost(ele) {
+
+		var $parent = ele.closest('.post-item');
+		var id = $parent.data('id');
+
+		$.getJSON('test', {
+			id: id
+		}).done(function() {
+			$parent.remove();
+		})
+	}
+
+	//编辑我的帖子
+	function editPost(ele) {
+		var $parent = ele.closest('.post-item');
+		var data = {};
+		data.group = $parent.find('.post-from a').text();
+		data.title = $parent.find('.post-title-text').text();
+		data.con = replaceTextarea($.trim($parent.find('.post-item_pro').eq(-1).find('.post-item-con').html()));
+		if ($parent.find('.post-repost_wrapper').length) {
+			data.con = replaceTextarea($.trim($parent.find('.post-text').text()));
+		}
+		showEditBox(data);
 	}
 
 	//查看所有对话
@@ -144,58 +250,6 @@ define(function(require, exports, module) {
 		}
 	}
 
-	//数目增加
-	function numAdd(ele) {
-			var $ele = ele.find('.num');
-			$ele.text(parseInt($ele.text()) + 1);
-		}
-		//数目减少
-	function numMinus(ele) {
-		var $ele = ele.find('.num');
-		$ele.text(parseInt($ele.text()) - 1);
-	}
-
-	//快速提示
-	function quickTip(con) {
-		var d = dialog({
-			content: con
-		});
-		d.show();
-		setTimeout(function() {
-			d.close().remove;
-		}, 1000);
-	}
-
-	//数据传递 返回
-	function postId(data) {
-			$.ajax({
-				url: data.url,
-				data: {
-					iddd: "xxx"
-				},
-				dataType: "json"
-			}).done(function() {
-				quickTip(data.quickTip);
-				data.ele.hide();
-				data.ele.prev().show();
-			});
-		}
-		//选择提示
-	function selectTip(data) {
-		var d = dialog({
-			skin: 'select-dialog',
-			title: '',
-			content: data.con,
-			okValue: '确定',
-			ok: function() {
-				postId(data);
-			},
-			cancelValue: '取消',
-			cancel: function() {}
-		});
-		d.show();
-	}
-
 	//评论添加
 	function addComment(cat, ele) {
 		if (cat == 'single') {
@@ -221,14 +275,15 @@ define(function(require, exports, module) {
 
 	//评论 评论的添加
 	function addSecondComment(ele) {
-			obj.isConversation = true;
-			var $ele = ele.closest('.quick-comment_wrapper');
-			var commentName = $ele.find('.quick-comment_nick').text();
-			var commentLink = $ele.find('.quick-comment_nick').attr('href');
-			var tpl = template('single-comment', obj);
+		obj.isConversation = true;
+		var $ele = ele.closest('.quick-comment_wrapper');
+		var commentName = $ele.find('.quick-comment_nick').text();
+		var commentLink = $ele.find('.quick-comment_nick').attr('href');
+		var tpl = template('single-comment', obj);
 
-		}
-		//喜欢贴子
+	}
+
+	//喜欢贴子
 	function loveTopic(tid, ele) {
 		$.getJSON('test', {
 			topicid: tid
@@ -297,7 +352,6 @@ define(function(require, exports, module) {
 	function showCommentBox(id, ele) {
 		ele.hide().next().show();
 		if (!ele.data('repeat')) {
-			console.log('test');
 			getComment(ele, id);
 			ele.data('repeat', true);
 		}
@@ -307,48 +361,49 @@ define(function(require, exports, module) {
 
 	//收起评论框
 	function hideCommentBox(ele) {
-			var $showEle = ele.closest('li').children('.post-comment_box');
-			$showEle.hide().find('.input-con').blur();
-			ele.hide().prev().show();
+		var $showEle = ele.closest('li').children('.post-comment_box');
+		$showEle.hide().find('.input-con').blur();
+		ele.hide().prev().show();
 
-		}
-		//回复帖子
+	}
 
+	//回复帖子
 	function postSubmit(tid, ele) {
-			postEle = ele;
-			var $ele = ele.closest('.quick-submit_wrapper').prev('.input-con');
-			var con = $ele.val().trim();
-			if (!con) {
-				$ele.focus();
-				return;
-			}
-			if (ele.data('repeat')) {
-				return;
-			}
-			ele.data('repeat', true);
-			obj.quick_con = replace_em(con);
-			ele.text('提交中...').css('cursor', 'not-allowed');
-			$.getJSON('test6', {
-				con: con,
-				tid: tid
-			}).done(
-				function(data) {
-					quickTip('评论成功');
-					$ele.val('');
-					var $number = postEle.closest('li').find('.post-comment')
-					numAdd($number);
-					// 下方的if是为了查看所有对话时回复框出现而设
-					if (postEle.closest('.ui-dialog')[0]) {
-						return;
-					}
-					obj.quick_cId = data.cId;
-					addComment('single', postEle);
-				}).always(function() {
-				ele.text('评论').css('cursor', 'pointer').data('repeat', false);
-
-			});
+		postEle = ele;
+		var $ele = ele.closest('.quick-submit_wrapper').prev('.input-con');
+		var con = $ele.val().trim();
+		if (!con) {
+			$ele.focus();
+			return;
 		}
-		//回复评论
+		if (ele.data('repeat')) {
+			return;
+		}
+		ele.data('repeat', true);
+		obj.quick_con = replace_em(con);
+		ele.text('提交中...').css('cursor', 'not-allowed');
+		$.getJSON('test6', {
+			con: con,
+			tid: tid
+		}).done(
+			function(data) {
+				quickTip('评论成功');
+				$ele.val('');
+				var $number = postEle.closest('li').find('.post-comment')
+				numAdd($number);
+				// 下方的if是为了查看所有对话时回复框出现而设
+				if (postEle.closest('.ui-dialog')[0]) {
+					return;
+				}
+				obj.quick_cId = data.cId;
+				addComment('single', postEle);
+			}).always(function() {
+			ele.text('评论').css('cursor', 'pointer').data('repeat', false);
+
+		});
+	}
+
+	//回复评论
 	function commentSubmit(tid, ele) {
 		commentEle = ele;
 		var con = ele.closest('.quick-submit_wrapper').prev('.input-con').val().trim();
@@ -463,6 +518,20 @@ define(function(require, exports, module) {
 
 
 		$(document)
+			.on('click', '.post-ops .icon', function() {
+				var $ele = $(this);
+				showOps($ele);
+			})
+			.on('click', '.post-ops .removePost', function(e) { //移除我的帖子
+				e.preventDefault();
+				var $ele = $(this);
+				removePost($ele);
+			})
+			.on('click', '.post-ops .editPost', function(e) { //编辑我的帖子
+				e.preventDefault();
+				var $ele = $(this);
+				editPost($ele);
+			})
 			.on('click', '.hug', function() { //喜欢
 				if (isLogin()) {
 					var $ele = $(this);
@@ -497,7 +566,7 @@ define(function(require, exports, module) {
 					})
 				}
 			})
-			.on('click', '.un-collect', function(e) {
+			.on('click', '.un-collect', function(e) { //取消收藏
 				e.preventDefault();
 				var $ele = $(this);
 				var topicId = $ele.closest('li').data('id');
@@ -522,7 +591,6 @@ define(function(require, exports, module) {
 						login.init();
 					})
 				}
-
 			})
 			.on('click', '.comment_submit_btn', function() { //回复评论
 				if (isLogin()) {
@@ -577,207 +645,4 @@ define(function(require, exports, module) {
 			})
 	});
 
-
-	function initPagination(page) {
-		$('#pagination').twbsPagination({
-			totalPages: page,
-			visiblePages: 8,
-			first: "第一页",
-			last: "最后一页",
-			prev: "上一页",
-			next: "下一页",
-			onPageClick: function(event, page) {
-				loadData(cat,0, page);
-				isScrolled = 0;
-				$('#pagination').hide();
-				$('html,body').animate({
-					'scrollTop': 0
-				}, 500, function() {
-					
-				})
-			}
-		});
-	}
-
-	initPagination(OP_CONFIG.totalPages);
-
-		//tab切换
-		$('.tab-hd .tag-cat').click(function  (e) {
-			e.preventDefault();
-			if ($(this).hasClass('J-selected')) {
-				return;
-			}
-			
-			var index = $(this).index();
-			$('.tab-hd .J-selected').removeClass('J-selected');
-			$(this).addClass('J-selected');
-			$('.tab-bd .show').removeClass('show');
-			$('.tab-bd .tab-item').eq(index).addClass('show');
-			$('.tab-item.show .tag-item').eq(0).click();
-
-		});
-
-	$(document).on('click', '.timeline-cat .cat-item', function(e) {
-		e.preventDefault();
-		var $ele = $(this);
-		 cat = $ele.data('id');
-		if ($ele.hasClass('J-selected')) {
-			return;
-		}
-		isScrolled = 0;
-		eventName = 'click';
-
-		$('.timeline-cat .J-selected').removeClass('J-selected');
-		$ele.addClass('J-selected');
-
-		if (cat == "tag") {
-			$('.tag-select-wrapper').show();
-			$('.tag-cat_wrapper .tag-cat').eq(0).click();
-		} else {
-			$('.tag-select-wrapper').hide();
-		}
-
-		loadData(cat);
-	});
-
-	var isAjax = 0;
-	var Page = 1;
-	var isScrolled = 0;
-	var second = 1;
-	var cat = 'tag';
-	var eventName = 'scroll'
-	var resetLoading = function() {
-		$(".bg-loading").css({
-			height: $(".my-post").height()
-		})
-	}
-
-	var showLoading = function() {
-		var h = $(".my-post").height() + 5;
-
-		if ($(".bg-loading").length == 0) {
-
-			$(".my-post").prepend('<div class="bg-loading"></div>')
-		}
-
-		$(".bg-loading").css({
-			height: h
-		}).fadeIn(100);
-	}
-
-	var hideLoading = function() {
-		isAjax = 0
-		setTimeout(function() {
-			$(".bg-loading").fadeOut(300);
-		}, 0)
-	}
-
-
-	var setFixed = function() {
-
-		if (isScrolled) {
-			return;
-		}
-		var t = $(document).scrollTop();
-		var h = $(document).height()
-		var wh = $(window).height()
-		if (t >= h - wh - 50) {
-			var cat = $('.cat-item.J-selected').data('id');
-			loadData(cat, 1, Page);
-		}
-	}
-
-	function loadData(cat, second, page) {
-		if (isAjax) {
-			return;
-		}
-
-		if (second == 1) {
-			$(".my-post").append('<a href="javascript:void(0)" class="js-next"></a>')
-		} else {
-			showLoading()
-		}
-
-		if (cat == 'tag') {
-			var url = 'test3';
-			var id = $('.tag-wrapper.show .J-selected').data('id');
-			var data = {
-				page: page,
-				id: id,
-				second: second
-			}
-		} else if (cat == "follow") {
-
-			var url = 'xxx';
-			var id = "follow";
-			var data = {
-				page: page,
-				id: id,
-				second: second
-			}
-		} else {
-			var url = 'xxx';
-			var id = "doc-ans";
-			var data = {
-				page: page,
-				id: id,
-				second: second
-			}
-		}
-
-		isAjax = 1;
-
-		$.ajax({
-			url: url,
-			data: data,
-			method: "post",
-			dataType: "json",
-		}).done(function(data) {
-
-			isAjax = 0;
-			var html = template('post-list', data);
-			
-			if (second == 0) {
-				
-				hideLoading()
-				$('.my-post').html(html);
-				second = 1;
-
-				if (eventName == 'click') {
-					$('#pagination').empty().removeData("twbs-pagination").unbind("page");
-					initPagination(data.page);
-				}
-
-
-			} else {
-				$('.js-next').remove();
-				$('.my-post').append(html);
-				console.log('test');
-				$('#pagination').show();
-				isScrolled = 1;
-			}
-		})
-	}
-
-
-	if (OP_CONFIG.page == "index") {
-		$(window).scroll(setFixed);
-	}
-
-	$(document).on('click', '.tag-item', function(e) {
-
-		e.preventDefault();
-		eventName = 'click';
-		var $ele = $(this),
-			id = $ele.data('id');
-		if ($ele.hasClass('J-selected')) {
-			return;
-		}
-		isScrolled = 0;
-		$('.tag-item.J-selected').removeClass('J-selected');
-		$ele.addClass('J-selected');
-		$('#pagination').hide();
-		loadData('tag',0, 1);
-
-	})
 })

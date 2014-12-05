@@ -8,6 +8,15 @@
 		<div class="post-item_con">
 		{{/if}}
 			<a class="post-item_author cardInfo" href="{{value.authorLink}}" data-id="{{value.authorId}}">{{value.authorName}}</a>
+			{{if isMypost}}
+			<div class="post-ops">
+				<i class="icon"></i>
+				<ul class="ops-menu">
+					<li><a href="javascript:;" class="editPost">修改</a></li>
+					<li><a href="javascript:;" class="removePost">删除</a></li>
+				</ul>
+			</div>
+			{{/if}}
 			{{if value.postType == "post"}}
 				{{if value.isRepost}}
 					<div class="post-text">{{value.postCon}}</div>
@@ -16,7 +25,7 @@
 						<h2><a href="{{value.repostLink}}" class="post-title-text">{{value.repostTitle}}</a></h2>
 						{{if value.rehasExpand}}
 							<div class="post-item_pro">
-								  {{value.repostCon_a}}
+								 {{value.repostCon_a}}
 								 <a href="javascript:;" class="post-expand"><i></i>展开</a>
 							</div>
 							<div class="post-item_pro see-all">
@@ -50,10 +59,88 @@
 						</div>
 					{{/if}}
 				{{/if}}
-			{{else}}
-				{{if value.isRepost}}
+			{{else if value.postType =="medcine"}}
+				<div class="post-text">{{value.postCon}}</div>
+				<div class="retweet-post">
+					<a class="post-item_author " href="{{value.medLink}}">{{value.medName}}
+					{{if value.commonMedname}}
+					<span class="subname">通用名称：{{value.commonMedname}}</span>
+					{{/if}}
+					</a>
+					<div class="post-item_pro">
+						<div class="score-wrapper">
+							<div class="all-average">综合均值<b class="number">{{value.allNum}}</b></div>
+							<div class="sep-average">
+								<div class="effect">
+									<span class="score">药效均值&nbsp;:<span class="num">{{value.effectNum}}</span></span><span class="percent-box"><em class="percent" style="width: {{value.effectPer}}"></em></span><span class="evalute">好<span class="num">{{value.effectPer}}</span></span>
+								</div>
+								<div class="safety">
+									<span class="score">安全度均值&nbsp;:<span class="num">{{value.safetyNum}}</span></span><span class="percent-box"><em class="percent" style="width: {{value.safetyPer}};"></em></span><span class="evalute">好<span class="num">{{value.safetyPer}}</span></span>
+								</div>
+								<div class="price">
+									<span class="score">价格均值&nbsp;:<span class="num">{{value.priceNum}}</span></span><span class="percent-box"><em class="percent" style="width: {{value.pricePer}};"></em></span><span class="evalute">好<span class="num">{{value.pricePer}}</span></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="original-post-info">
+					  	<span class="time">{{value.oritime}}</span>
+					  	<a href="{{value.oriLink}}">相关讨论({{value.oricomment}})</a>
+					</div>
+				</div>
+			{{else if value.postType == "answer"}}
+				<div class="post-text">{{value.postCon}}</div>
+				<div class="retweet-post">
+					<a class="post-item_author cardInfo" href="{{value.reauthorLink}}" data-id="{{value.reauthorId}}">{{value.reauthorName}}</a>
+					{{if value.rehasExpand}}
+						<div class="post-item_pro">
+							  {{value.repostCon_a}}
+							 <a href="javascript:;" class="post-expand"><i></i>展开</a>
+						</div>
+						<div class="post-item_pro see-all">
+							{{value.repostCon_b}}
+							<a href="javascript:;" class="post-packUp"><i></i>收起</a>
+						</div>
+					{{else}}
+						<div class="post-item_pro">
+							  {{value.repostCon_a}}
+						</div>
+					{{/if}}
+					  <div class="original-post-info">
+					  	<span class="time">{{value.oritime}}</span>
+					  	<a href="{{value.postTitleLink}}">相关讨论({{value.oricomment}})</a>
+					  </div>
+				</div>
+			{{else if value.postType=="ask"}}
+				{{if value.hasExpand}}
+					<div class="post-item_pro">
+
+						  {{value.postCon_a}}
+						 <a href="javascript:;" class="post-expand"><i></i>展开</a>
+					</div>
+					<div class="post-item_pro see-all">
+						{{value.postCon_b}}
+						<a href="javascript:;" class="post-packUp"><i></i>收起</a>
+					</div>
 				{{else}}
+					<div class="post-item_pro">
+						  {{value.postCon_a}}
+					</div>
 				{{/if}}
+			{{else}}
+				<div class="post-text">{{value.postCon}}</div>
+				<div class="retweet-post">
+					<a class="post-item_author cardInfo" href="{{value.reauthorLink}}" data-id="{{value.reauthorId}}">{{value.reauthorName}}</a>
+					<h2><a href="{{value.repostLink}}" class="post-title-text">{{value.repostTitle}}</a></h2>
+					<div class="post-item_pro">
+						<div>{{value.hashelp}}<span class="use-time">使用：{{value.useTime}}</span></div>
+						<div>{{value.therapycon}}</div>
+					</div>
+					<div class="original-post-info">
+					  	<span class="time">{{value.oritime}}</span>
+					  	<a href="{{value.oriLink}}">相关讨论({{value.oricomment}})</a>
+					</div>
+				</div>
 			{{/if}}
 
 			<div class="post-item_info">

@@ -1673,8 +1673,11 @@ a.mini-share:hover {
 #methodtemplate {
 	display: none
 }
+.post-item_pro .score-wrapper{
+	padding:10px 0 5px 12px;
+}
 
-.medicine .bd .all-average {
+.all-average {
 	float: left;
 	height: 120px;
 	width: 24%;
@@ -1685,12 +1688,15 @@ a.mini-share:hover {
 	line-height: 56px;
 	color: #fff
 }
-.medicine .all-average .number {
+.post-item_pro .all-average{
+	height: 110px;
+}
+.all-average .number {
 	font-size: 36px;
 	line-height: 40px;
 	display: block
 }
-.medicine .sep-average {
+.sep-average {
 	overflow: hidden;
 	zoom: 1
 }
@@ -1701,6 +1707,9 @@ a.mini-share:hover {
 	*zoom: 1;
 	text-align: right;
 	color: #3ba354
+}
+.post-item_pro .sep-average .score{
+	width: 37%;
 }
 .sep-average .score .num {
 	color: rgb(235, 0, 0);
@@ -1955,8 +1964,7 @@ a.mini-share:hover {
 	margin-left: -1px
 }
 .group-comment .bd li {
-	padding-top: 20px;
-	padding-bottom: 26px;
+	padding:14px 0 10px 0;
 	border-bottom: 1px dotted rgb(219, 219, 219)
 }
 .group-comment  .pic {
@@ -1982,6 +1990,8 @@ a.mini-share:hover {
 .group-comment .con {
 	line-height: 24px;
 	font-family: Verdana, sans-serif, '宋体';
+	margin-bottom: 10px;
+	color: #333;
 }
 .group-comment .effect,
 .group-comment .score {

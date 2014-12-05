@@ -634,9 +634,6 @@ body {
 .sider .bx-wrapper, .sidebar .bx-wrapper {
 	overflow: hidden
 }
-.sider .bx-wrapper .bx-viewport {
-	background-color: #fff
-}
 .newfeed-list li {
 	margin-bottom: 16px;
 	_margin-bottom: 13px;

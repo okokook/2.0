@@ -27,7 +27,8 @@ seajs.config({
 		'caret'      :'/public/component/base/jquery.caret.min',
 		'atwho'      :'/public/component/base/jquery.atwho.min',
 		'atWho'      :'/public/component/logic/atWho',
-		'imgupload'  :'/public/component/logic/webuploader'
+		'imgupload'  :'/public/component/logic/webuploader',
+		'page'       :'/public/component/logic/page'
  
 	},
 	// 预加载项

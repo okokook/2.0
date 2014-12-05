@@ -3,6 +3,8 @@ define(function(require, exports, module) {
 	var common = require('./common');
 	var post = require('post-handle');
 	var atwho = require('atWho').atWho;
+	var template = require('template');
+	var initPagination = require('page');
 	require('autosize');
 
 	//@他人
@@ -15,6 +17,21 @@ define(function(require, exports, module) {
 	}
 	imgupload.imgupload(uploadObj);
 
+	//下一页
+	function Pagecallback(event, page) {
+			loadData(cat, 0, page);
+			isScrolled = 0;
+			$('#pagination').hide();
+			$('html,body').animate({
+				'scrollTop': 0
+			}, 500, function() {
+
+			})
+		}
+
+	initPagination(OP_CONFIG.totalPages,Pagecallback);
+	$('#pagination').hide();
+
 	//提示框
 	function quickdialog(con) {
 		var d = common.dialog({
@@ -26,7 +43,42 @@ define(function(require, exports, module) {
 		}, 1000);
 	}
 
-	
+	//帖子添加到首页
+	function addPost(data){
+		var htmltem = template('post-list',data);
+		var $ele = $('<div id="template-post" style="display:none;"></div>').append(htmltem);
+		$('body').append($ele);
+		var html = $('#template-post ul').html();
+		$('#template-post').remove();
+		return html;
+
+	}
+
+	//图片重置
+	function resetimg(){
+		imgupload.reset();
+		$('.editor-post_footer .upload-img').show();
+		$('.img-upload_box').css({
+			'height':0,
+			'overflow':'hidden'
+		});
+	}
+
+	//发布框重置
+	function resetShareBox(data){
+		
+		$('.my-shareBox .clicked').hide();
+		$('.my-shareBox .un-clicked').show();
+		var html = addPost(data);
+		$('.editor-post_group .J-clicked').removeClass('J-clicked');
+		$('.editor-post_title input').val('');
+		$('.editor-post_con .con-wrapper').val('');
+		$('.btn-submit').data('repeat', false);
+		$('.group-tip').hide();
+		if ($('.queueList li').length) {
+			resetimg();
+		}
+	}
 
 	$(function() {
 
@@ -43,13 +95,11 @@ define(function(require, exports, module) {
 		})
 
 		//点击表情 图片时弹出发帖框
-
-		$('.editor-post_footer').click(function() {
+		$('.editor-post_footer .emotion,.editor-post_footer .upload-img,.editor-post_footer .changwen').click(function() {
 			$('.my-shareBox .un-clicked').click();
 		})
 
 		//弹出主评论框
-
 		$('.my-shareBox .un-clicked').click(function(e) {
 			e.preventDefault();
 			//判断是否为小组页面  告知加入才可发帖
@@ -101,34 +151,28 @@ define(function(require, exports, module) {
 			}
 			if (!postTitle) {
 				$('.editor-post_title input').focus();
+				quickdialog('请输入标题');
 				return;
 			}
 			if (!postCon) {
 				$('.editor-post_con .con-wrapper').focus();
+				quickdialog('请输入内容');
 				return;
 			}
 			var postGroup = $('.editor-post_group .J-clicked').data('id');
 			var toDoc = $('#toDoc').prop('checked');
 			$(this).data('repeat', true);
 			$.getJSON('test', {
+
 				postGroup: postGroup,
 				postTitle: postTitle,
 				postCon: postCon,
 				toDoc: toDoc,
-				imgList: imgList
-			}).done(function() {
-				$('.editor-post_group .J-clicked').removeClass('J-clicked');
-				$('.editor-post_title input').val('');
-				$('.editor-post_con .con-wrapper').val('');
+				imgList: imgupload.imgList
 
-				$('.btn-submit').data('repeat', false);
-				$('.group-tip').hide();
-				$('.queueList').html('');
-				if (uploader) {
-					uploader.reset();
-				}
-				$('.editor-post_con .con-wrapper').css('height', 100);
-			}).fail(function() {
+			}).always(function(data) {
+
+				resetShareBox(data);
 
 			})
 		})
@@ -212,4 +256,170 @@ define(function(require, exports, module) {
 				$(this).hide().prev().show();
 			})
 	})
+
+		var isAjax = 0;
+		var Page = 1;
+		var isScrolled = 0;
+		var second = 1;
+		var cat = 'tag';
+		var eventName = 'scroll'
+		var resetLoading = function() {
+			$(".bg-loading").css({
+				height: $(".my-post").height()
+			})
+		}
+
+		var showLoading = function() {
+			var h = $(".my-post").height() + 5;
+
+			if ($(".bg-loading").length == 0) {
+
+				$(".my-post").prepend('<div class="bg-loading"></div>')
+			}
+
+			$(".bg-loading").css({
+				height: h
+			}).fadeIn(100);
+		}
+
+		var hideLoading = function() {
+			isAjax = 0
+			setTimeout(function() {
+				$(".bg-loading").fadeOut(300);
+			}, 0)
+		}
+
+
+		var setFixed = function() {
+
+			if (isScrolled) {
+				return;
+			}
+			var t = $(document).scrollTop();
+			var h = $(document).height()
+			var wh = $(window).height()
+			if (t >= h - wh - 50) {
+				var cat = $('.cat-item.J-selected').data('id');
+				loadData(cat, 1, Page);
+			}
+		}
+
+		
+
+		function loadData(cat, second, page) {
+			if (isAjax) {
+				return;
+			}
+
+			if (second == 1) {
+				$(".my-post").append('<a href="javascript:void(0)" class="js-next"></a>')
+			} else {
+				showLoading()
+			}
+
+			if (cat == 'tag') {
+				var url = 'test3';
+				var id = $('.tag-wrapper.show .J-selected').data('id');
+				var data = {
+					page: page,
+					id: id,
+					second: second
+				}
+			} else if (cat == "follow") {
+
+				var url = 'xxx';
+				var id = "follow";
+				var data = {
+					page: page,
+					id: id,
+					second: second
+				}
+			} else {
+				var url = 'xxx';
+				var id = "doc-ans";
+				var data = {
+					page: page,
+					id: id,
+					second: second
+				}
+			}
+
+			isAjax = 1;
+
+			$.ajax({
+				url: url,
+				data: data,
+				method: "post",
+				dataType: "json",
+			}).done(function(data) {
+
+				isAjax = 0;
+				var html = template('post-list', data);
+
+				if (second == 0) {
+
+					hideLoading()
+					$('.my-post').html(html);
+					second = 1;
+
+					if (eventName == 'click') {
+						$('#pagination').empty().removeData("twbs-pagination").unbind("page");
+						initPagination(data.page,Pagecallback);
+					}
+
+
+				} else {
+					$('.js-next').remove();
+					$('.my-post').append(html);
+					console.log('test');
+					$('#pagination').show();
+					isScrolled = 1;
+				}
+			})
+		}
+
+
+		if (OP_CONFIG.page == "index") {
+			$(window).scroll(setFixed);
+		}
+
+		$(document).on('click', '.tag-item', function(e) {
+
+			e.preventDefault();
+			eventName = 'click';
+			var $ele = $(this),
+				id = $ele.data('id');
+			if ($ele.hasClass('J-selected')) {
+				return;
+			}
+			isScrolled = 0;
+			$('.tag-item.J-selected').removeClass('J-selected');
+			$ele.addClass('J-selected');
+			$('#pagination').hide();
+			loadData('tag', 0, 1);
+
+		})
+
+	$(document).on('click', '.timeline-cat .cat-item', function(e) {
+		e.preventDefault();
+		var $ele = $(this);
+		cat = $ele.data('id');
+		if ($ele.hasClass('J-selected')) {
+			return;
+		}
+		isScrolled = 0;
+		eventName = 'click';
+
+		$('.timeline-cat .J-selected').removeClass('J-selected');
+		$ele.addClass('J-selected');
+
+		if (cat == "tag") {
+			$('.tag-select-wrapper').show();
+			$('.tag-cat_wrapper .tag-cat').eq(0).click();
+		} else {
+			$('.tag-select-wrapper').hide();
+		}
+
+		loadData(cat);
+	});
 })

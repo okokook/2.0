@@ -109,28 +109,10 @@
 					</div>
 				</div>
 				<div class="my-con">
-					<div class="my-recommend">
-						<div class="hd">与我相关<iframe name="weather_inc" src="http://tianqi.xixik.com/cframe/1" width="270" height="35" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" id="weather"></iframe></div>
-						<div class="bd">
-							<div class="item-wrapper">
-								<div class="item first">[<span class="item-cat">治疗</span>]<a href="" class="item-title">一起来吐槽：你发了啥中秋福利一起来吐槽：你发了啥中秋福利</a></div>
-								<div class="item">[<span class="item-cat">治疗</span>]<a href="" class="item-title">妇产科该不该有男医生？</a></div>
-							</div>
-							<div class="item-wrapper">
-								<div class="item first">[<span class="item-cat">治疗</span>]<a href="" class="item-title">麻醉医生真的只是在手术时给病人打一针？</a></div>
-								<div class="item">[<span class="item-cat">治疗</span>]<a href="" class="item-title">一起来吐槽：你发了啥中秋福利一起来吐槽：你发了啥中秋福利</a></div>
-							</div>
-							<div class="item-wrapper">
-								<div class="item first">[<span class="item-cat">治疗</span>]<a href="" class="item-title">除皱大战：玻尿酸PK肉毒素</a></div>
-								<div class="item">[<span class="item-cat">治疗</span>]<a href="" class="item-title">亲，你蹲对马桶了吗？涨姿势啦</a></div>
-							</div>
-						</div>
-						<div class="more"><a href="">更多</a></div>
-					</div>
 					<div class="group-nav">
-								<ul class="tabgroupnav">
-									<li><a href="" class="cur">药物</a></li><li><a href="">疗法</a></li><li><a href="">病因</a></li><li><a href="">鉴别</a></li><li><a href="">治疗</a></li><li><a href="">并发症</a></li><li class="last"><a href="" >预防</a></li>
-								</ul>
+						<ul class="tabgroupnav">
+							<li><a href="" class="cur">药物</a></li><li><a href="">疗法</a></li><li><a href="">病因</a></li><li><a href="">鉴别</a></li><li><a href="">治疗</a></li><li><a href="">并发症</a></li><li class="last"><a href="" >预防</a></li>
+						</ul>
 					</div>
 					<div class="middle-hot">
 						<div class="tabcontent">
@@ -315,6 +297,12 @@
 						</div>
 						<div class="clicked edit-box_wrapper">
 							<div class="editor-content">
+								<div class="editor-post_group">
+									<!-- 用户发布帖子，向后台传入{postGroup:postGroup,postTitle:postTitle,postCon:postCon,toDOc:toDoc} postGroup小组标志 为data—id值 -->
+									<span class="text">选择板块:</span>
+									<a href="javascript:;"  class="group-item J-clicked" data-id="111">糖尿病</a>
+									<span class="group-tip">*请选择板块</span>
+								</div>
 								<div class="editor-post_title">
 									<input type="text" placeholder="点击这里输入标题">
 								</div>
@@ -334,10 +322,11 @@
 						<div class="editor-post_footer">
 							<span class="emotion" title="添加表情"><i></i><i class="hover"></i>表情</span>
 							<span class="upload-img" title="添加图片"><i></i><i class="hover"></i>图片</span><div id="filePicker"></div>
+							<span class="changwen" title="长文"><i></i><i class="hover"></i>长文</span>
+							<span class="cw-back">返回</span>
 							<div class="r">
 							<span class="toDoc-wrapper"><input type="checkbox" id="toDoc" value="true" name="toDoc"><label for="toDoc">抄送给医生</label> </span>
 								<span class="submit-wrapper">
-									<a href="" class="btn-cancel">取消</a>
 									<a href="" class="btn-submit">发布</a>
 								</span>
 							</div>
@@ -345,455 +334,341 @@
 					</div>
 					<div class="my-timeline group">
 						<div class="timeline-cat">
-							<a href="" class="cat-item tag J-selected">糖尿病话题</a>
+							<a href="link1" class="cat-item J-selected" data-id="tag">糖尿病话题</a>
 							<div class="tip">
 								<a class="J-show" href="" id="tag-tip">设置我的标签</a>
 							</div>
 						</div>
-						<div class="timeline-con">
-							<div class="con-item" id="tag-con">
-								<div class="tag-con">
-									<div class="tag-cat_wrapper tab-hd">
-										<!-- 小组的规则 五个以上隐藏 有expand 五个及以下全显示 无expand -->
-										<a href="" class="J-selected">全部</a>
-										<a href="">糖尿病</a>
-										<a href="">高血压</a>
-										<a href="">冠心病</a>
-										<a href="">心脏病</a>
-										<a href="">糖尿病</a>
-										<a href="" class="hide">冠心病</a>
-										<a href="" class="hide">心脏病</a>
-										<a href="" class="hide">糖尿病</a>
-										<a href="" class="hide">高血压</a>
-										<a href="" class="hide">冠心病</a>
-										<a href="" class="hide">心脏病</a>
-										<a href="" class="expand"><i></i></a>
-									</div>
-									<div class="tab-bd">
-										<div class="tag-wrapper tab-item show">
-											<!-- 标签的规则  显示十个  超过十个 有expand 不超过十个  全显示 无expand -->
-											<a href="" class="tag-item J-selected">全部</a>
-											<a href="" class="tag-item">糖尿病</a>
-											<a href="" class="tag-item">尿病</a>
-											<a href="" class="tag-item">一型糖尿病</a>
-											<a href="" class="tag-item">糖尿病</a>
-											<a href="" class="tag-item">一型糖尿病</a>
-											<a href="" class="tag-item">二型糖尿病</a>
-											<a href="" class="tag-item">一病</a>
-											<a href="" class="tag-item">二型糖尿病</a>
-											<a href="" class="tag-item">一型</a>
-											<a href="" class="tag-item">糖尿病</a>
-											<a href="" class="tag-item hide">一型糖尿病</a>
-											<a href="" class="tag-item hide">二型糖尿病</a>
-											<a href="" class="tag-item hide">尿病</a>
-											<a href="" class="tag-item hide">二尿病</a>
-											<a href="" class="tag-item hide">一型糖尿病</a>
-											<a href="" class="tag-item hide">型糖尿病</a>
-											<a href="" class="tag-item hide">一型糖尿病</a>
-											<a href="" class="tag-item hide">糖尿病</a>
-											<a href="" class="tag-item hide">型糖尿病</a>
-											<a href="" class="tag-item hide">二型糖尿病</a>
-											<a href="" class="expand"><i></i></a>
-										</div>
-										<div class="tag-wrapper tab-item">
-											<a href="" class="tag-item">糖尿病</a>
-											<a href="" class="tag-item">一型糖尿病</a>
-											<a href="" class="tag-item">二型糖尿病</a>
-											<a href="" class="tag-item">一病</a>
-											<a href="" class="tag-item">二型糖尿病</a>
-											<a href="" class="tag-item">一型</a>
-											<a href="" class="tag-item">糖尿病</a>
-											<a href="" class="tag-item">一型糖尿病</a>
-											<a href="" class="tag-item">二型糖尿病</a>
-											<a href="" class="tag-item">尿病</a>
-											<a href="" class="tag-item hide">二尿病</a>
-											<a href="" class="tag-item hide">一型糖尿病</a>
-											<a href="" class="tag-item hide">型糖尿病</a>
-											<a href="" class="tag-item hide">一型糖尿病</a>
-											<a href="" class="tag-item hide">糖尿病</a>
-											<a href="" class="tag-item hide">型糖尿病</a>
-											<a href="" class="tag-item hide">二型糖尿病</a>
-											<a href="" class="expand"><i></i></a>
-										</div>
-										<div class="tag-wrapper tab-item">
-											<a href="" class="tag-item">糖尿病</a>
-											<a href="" class="tag-item">尿病</a>
-											<a href="" class="tag-item">一型糖尿病</a>
-											<a href="" class="tag-item">糖尿病</a>
-											<a href="" class="tag-item">一型糖尿病</a>
-											<a href="" class="tag-item">二型糖尿病</a>
-											<a href="" class="tag-item">一病</a>
-											<a href="" class="tag-item">二型糖尿病</a>
-											<a href="" class="tag-item">一型</a>
-											<a href="" class="tag-item">糖尿病</a>
-										</div>
-									</div>
-									<!-- 对帖子的操作包括喜欢 转发 收藏 收藏后的取消收藏 评论 评论后的删除评论 帖子的唯一标志id 绑定在li元素的data—id属性上，操作时向后台传这个id  帖子所需数据见1003行 -->
-									<div class="my-post">
-										<div class="post-bd">
-											<ul>
-												<li data-id="xxx" class="post-item">
-													<div class="post-item_photo"><a href="" class="cardInfo" data-id="4567"><img src="http://www.manyoubang.com/cache/user/0/0/48/a1c9b4f4b5_48_48.jpg" alt="同一个梦"></a></div>
-													<div class="post-item_con">
-														<div class="post-item_title">
-															<a class="post-item_author" href="" class="cardInfo" data-userId="4234">同一个梦</a>
-															<a href="">说说打针的那些事</a>
-														</div>
-														<!-- 帖子内容超过200字，省略字符 用户点击展开更多查看  第二个例子片段为字数未超过200时的结构-->
-														<div class="post-item_pro">
-															打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子.... <a href="javascript:;" class="post-expand"><i></i>展开</a>
-														</div>
-														<div class="post-item_pro see-all">
-															<p>打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子.</p>
-															<p>打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子.</p>
-															<p>打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子.</p>
-															<a href="javascript:;" class="post-packUp"><i></i>收起</a>
-														</div>
-														<div class="post-item_info">
-															<div class="info-group">
-																08-01&nbsp;12:22 <span class="post-from">来自<a href="">糖尿病互助帮</a></span>
-																<a href="" class="reportPost">举报</a>
-															</div>
-															<div class="info-ops">
-																<!-- 用户未喜欢过这个帖子时页面载入的hug片段 -->
-																<a class="hug" href="javascript:;" title="喜欢"><span class="tit">喜欢</span>(<span class="num">5</span>)</a>
-
-																<!-- 用户喜欢过这个帖子后载入的代码片段
-																<a class="huged" href="javascript:;" title="您已喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a> -->
-
-																<a href="javascript:;" class="repost" >转发(<span class="num">2</span>)</a>
-
-																<!-- 用户未收藏过这个帖子的片段 -->
-																<a class="collect" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
-																<a class="un-collect" href="javascript:;">取消收藏</a>
-
-																<!-- 用户收藏过这个帖子的片段
-																<a class="collect collected" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
-																<a class="un-collect collected" href="javascript:;">取消收藏</a> -->
-
-																<!-- 当有评论时 data-comment 属性为 ture 无评论时为
-																false -->
-																<a class="post-comment last" href="javascript:;" title="我要评论" data-comment="true">评论(<span class="num">2</span>)</a>
-																<a href="javascript:;" class="post-comment_up last">收起评论</a>
-															</div>
-														</div>
-													</div>
-												</li>
-												<li data-id="xxx" class="post-item">
-													<div class="post-item_photo"><a href="" class="cardInfo" data-id="4567"><img src="http://www.manyoubang.com/cache/user/0/0/48/4bb0a85135_48_48.jpg" alt="同一个梦"></a></div>
-													<div class="post-item_con">
-														<div class="post-item_title">
-															<a class="post-item_author" href="" class="cardInfo" data-userId="4234">大王叫我来巡山</a>
-															<a href="">医生说我高血压怎么办</a>
-														</div>
-														<!-- 帖子内容超过100字，省略字符 用户点击展开更多查看  -->
-														<div class="post-item_pro">
-															打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子
-														</div>
-														<div class="post-item_info">
-															<div class="info-group">
-																08-01&nbsp;12:22 <span class="post-from">来自<a href="">糖尿病互助帮</a></span>
-																<a href="" class="reportPost">举报</a>
-															</div>
-															<div class="info-ops">
-																<!-- 用户未喜欢过这个帖子时页面载入的hug片段
-																<a class="hug" href="javascript:;" title="喜欢"><span class="tit">喜欢</span>(<span class="num">5</span>)</a> -->
-																
-																<a class="huged" href="javascript:;" title="您已喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a>
-
-																<a href="javascript:;" class="repost" >转发(<span class="num">2</span>)</a>
-
-																<!-- 用户收藏过这个帖子的片段 -->
-																<a class="collect collected" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
-																<a class="un-collect collected" href="javascript:;">取消收藏</a>
-
-																<a class="post-comment last" href="javascript:;" title="我要评论">评论(<span class="num">0</span>)</a>
-																<a href="javascript:;" class="post-comment_up last">收起评论</a>
-															</div>
-														</div>
-													</div>
-												</li>
-												<li data-id="xxx" class="post-item">
-													<div class="post-item_photo"><a href="" class="cardInfo" data-id="4567"><img src="http://www.manyoubang.com/cache/user/0/5/48/6acc89d8e6_48_48.jpg" alt="同一个梦"></a></div>
-													<div class="post-item_con">
-														<div class="post-item_title">
-															<a class="post-item_author" href="" class="cardInfo" data-userId="4234">小人参</a>
-															<a href="">亲，你蹲对马桶了吗？涨姿势啦</a>
-														</div>
-														<!-- 帖子内容超过200字，省略字符 用户点击展开更多查看  第二个例子片段为字数未超过200时的结构-->
-														<div class="post-item_pro">
-															<p>提到蹲马桶，相信大家肯定有很多要说的，大多都是对排便不畅的困惑吧，比如坐式马桶，虽然不像蹲式马桶那么累，但是却没有蹲便来得顺畅，有木有？真是急死个人，这是怎么回事呢？原来蹲着时，肛肠角比坐着时要大20多度，而肛肠角越大，排便就越顺畅。看到这</p>
-															<a href="javascript:;" class="post-expand"><i></i>展开</a>
-														</div>
-														<div class="post-item_pro see-all">
-															<p>提到蹲马桶，相信大家肯定有很多要说的，大多都是对排便不畅的困惑吧，比如坐式马桶，虽然不像蹲式马桶那么累，但是却没有蹲便来得顺畅，有木有？真是急死个人，这是怎么回事呢？原来蹲着时，肛肠角比坐着时要大20多度，而肛肠角越大，排便就越顺畅。看到这，有人问了，那坐式马桶的发明意义在哪儿了呢？其实除了角度原因，如果增大腹部压力的话，也能促进排便。下面就为大家叨叨几种坐马桶的最佳姿势，让你从此便便畅通无阻噢。</p>
-															<p>踩个小板凳，上身前倾，嗯，这个很适合腿短的亲哦，哈哈...</p>
-															<p>要知道，皱纹其实就分两种，静态皱纹和动态皱纹。顾名思义，当你没有做任何表情动作时就有的皱纹是静态皱纹，而只在做表情动作时出现的皱纹就是动态皱纹！再根据前面的介绍，不难看出，玻尿酸适合用于静态皱纹，肉毒素适合用于动态皱纹。</p><p>还不明白的话，就去照照镜子吧，不笑就有皱纹即静态皱纹选择玻尿酸，笑一下才有皱纹即动态皱纹选择肉毒素。</p>
-															<a href="javascript:;" class="post-packUp"><i></i>收起</a>
-														</div>
-														<div class="post-item_info">
-															<div class="info-group">
-																08-01&nbsp;12:22 <span class="post-from">来自<a href="">糖尿病互助帮</a></span>
-																<a href="" class="reportPost">举报</a>
-															</div>
-															<div class="info-ops">
-																<!-- 用户未喜欢过这个帖子时页面载入的hug片段 -->
-																<a class="hug" href="javascript:;" title="喜欢"><span class="tit">喜欢</span>(<span class="num">5</span>)</a>
-
-																<!-- 用户喜欢过这个帖子后载入的代码片段
-																<a class="huged" href="javascript:;" title="您已喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a> -->
-																
-																<a href="javascript:;" class="repost" >转发(<span class="num">2</span>)</a>
-
-																<!-- 用户未收藏过这个帖子的片段 -->
-																<a class="collect" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
-																<a class="un-collect" href="javascript:;">取消收藏</a>
-
-																<!-- 用户收藏过这个帖子的片段
-																<a class="collect collected" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
-																<a class="un-collect collected" href="javascript:;">取消收藏</a> -->
-
-																<!-- 当有评论时 data-comment 属性为 ture 无评论时为
-																false -->
-																<a class="post-comment last" href="javascript:;" title="我要评论" data-comment="true">评论(<span class="num">2</span>)</a>
-																<a href="javascript:;" class="post-comment_up last">收起评论</a>
-															</div>
-														</div>
-													</div>
-												</li>
-												<li data-id="xxx" class="post-item">
-													<div class="post-item_photo"><a href="" class="cardInfo" data-id="4567"><img src="http://www.manyoubang.com/cache/user/0/0/48/f5de510614_48_48.jpg" alt="同一个梦"></a></div>
-													<div class="post-item_con">
-														<div class="post-item_title">
-															<a class="post-item_author" href="" class="cardInfo" data-userId="4234">亢龙有悔</a>
-															<a href="">妇产科该不该有男医生？</a>
-														</div>
-														<!-- 帖子内容超过100字，省略字符 用户点击展开更多查看  -->
-														<div class="post-item_pro">
-															《金太郎的幸福生活》想必大家都看过，里面的男主角金亮是一名妇产科医生，“妇产科男医”现象一直不为人所接受，在剧中，金太郎凭借自己的努力抱得美人归并赢得了社会的尊重与认可。.... <a href="javascript:;" class="post-expand"><i></i>展开</a>
-														</div>
-														<div class="post-item_pro see-all">
-															<p>《金太郎的幸福生活》想必大家都看过，里面的男主角金亮是一名妇产科医生，“妇产科男医”现象一直不为人所接受，在剧中，金太郎凭借自己的努力抱得美人归并赢得了社会的尊重与认可。</p>
-															<p>而今年热播的夫妻档电视剧《产科男医生》，一个个帅气的产科男医生虽然也会受到产妇家属的抵触，但那都是小打小闹了。而现实中的人就没那么幸运了，我们先来看看产科男医们遭遇的生命威胁：</p>
-															<p>4月19日上午10时许，沭阳县南关医院住院部四楼妇产科男医生查房引起产妇丈夫不满，遭三名男子殴打，致使其昏迷不醒。</p>
-															<p>11月1日下午3时许，巢湖康平妇产医院一名麻醉医生在手术室遭到患者家属刀捅，原因仅因看到妻子做人流手术室里有男医生。</p>
-															<p>“妇产科男医生”这一广受争议的职业再次成为人们讨论的话题，为何医生突然遭到患者家属的毒打？为何大家不喜欢在妇产科看到男医生？妇产科究竟该不该存在男性医生？</p>
-															<p>医生本是个神圣而庄严的职业，救死扶伤，白衣天使，但是人们对男性妇产科医生历来都有一种偏见，这种偏见从哪里来？在我国古代传统思想中，男女授受不亲的观念根深蒂固，这种文化上的认知随着时间的推移并没有完全消失。</p>
-															<p>《金太郎的幸福生活》想必大家都看过，里面的男主角金亮是一名妇产科医生，“妇产科男医”现象一直不为人所接受，在剧中，金太郎凭借自己的努力抱得美人归并赢得了社会的尊重与认可。</p>
-															<p>而今年热播的夫妻档电视剧《产科男医生》，一个个帅气的产科男医生虽然也会受到产妇家属的抵触，但那都是小打小闹了。而现实中的人就没那么幸运了，我们先来看看产科男医们遭遇的生命威胁：</p>
-															<p>4月19日上午10时许，沭阳县南关医院住院部四楼妇产科男医生查房引起产妇丈夫不满，遭三名男子殴打，致使其昏迷不醒。</p>
-															<p>11月1日下午3时许，巢湖康平妇产医院一名麻醉医生在手术室遭到患者家属刀捅，原因仅因看到妻子做人流手术室里有男医生。</p>
-															<p>“妇产科男医生”这一广受争议的职业再次成为人们讨论的话题，为何医生突然遭到患者家属的毒打？为何大家不喜欢在妇产科看到男医生？妇产科究竟该不该存在男性医生？</p>
-															<p>医生本是个神圣而庄严的职业，救死扶伤，白衣天使，但是人们对男性妇产科医生历来都有一种偏见，这种偏见从哪里来？在我国古代传统思想中，男女授受不亲的观念根深蒂固，这种文化上的认知随着时间的推移并没有完全消失。</p>
-
-															<a href="javascript:;" class="post-packUp"><i></i>收起</a>
-														</div>
-														<div class="post-item_info">
-															<div class="info-group">
-																08-01&nbsp;12:22 <span class="post-from">来自<a href="">糖尿病互助帮</a></span>
-																<a href="" class="reportPost">举报</a>
-															</div>
-															<div class="info-ops">
-																<!-- 用户未喜欢过这个帖子时页面载入的hug片段
-																<a class="hug" href="javascript:;" title="喜欢"><span class="tit">喜欢</span>(<span class="num">5</span>)</a> -->
-																
-																<a class="huged" href="javascript:;" title="您已喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a>
-
-																<a href="javascript:;" class="repost" >转发(<span class="num">2</span>)</a>
-
-																<!-- 用户收藏过这个帖子的片段 -->
-																<a class="collect collected" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
-																<a class="un-collect collected" href="javascript:;">取消收藏</a>
-
-																<a class="post-comment last" href="javascript:;" title="我要评论">评论(<span class="num">0</span>)</a>
-																<a href="javascript:;" class="post-comment_up last">收起评论</a>
-															</div>
-														</div>
-													</div>
-												</li>
-												<li data-id="xxx" class="post-item">
-													<div class="post-item_photo"><a href="" class="cardInfo" data-id="4567"><img src="http://www.manyoubang.com/cache/user/0/0/48/a1c9b4f4b5_48_48.jpg" alt="同一个梦"></a></div>
-													<div class="post-item_con">
-														<div class="post-item_title">
-															<a class="post-item_author" href="" class="cardInfo" data-userId="4234">同一个梦</a>
-															<a href="">说说打针的那些事</a>
-														</div>
-														<!-- 帖子内容超过200字，省略字符 用户点击展开更多查看  第二个例子片段为字数未超过200时的结构-->
-														<div class="post-item_pro">
-															打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子.... <a href="javascript:;" class="post-expand"><i></i>展开</a>
-														</div>
-														<div class="post-item_pro see-all">
-															<p>打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子.</p>
-															<p>打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子.</p>
-															<p>打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子.</p>
-															<a href="javascript:;" class="post-packUp"><i></i>收起</a>
-														</div>
-														<div class="post-item_info">
-															<div class="info-group">
-																08-01&nbsp;12:22 <span class="post-from">来自<a href="">糖尿病互助帮</a></span>
-																<a href="" class="reportPost">举报</a>
-															</div>
-															<div class="info-ops">
-																<!-- 用户未喜欢过这个帖子时页面载入的hug片段 -->
-																<a class="hug" href="javascript:;" title="喜欢"><span class="tit">喜欢</span>(<span class="num">5</span>)</a>
-
-																<!-- 用户喜欢过这个帖子后载入的代码片段
-																<a class="huged" href="javascript:;" title="您已喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a> -->
-																
-																<a href="javascript:;" class="repost" >转发(<span class="num">2</span>)</a>
-
-																<!-- 用户未收藏过这个帖子的片段 -->
-																<a class="collect" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
-																<a class="un-collect" href="javascript:;">取消收藏</a>
-
-																<!-- 用户收藏过这个帖子的片段
-																<a class="collect collected" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
-																<a class="un-collect collected" href="javascript:;">取消收藏</a> -->
-
-																<!-- 当有评论时 data-comment 属性为 ture 无评论时为
-																false -->
-																<a class="post-comment last" href="javascript:;" title="我要评论" data-comment="true">评论(<span class="num">2</span>)</a>
-																<a href="javascript:;" class="post-comment_up last">收起评论</a>
-															</div>
-														</div>
-													</div>
-												</li>
-												<li data-id="xxx" class="post-item">
-													<div class="post-item_photo"><a href="" class="cardInfo" data-id="4567"><img src="http://www.manyoubang.com/cache/user/0/0/48/4bb0a85135_48_48.jpg" alt="同一个梦"></a></div>
-													<div class="post-item_con">
-														<div class="post-item_title">
-															<a class="post-item_author" href="" class="cardInfo" data-userId="4234">大王叫我来巡山</a>
-															<a href="">医生说我高血压怎么办</a>
-														</div>
-														<!-- 帖子内容超过100字，省略字符 用户点击展开更多查看  -->
-														<div class="post-item_pro">
-															打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子
-														</div>
-														<div class="post-item_info">
-															<div class="info-group">
-																08-01&nbsp;12:22 <span class="post-from">来自<a href="">糖尿病互助帮</a></span>
-																<a href="" class="reportPost">举报</a>
-															</div>
-															<div class="info-ops">
-																<!-- 用户未喜欢过这个帖子时页面载入的hug片段
-																<a class="hug" href="javascript:;" title="喜欢"><span class="tit">喜欢</span>(<span class="num">5</span>)</a> -->
-																
-																<a class="huged" href="javascript:;" title="您已喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a>
-
-																<a href="javascript:;" class="repost" >转发(<span class="num">2</span>)</a>
-
-																<!-- 用户收藏过这个帖子的片段 -->
-																<a class="collect collected" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
-																<a class="un-collect collected" href="javascript:;">取消收藏</a>
-
-																<a class="post-comment last" href="javascript:;" title="我要评论">评论(<span class="num">0</span>)</a>
-																<a href="javascript:;" class="post-comment_up last">收起评论</a>
-															</div>
-														</div>
-													</div>
-												</li>
-												<li data-id="xxx" class="post-item">
-													<div class="post-item_photo"><a href="" class="cardInfo" data-id="4567"><img src="http://www.manyoubang.com/cache/user/0/5/48/6acc89d8e6_48_48.jpg" alt="同一个梦"></a></div>
-													<div class="post-item_con">
-														<div class="post-item_title">
-															<a class="post-item_author" href="" class="cardInfo" data-userId="4234">小人参</a>
-															<a href="">亲，你蹲对马桶了吗？涨姿势啦</a>
-														</div>
-														<!-- 帖子内容超过200字，省略字符 用户点击展开更多查看  第二个例子片段为字数未超过200时的结构-->
-														<div class="post-item_pro">
-															<p>提到蹲马桶，相信大家肯定有很多要说的，大多都是对排便不畅的困惑吧，比如坐式马桶，虽然不像蹲式马桶那么累，但是却没有蹲便来得顺畅，有木有？真是急死个人，这是怎么回事呢？原来蹲着时，肛肠角比坐着时要大20多度，而肛肠角越大，排便就越顺畅。看到这</p>
-															<a href="javascript:;" class="post-expand"><i></i>展开</a>
-														</div>
-														<div class="post-item_pro see-all">
-															<p>提到蹲马桶，相信大家肯定有很多要说的，大多都是对排便不畅的困惑吧，比如坐式马桶，虽然不像蹲式马桶那么累，但是却没有蹲便来得顺畅，有木有？真是急死个人，这是怎么回事呢？原来蹲着时，肛肠角比坐着时要大20多度，而肛肠角越大，排便就越顺畅。看到这，有人问了，那坐式马桶的发明意义在哪儿了呢？其实除了角度原因，如果增大腹部压力的话，也能促进排便。下面就为大家叨叨几种坐马桶的最佳姿势，让你从此便便畅通无阻噢。</p>
-															<p>踩个小板凳，上身前倾，嗯，这个很适合腿短的亲哦，哈哈...</p>
-															<p>要知道，皱纹其实就分两种，静态皱纹和动态皱纹。顾名思义，当你没有做任何表情动作时就有的皱纹是静态皱纹，而只在做表情动作时出现的皱纹就是动态皱纹！再根据前面的介绍，不难看出，玻尿酸适合用于静态皱纹，肉毒素适合用于动态皱纹。</p><p>还不明白的话，就去照照镜子吧，不笑就有皱纹即静态皱纹选择玻尿酸，笑一下才有皱纹即动态皱纹选择肉毒素。</p>
-															<a href="javascript:;" class="post-packUp"><i></i>收起</a>
-														</div>
-														<div class="post-item_info">
-															<div class="info-group">
-																08-01&nbsp;12:22 <span class="post-from">来自<a href="">糖尿病互助帮</a></span>
-																<a href="" class="reportPost">举报</a>
-															</div>
-															<div class="info-ops">
-																<!-- 用户未喜欢过这个帖子时页面载入的hug片段 -->
-																<a class="hug" href="javascript:;" title="喜欢"><span class="tit">喜欢</span>(<span class="num">5</span>)</a>
-
-																<!-- 用户喜欢过这个帖子后载入的代码片段
-																<a class="huged" href="javascript:;" title="您已喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a> -->
-																
-																<a href="javascript:;" class="repost" >转发(<span class="num">2</span>)</a>
-
-																<!-- 用户未收藏过这个帖子的片段 -->
-																<a class="collect" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
-																<a class="un-collect" href="javascript:;">取消收藏</a>
-
-																<!-- 用户收藏过这个帖子的片段
-																<a class="collect collected" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
-																<a class="un-collect collected" href="javascript:;">取消收藏</a> -->
-
-																<!-- 当有评论时 data-comment 属性为 ture 无评论时为
-																false -->
-																<a class="post-comment last" href="javascript:;" title="我要评论" data-comment="true">评论(<span class="num">2</span>)</a>
-																<a href="javascript:;" class="post-comment_up last">收起评论</a>
-															</div>
-														</div>
-													</div>
-												</li>
-												<li data-id="xxx" class="post-item">
-													<div class="post-item_photo"><a href="" class="cardInfo" data-id="4567"><img src="http://www.manyoubang.com/cache/user/0/0/48/f5de510614_48_48.jpg" alt="同一个梦"></a></div>
-													<div class="post-item_con">
-														<div class="post-item_title">
-															<a class="post-item_author" href="" class="cardInfo" data-userId="4234">亢龙有悔</a>
-															<a href="">妇产科该不该有男医生？</a>
-														</div>
-														<!-- 帖子内容超过100字，省略字符 用户点击展开更多查看  -->
-														<div class="post-item_pro">
-															《金太郎的幸福生活》想必大家都看过，里面的男主角金亮是一名妇产科医生，“妇产科男医”现象一直不为人所接受，在剧中，金太郎凭借自己的努力抱得美人归并赢得了社会的尊重与认可。.... <a href="javascript:;" class="post-expand"><i></i>展开</a>
-														</div>
-														<div class="post-item_pro see-all">
-															<p>《金太郎的幸福生活》想必大家都看过，里面的男主角金亮是一名妇产科医生，“妇产科男医”现象一直不为人所接受，在剧中，金太郎凭借自己的努力抱得美人归并赢得了社会的尊重与认可。</p>
-															<p>而今年热播的夫妻档电视剧《产科男医生》，一个个帅气的产科男医生虽然也会受到产妇家属的抵触，但那都是小打小闹了。而现实中的人就没那么幸运了，我们先来看看产科男医们遭遇的生命威胁：</p>
-															<p>4月19日上午10时许，沭阳县南关医院住院部四楼妇产科男医生查房引起产妇丈夫不满，遭三名男子殴打，致使其昏迷不醒。</p>
-															<p>11月1日下午3时许，巢湖康平妇产医院一名麻醉医生在手术室遭到患者家属刀捅，原因仅因看到妻子做人流手术室里有男医生。</p>
-															<p>“妇产科男医生”这一广受争议的职业再次成为人们讨论的话题，为何医生突然遭到患者家属的毒打？为何大家不喜欢在妇产科看到男医生？妇产科究竟该不该存在男性医生？</p>
-															<p>医生本是个神圣而庄严的职业，救死扶伤，白衣天使，但是人们对男性妇产科医生历来都有一种偏见，这种偏见从哪里来？在我国古代传统思想中，男女授受不亲的观念根深蒂固，这种文化上的认知随着时间的推移并没有完全消失。</p>
-															<p>《金太郎的幸福生活》想必大家都看过，里面的男主角金亮是一名妇产科医生，“妇产科男医”现象一直不为人所接受，在剧中，金太郎凭借自己的努力抱得美人归并赢得了社会的尊重与认可。</p>
-															<p>而今年热播的夫妻档电视剧《产科男医生》，一个个帅气的产科男医生虽然也会受到产妇家属的抵触，但那都是小打小闹了。而现实中的人就没那么幸运了，我们先来看看产科男医们遭遇的生命威胁：</p>
-															<p>4月19日上午10时许，沭阳县南关医院住院部四楼妇产科男医生查房引起产妇丈夫不满，遭三名男子殴打，致使其昏迷不醒。</p>
-															<p>11月1日下午3时许，巢湖康平妇产医院一名麻醉医生在手术室遭到患者家属刀捅，原因仅因看到妻子做人流手术室里有男医生。</p>
-															<p>“妇产科男医生”这一广受争议的职业再次成为人们讨论的话题，为何医生突然遭到患者家属的毒打？为何大家不喜欢在妇产科看到男医生？妇产科究竟该不该存在男性医生？</p>
-															<p>医生本是个神圣而庄严的职业，救死扶伤，白衣天使，但是人们对男性妇产科医生历来都有一种偏见，这种偏见从哪里来？在我国古代传统思想中，男女授受不亲的观念根深蒂固，这种文化上的认知随着时间的推移并没有完全消失。</p>
-
-															<a href="javascript:;" class="post-packUp"><i></i>收起</a>
-														</div>
-														<div class="post-item_info">
-															<div class="info-group">
-																08-01&nbsp;12:22 <span class="post-from">来自<a href="">糖尿病互助帮</a></span>
-																<a href="" class="reportPost">举报</a>
-															</div>
-															<div class="info-ops">
-																<!-- 用户未喜欢过这个帖子时页面载入的hug片段
-																<a class="hug" href="javascript:;" title="喜欢"><span class="tit">喜欢</span>(<span class="num">5</span>)</a> -->
-																
-																<a class="huged" href="javascript:;" title="您已喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a>
-
-																<a href="javascript:;" class="repost" >转发(<span class="num">2</span>)</a>
-
-																<!-- 用户收藏过这个帖子的片段 -->
-																<a class="collect collected" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
-																<a class="un-collect collected" href="javascript:;">取消收藏</a>
-
-																<a class="post-comment last" href="javascript:;" title="我要评论">评论(<span class="num">0</span>)</a>
-																<a href="javascript:;" class="post-comment_up last">收起评论</a>
-															</div>
-														</div>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
+						<div class="tag-select-wrapper">
+							<div class="tab-bd">
+								<div class="tag-wrapper tab-item show">
+									<!-- 标签的规则  显示十个  超过十个 有expand 不超过十个  全显示 无expand -->
+									<a href="" data-id="123" class="tag-item J-selected">全部</a>
+									<a href="" data-id="123" class="tag-item">糖尿病</a>
+									<a href="" data-id="123" class="tag-item">尿病</a>
+									<a href="" data-id="123" class="tag-item">一型糖尿病</a>
+									<a href="" data-id="123" class="tag-item">糖尿病</a>
+									<a href="" data-id="123" class="tag-item">一型糖尿病</a>
+									<a href="" data-id="123" class="tag-item">二型糖尿病</a>
+									<a href="" data-id="123" class="tag-item">一病</a>
+									<a href="" data-id="123" class="tag-item">二型糖尿病</a>
+									<a href="" data-id="123" class="tag-item">一型</a>
+									<a href="" data-id="123" class="tag-item">糖尿病</a>
+									<a href="" data-id="123" class="tag-item hide">一型糖尿病</a>
+									<a href="" data-id="123" class="tag-item hide">二型糖尿病</a>
+									<a href="" data-id="123" class="tag-item hide">尿病</a>
+									<a href="" data-id="123" class="tag-item hide">二尿病</a>
+									<a href="" data-id="123" class="tag-item hide">一型糖尿病</a>
+									<a href="" data-id="123" class="tag-item hide">型糖尿病</a>
+									<a href="" data-id="123" class="tag-item hide">一型糖尿病</a>
+									<a href="" data-id="123" class="tag-item hide">糖尿病</a>
+									<a href="" data-id="123" class="tag-item hide">型糖尿病</a>
+									<a href="" data-id="123" class="tag-item hide">二型糖尿病</a>
+									<a href="" class="expand"><i></i></a>
 								</div>
+							</div>
+						</div>
+						<div class="my-post">
+							<div class="post-bd">
+								<ul>
+									<!-- 自己发的帖子  带一个修改和删除的快捷方式 -->
+									<li data-id="xxx" class="post-item">
+										<div class="post-item_photo"><a href="" class="cardInfo" data-id="4567"><img src="http://www.2qqtouxiang.cn/uploads/qqtouxiang/2012-06/07-142609_281.jpg" alt="同一个梦"></a></div>
+										<div class="post-item_con">
+											<a class="post-item_author cardInfo" href="" data-id="4234">草莓公主</a>
+											<div class="post-ops">
+												<i class='icon'></i>
+												<ul class="ops-menu">
+													<li><a href="" class="editPost">修改</a></li>
+													<li><a href="" class="removePost">删除</a></li>
+												</ul>
+											</div>
+											<h2><a href="" class="post-title-text">说说打针的那些事</a></h2>
+											<!-- 帖子内容超过200字，省略字符 用户点击展开更多查看  第二个例子片段为字数未超过200时的结构-->
+											<div class="post-item_pro">
+												<div class="post-item-con">打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子.... 
+												</div>
+												<img src="http://xqimg.imedao.com/149f011e6322043fe4087c81.jpg!thumb.jpg">
+												<a href="javascript:;" class="post-expand"><i></i>展开</a>
+											</div>
+											<div class="post-item_pro see-all">
+												<div class="post-item-con">
+													打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子.<br><br>打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子.<br><br>打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子.<br><br>	
+												</div><img src="http://xqimg.imedao.com/149f011e6322043fe4087c81.jpg!custom.jpg" >
+												<a href="javascript:;" class="post-packUp"><i></i>收起</a>
+											</div>
+											<div class="post-item_info">
+												<div class="info-group">
+													08-01&nbsp;12:22 <span class="post-from">来自<a href="">糖尿病互助帮</a></span>
+													<a href="" class="reportPost">举报</a>
+												</div>
+												<div class="info-ops">
+													<!-- 用户未喜欢过这个帖子时页面载入的hug片段 -->
+													<a class="hug" href="javascript:;" title="喜欢"><span class="tit">喜欢</span>(<span class="num">5</span>)</a>
+
+													<!-- 用户喜欢过这个帖子后载入的代码片段
+													<a class="huged" href="javascript:;" title="您已喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a> -->
+
+													<a href="javascript:;" class="repost" >转发(<span class="num">2</span>)</a>
+
+													<!-- 用户未收藏过这个帖子的片段 -->
+													<a class="collect" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
+													<a class="un-collect" href="javascript:;">取消收藏</a>
+
+													<!-- 用户收藏过这个帖子的片段
+													<a class="collect collected" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
+													<a class="un-collect collected" href="javascript:;">取消收藏</a> -->
+
+													<!-- 当有评论时 data-comment 属性为 ture 无评论时为
+													false -->
+													<a class="post-comment last" href="javascript:;" title="我要评论" data-comment="true">评论(<span class="num">2</span>)</a>
+													<a href="javascript:;" class="post-comment_up last">收起评论</a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- 多个转发 -->
+									<li data-id="234" class="post-item"> 
+										<div class="post-item_photo"><a href="www.baidu.com" class="cardInfo" data-id="232"><img src="http://www.manyoubang.com/cache/user/0/0/48/a1c9b4f4b5_48_48.jpg" alt="大王叫我来巡山"></a></div>  
+										<div class="post-item_con post-repost_wrapper">
+											<a class="post-item_author cardInfo" href="" data-id="4234">小人参</a>
+											<div class="post-ops">
+												<i class='icon'></i>
+												<ul class="ops-menu">
+													<li><a href="" class="editPost">修改</a></li>
+													<li><a href="" class="removePost">删除</a></li>
+												</ul>
+											</div>
+											<div class="post-text">你这个专题做得好啊，加工资<a href="" class="repost-user-name cardInfo" data-id="342">//@李明:</a>这个专题干货啊，速速围观<a href="" class="repost-user-name cardInfo" data-id="346">//@余生:</a>写的真好啊 </div>
+											<div class="retweet-post">
+												<a class="post-item_author cardInfo" data-id="xxx" href="">大王叫我来巡山</a> 
+												<h2><a href="www.baidu.com" class="post-title-text">麻醉师真的只是手术时打一针？</a></h2> 
+												<div class="post-item_pro">
+													<div class="post-item-con">11月1日《焦点访谈》刚刚播出“麻醉医生猝死事件调查”，时隔两日，巢湖康平妇产医院发生麻醉医生被捅事件，种种事件不得不让麻醉医生们心寒。</div> <a href="javascript:;" class="post-expand"><i></i>展开</a> </div> 
+												<div class="post-item_pro see-all"> <div class="post-item-con">11月1日《焦点访谈》刚刚播出“麻醉医生猝死事件调查”，时隔两日，巢湖康平妇产医院发生麻醉医生被捅事件，种种事件不得不让麻醉医生们心寒。</br><br>早上八点进手术室，晚上八九点出手术室，每天连续工作十二小时甚至更长，这几乎成了很多三甲医院麻醉医生的常态，当然，普通地市、县级医院的麻醉医生们可能劳动强度相对要小些，但却也是普通人难以支撑的。仅今年年初就已有三位麻醉医生倒在了这种高压力、高强度的工作之下。他们在用自己的生命为病人保驾护航，却又在病人的不理解中默默承受。</br><br>很多人以为：麻醉医生就是在手术的时候打一针，事实真的如此吗？其实，从你准备手术的当天，就和麻醉医生结下不解之缘。</div> <a href="javascript:;" class="post-packUp"><i></i>收起</a> </div>   
+												<div class="original-post-info"> <span class="time">11-01 23:33</span> <a href="www.baidu.com">相关讨论(7)</a> </div>
+											</div>
+											<div class="post-item_info"> <div class="info-group"> 11-09 02:04 <span class="post-from">来自<a href="www.xxx.xx">糖尿病</a></span> <a href="javascript:;" class="reportPost">举报</a> </div> <div class="info-ops">  <a class="huged" href="javascript:;" title="喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a>   <a class="collect" href="javascript:;" title="觉得有用，收藏下吧">收藏</a> <a class="un-collect" href="javascript:;">取消收藏</a>  <a href="javascript:;" class="repost">转发(<span class="num">4</span>)</a> <a class="post-comment last" href="javascript:;" title="我要评论" data-comment="comment">评论(<span class="num">5</span>)</a> <a href="javascript:;" class="post-comment_up last">收起评论</a> </div> </div>
+										</div> 
+									</li>
+									<!-- 带图的帖子 收缩模式下只显示一张 展开模式全部显示 -->
+									<li data-id="xxx" class="post-item">
+										<div class="post-item_photo"><a href="" class="cardInfo" data-id="4567"><img src="http://www.manyoubang.com/cache/user/0/0/48/a1c9b4f4b5_48_48.jpg" alt="同一个梦"></a></div>
+										<div class="post-item_con">
+											<a class="post-item_author cardInfo" href="" data-id="4234">同一个梦</a>
+											<h2><a href="" class="post-title-text">说说打针的那些事</a></h2>
+											<!-- 帖子内容超过200字，省略字符 用户点击展开更多查看  第二个例子片段为字数未超过200时的结构-->
+											<div class="post-item_pro">
+												<div class="post-item-con">
+													打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子.... <img src="http://xqimg.imedao.com/149f011e6322043fe4087c81.jpg!thumb.jpg">
+												</div>
+												<a href="javascript:;" class="post-expand"><i></i>展开</a>
+											</div>
+											<div class="post-item_pro see-all">
+												<div class="post-item-con">
+												打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子.<br><br>
+												打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子.<br><br>
+												打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子.<br><br>
+												<img src="http://xqimg.imedao.com/149f011e6322043fe4087c81.jpg!custom.jpg" >
+												</div>
+												<a href="javascript:;" class="post-packUp"><i></i>收起</a>
+											</div>
+											<div class="post-item_info">
+												<div class="info-group">
+													08-01&nbsp;12:22 <span class="post-from">来自<a href="">糖尿病互助帮</a></span>
+													<a href="" class="reportPost">举报</a>
+												</div>
+												<div class="info-ops">
+													<!-- 用户未喜欢过这个帖子时页面载入的hug片段 -->
+													<a class="hug" href="javascript:;" title="喜欢"><span class="tit">喜欢</span>(<span class="num">5</span>)</a>
+
+													<!-- 用户喜欢过这个帖子后载入的代码片段
+													<a class="huged" href="javascript:;" title="您已喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a> -->
+
+													<a href="javascript:;" class="repost" >转发(<span class="num">2</span>)</a>
+
+													<!-- 用户未收藏过这个帖子的片段 -->
+													<a class="collect" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
+													<a class="un-collect" href="javascript:;">取消收藏</a>
+
+													<!-- 用户收藏过这个帖子的片段
+													<a class="collect collected" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
+													<a class="un-collect collected" href="javascript:;">取消收藏</a> -->
+
+													<!-- 当有评论时 data-comment 属性为 ture 无评论时为
+													false -->
+													<a class="post-comment last" href="javascript:;" title="我要评论" data-comment="true">评论(<span class="num">2</span>)</a>
+													<a href="javascript:;" class="post-comment_up last">收起评论</a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- 普通帖子  字数过少时没有展开模式 具体字数多少应用展开模式自定 -->
+									<li data-id="xxx" class="post-item">
+										<div class="post-item_photo"><a href="" class="cardInfo" data-id="4567"><img src="http://www.manyoubang.com/cache/user/0/0/48/4bb0a85135_48_48.jpg" alt="同一个梦"></a></div>
+										<div class="post-item_con">
+												<a class="post-item_author cardInfo" href="" data-id="4234">大王叫我来巡山</a>
+												<h2><a href="" class="post-title-text">医生说我高血压怎么办</a></h2>
+											<!-- 帖子内容超过100字，省略字符 用户点击展开更多查看  -->
+											<div class="post-item_pro">
+												<div class="post-item-con">
+												打胰岛素整整3年了，说起打针，走过了忌讳、苦恼、无奈、学习、适应的过程，一直到现在日日形影不离，我并不喜欢她，但是她是我生命中必不可少的一部分，我只有掌握好她才能过好日子</div>
+											</div>
+											<div class="post-item_info">
+												<div class="info-group">
+													08-01&nbsp;12:22 <span class="post-from">来自<a href="">糖尿病互助帮</a></span>
+													<a href="" class="reportPost">举报</a>
+												</div>
+												<div class="info-ops">
+													<!-- 用户未喜欢过这个帖子时页面载入的hug片段
+													<a class="hug" href="javascript:;" title="喜欢"><span class="tit">喜欢</span>(<span class="num">5</span>)</a> -->
+													<a class="huged" href="javascript:;" title="您已喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a>
+
+													<a href="javascript:;" class="repost" >转发(<span class="num">2</span>)</a>
+
+													用户收藏过这个帖子的片段
+													<a class="collect collected" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
+													<a class="un-collect collected" href="javascript:;">取消收藏</a>
+
+													<a class="post-comment last" href="javascript:;" title="我要评论">评论(<span class="num">0</span>)</a>
+													<a href="javascript:;" class="post-comment_up last">收起评论</a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- 普通帖子  展开模式 -->
+									<li data-id="xxx" class="post-item">
+										<div class="post-item_photo"><a href="" class="cardInfo" data-id="4567"><img src="http://www.manyoubang.com/cache/user/0/5/48/6acc89d8e6_48_48.jpg" alt="同一个梦"></a></div>
+										<div class="post-item_con">
+											<a class="post-item_author cardInfo" href="" data-id="4234">小人参</a>
+											<h2><a href="" class="post-title-text">亲，你蹲对马桶了吗？涨姿势啦</a></h2>
+											<!-- 帖子内容超过200字，省略字符 用户点击展开更多查看  第二个例子片段为字数未超过200时的结构-->
+											<div class="post-item_pro">
+												<div class="post-item-con">
+												提到蹲马桶，相信大家肯定有很多要说的，大多都是对排便不畅的困惑吧，比如坐式马桶，虽然不像蹲式马桶那么累，但是却没有蹲便来得顺畅，有木有？真是急死个人，这是怎么回事呢？原来蹲着时，肛肠角比坐着时要大20多度，而肛肠角越大，排便就越顺畅。看到这
+												</div>
+												<a href="javascript:;" class="post-expand"><i></i>展开</a>
+											</div>
+											<div class="post-item_pro see-all">
+												<div class="post-item-con">
+												提到蹲马桶，相信大家肯定有很多要说的，大多都是对排便不畅的困惑吧，比如坐式马桶，虽然不像蹲式马桶那么累，但是却没有蹲便来得顺畅，有木有？真是急死个人，这是怎么回事呢？原来蹲着时，肛肠角比坐着时要大20多度，而肛肠角越大，排便就越顺畅。看到这，有人问了，那坐式马桶的发明意义在哪儿了呢？其实除了角度原因，如果增大腹部压力的话，也能促进排便。下面就为大家叨叨几种坐马桶的最佳姿势，让你从此便便畅通无阻噢。<br><br>
+												踩个小板凳，上身前倾，嗯，这个很适合腿短的亲哦，哈哈...<br><br>
+												要知道，皱纹其实就分两种，静态皱纹和动态皱纹。顾名思义，当你没有做任何表情动作时就有的皱纹是静态皱纹，而只在做表情动作时出现的皱纹就是动态皱纹！再根据前面的介绍，不难看出，玻尿酸适合用于静态皱纹，肉毒素适合用于动态皱纹。还不明白的话，就去照照镜子吧，不笑就有皱纹即静态皱纹选择玻尿酸，笑一下才有皱纹即动态皱纹选择肉毒素。<br><br>
+												</div>
+												<a href="javascript:;" class="post-packUp"><i></i>收起</a>
+											</div>
+											<div class="post-item_info">
+												<div class="info-group">
+													08-01&nbsp;12:22 <span class="post-from">来自<a href="">糖尿病互助帮</a></span>
+													<a href="" class="reportPost">举报</a>
+												</div>
+												<div class="info-ops">
+													<!-- 用户未喜欢过这个帖子时页面载入的hug片段 -->
+													<a class="hug" href="javascript:;" title="喜欢"><span class="tit">喜欢</span>(<span class="num">5</span>)</a>
+
+													<!-- 用户喜欢过这个帖子后载入的代码片段
+													<a class="huged" href="javascript:;" title="您已喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a> -->
+													
+													<a href="javascript:;" class="repost" >转发(<span class="num">2</span>)</a>
+
+													<!-- 用户未收藏过这个帖子的片段 -->
+													<a class="collect" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
+													<a class="un-collect" href="javascript:;">取消收藏</a>
+
+													<!-- 用户收藏过这个帖子的片段
+													<a class="collect collected" href="javascript:;" title="觉得有用，收藏下吧">收藏</a>
+													<a class="un-collect collected" href="javascript:;">取消收藏</a> -->
+
+													<!-- 当有评论时 data-comment 属性为 ture 无评论时为
+													false -->
+													<a class="post-comment last" href="javascript:;" title="我要评论" data-comment="true">评论(<span class="num">2</span>)</a>
+													<a href="javascript:;" class="post-comment_up last">收起评论</a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<!-- 转发模式 -->
+									<li data-id="234" class="post-item"> 
+										<div class="post-item_photo"><a href="www.baidu.com" class="cardInfo" data-id="433"><img src="http://www.manyoubang.com/cache/user/0/0/48/a1c9b4f4b5_48_48.jpg" alt="大王叫我来巡山"></a></div>  
+										<div class="post-item_con post-repost_wrapper">
+											<a class="post-item_author cardInfo" href="" data-id="4234">小人参</a> 
+											<div class="post-text">你这个专题做得好啊，加工资<span class="ops">//转发</span> </div>
+											<div class="retweet-post">
+												<a class="post-item_author cardInfo" href="" data-id="4234">大王叫我来巡山</a>
+												<h2><a href="www.baidu.com" class="post-title-text">麻醉师真的只是手术时打一针？</a></h2> 
+												<div class="post-item_pro">
+													<div class="post-item-con">11月1日《焦点访谈》刚刚播出“麻醉医生猝死事件调查”，时隔两日，巢湖康平妇产医院发生麻醉医生被捅事件，种种事件不得不让麻醉医生们心寒。 </div><a href="javascript:;" class="post-expand"><i></i>展开</a> </div> 
+												<div class="post-item_pro see-all"> <div class="post-item-con">11月1日《焦点访谈》刚刚播出“麻醉医生猝死事件调查”，时隔两日，巢湖康平妇产医院发生麻醉医生被捅事件，种种事件不得不让麻醉医生们心寒。<br><br>早上八点进手术室，晚上八九点出手术室，每天连续工作十二小时甚至更长，这几乎成了很多三甲医院麻醉医生的常态，当然，普通地市、县级医院的麻醉医生们可能劳动强度相对要小些，但却也是普通人难以支撑的。仅今年年初就已有三位麻醉医生倒在了这种高压力、高强度的工作之下。他们在用自己的生命为病人保驾护航，却又在病人的不理解中默默承受。<br><br>很多人以为：麻醉医生就是在手术的时候打一针，事实真的如此吗？其实，从你准备手术的当天，就和麻醉医生结下不解之缘。</div> <a href="javascript:;" class="post-packUp"><i></i>收起</a> </div>   
+												<div class="original-post-info"> <span class="time">11-01 23:33</span> <a href="www.baidu.com">相关讨论(7)</a> </div>
+											</div>
+											<div class="post-item_info"> <div class="info-group"> 11-09 02:04 <span class="post-from">来自<a href="www.xxx.xx">糖尿病</a></span> <a href="javascript:;" class="reportPost">举报</a> </div> <div class="info-ops">  <a class="huged" href="javascript:;" title="喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a>   <a class="collect" href="javascript:;" title="觉得有用，收藏下吧">收藏</a> <a class="un-collect" href="javascript:;">取消收藏</a>  <a href="javascript:;" class="repost">转发(<span class="num">4</span>)</a> <a class="post-comment last" href="javascript:;" title="我要评论" data-comment="comment">评论(<span class="num">5</span>)</a> <a href="javascript:;" class="post-comment_up last">收起评论</a> </div> </div>
+										</div> 
+									</li>
+									<!-- 多个转发 -->
+									<li data-id="234" class="post-item"> 
+										<div class="post-item_photo"><a href="www.baidu.com" class="cardInfo" data-id="232"><img src="http://www.manyoubang.com/cache/user/0/0/48/a1c9b4f4b5_48_48.jpg" alt="大王叫我来巡山"></a></div>  
+										<div class="post-item_con post-repost_wrapper">
+											<a class="post-item_author cardInfo" href="" data-id="4234">小人参</a>
+											<div class="post-text">你这个专题做得好啊，加工资<a href="" class="repost-user-name cardInfo" data-id="342">//@李明:</a>这个专题干货啊，速速围观<a href="" class="repost-user-name cardInfo" data-id="346">//@余生:</a>写的真好啊 </div>
+											<div class="retweet-post">
+												<a class="post-item_author cardInfo" data-id="xxx" href="">大王叫我来巡山</a> 
+												<h2><a href="www.baidu.com" class="post-title-text">麻醉师真的只是手术时打一针？</a></h2> 
+												<div class="post-item_pro">
+													<div class="post-item-con">11月1日《焦点访谈》刚刚播出“麻醉医生猝死事件调查”，时隔两日，巢湖康平妇产医院发生麻醉医生被捅事件，种种事件不得不让麻醉医生们心寒。</div> <a href="javascript:;" class="post-expand"><i></i>展开</a> </div> 
+												<div class="post-item_pro see-all"> <div class="post-item-con">11月1日《焦点访谈》刚刚播出“麻醉医生猝死事件调查”，时隔两日，巢湖康平妇产医院发生麻醉医生被捅事件，种种事件不得不让麻醉医生们心寒。</br><br>早上八点进手术室，晚上八九点出手术室，每天连续工作十二小时甚至更长，这几乎成了很多三甲医院麻醉医生的常态，当然，普通地市、县级医院的麻醉医生们可能劳动强度相对要小些，但却也是普通人难以支撑的。仅今年年初就已有三位麻醉医生倒在了这种高压力、高强度的工作之下。他们在用自己的生命为病人保驾护航，却又在病人的不理解中默默承受。</br><br>很多人以为：麻醉医生就是在手术的时候打一针，事实真的如此吗？其实，从你准备手术的当天，就和麻醉医生结下不解之缘。</div> <a href="javascript:;" class="post-packUp"><i></i>收起</a> </div>   
+												<div class="original-post-info"> <span class="time">11-01 23:33</span> <a href="www.baidu.com">相关讨论(7)</a> </div>
+											</div>
+											<div class="post-item_info"> <div class="info-group"> 11-09 02:04 <span class="post-from">来自<a href="www.xxx.xx">糖尿病</a></span> <a href="javascript:;" class="reportPost">举报</a> </div> <div class="info-ops">  <a class="huged" href="javascript:;" title="喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a>   <a class="collect" href="javascript:;" title="觉得有用，收藏下吧">收藏</a> <a class="un-collect" href="javascript:;">取消收藏</a>  <a href="javascript:;" class="repost">转发(<span class="num">4</span>)</a> <a class="post-comment last" href="javascript:;" title="我要评论" data-comment="comment">评论(<span class="num">5</span>)</a> <a href="javascript:;" class="post-comment_up last">收起评论</a> </div> </div>
+										</div> 
+									</li>
+									<!-- 药物转发	 -->
+									<li data-id="234" class="post-item"> 
+										<div class="post-item_photo"><a href="www.baidu.com" class="cardInfo" data-id="433"><img src="http://www.manyoubang.com/cache/user/0/0/48/a1c9b4f4b5_48_48.jpg" alt="大王叫我来巡山"></a></div>  
+										<div class="post-item_con post-repost_wrapper">
+											<a class="post-item_author cardInfo" href="" data-id="4234">小人参</a> 
+											<div class="post-text">我也用过这种药 效果确实不错</div>
+											<div class="retweet-post">
+												<a class="post-item_author " href="" >强的松龙同 <span class="subname">通用名称：醋酸泼尼松龙注射液</span></a>
+												<div class="post-item_pro">
+													<div class="score-wrapper">
+														<div class="all-average">综合均值<b class="number">3.9</b></div>
+														<div class="sep-average">
+															<div class="effect">
+																<span class="score">药效均值&nbsp;:<span class="num">3.7</span></span><span class="percent-box"><em class="percent" number="74%" style="width: 74%;"></em></span><span class="evalute">好<span class="num">74%</span></span>
+															</div>
+															<div class="safety">
+																<span class="score">安全度均值&nbsp;:<span class="num">3.9</span></span><span class="percent-box"><em class="percent" number="78%" style="width: 78%;"></em></span><span class="evalute">好<span class="num">78%</span></span>
+															</div>
+															<div class="price">
+																<span class="score">价格均值&nbsp;:<span class="num">3.5</span></span><span class="percent-box"><em class="percent" number="70%" style="width: 70%;"></em></span><span class="evalute">好<span class="num">70%</span></span>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="original-post-info"> <span class="time">11-01 23:33</span> <a href="www.baidu.com">相关讨论(7)</a> </div>
+											</div>
+											<div class="post-item_info"> <div class="info-group"> 11-09 02:04 <span class="post-from">来自<a href="www.xxx.xx">糖尿病</a></span> <a href="javascript:;" class="reportPost">举报</a> </div> <div class="info-ops">  <a class="huged" href="javascript:;" title="喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a>   <a class="collect" href="javascript:;" title="觉得有用，收藏下吧">收藏</a> <a class="un-collect" href="javascript:;">取消收藏</a>  <a href="javascript:;" class="repost">转发(<span class="num">4</span>)</a> <a class="post-comment last" href="javascript:;" title="我要评论" data-comment="comment">评论(<span class="num">5</span>)</a> <a href="javascript:;" class="post-comment_up last">收起评论</a> </div> </div>
+										</div> 
+									</li>
+									<!-- 疗法转发 -->
+									<li data-id="234" class="post-item"> 
+										<div class="post-item_photo"><a href="www.baidu.com" class="cardInfo" data-id="433"><img src="http://www.manyoubang.com/cache/user/0/0/48/a1c9b4f4b5_48_48.jpg" alt="大王叫我来巡山"></a></div>  
+										<div class="post-item_con post-repost_wrapper">
+											<a class="post-item_author cardInfo" href="" data-id="4234">小人参</a> 
+											<div class="post-text">我也用过这种疗法 效果确实不错</div>
+											<div class="retweet-post">
+												<a class="post-item_author cardInfo" href="" >张大硕 </a>
+												<h2><a href="www.baidu.com" class="post-title-text">血糖自我检测日记</a></h2>
+												<div class="post-item_pro">
+													<div>有帮助<span class="use-time">使用：一个月</span></div>
+													<div>我刚开始吃瑞易宁效果还是很不错的，各项检查控制的比较理想，但是后来就没效果了，血糖降不下来，我也知道血糖与各个方面有关系，但是最后还是停了。</div>
+												</div>
+												<div class="original-post-info"> <span class="time">11-01 23:33</span> <a href="www.baidu.com">相关讨论(7)</a> </div>
+											</div>
+											<div class="post-item_info"> <div class="info-group"> 11-09 02:04 <span class="post-from">来自<a href="www.xxx.xx">糖尿病</a></span> <a href="javascript:;" class="reportPost">举报</a> </div> <div class="info-ops">  <a class="huged" href="javascript:;" title="喜欢" data-repeat="true">已喜欢(<span class="num">4</span>)</a>   <a class="collect" href="javascript:;" title="觉得有用，收藏下吧">收藏</a> <a class="un-collect" href="javascript:;">取消收藏</a>  <a href="javascript:;" class="repost">转发(<span class="num">4</span>)</a> <a class="post-comment last" href="javascript:;" title="我要评论" data-comment="comment">评论(<span class="num">5</span>)</a> <a href="javascript:;" class="post-comment_up last">收起评论</a> </div> </div>
+										</div> 
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -865,7 +740,7 @@
 				</div>
 				<!-- 医生问答 -->
 				<div class="doctor-answer module">
-					<div class="hd">医生推荐<a href="" class="refresh" data-id="ajax-xxx"></a></div>
+					<div class="hd">糖尿病医生<a href="" class="refresh" data-id="ajax-xxx"></a></div>
 					<div class="bd">
 						<ul>
 							<li>
@@ -874,7 +749,7 @@
 								</div>
 								<div class="doc-con authentic">
 									<div class="doc-name">刘能<i></i></div>
-									<div class="doc-ask_box"><a href="" class="doc-follow">关注</a><!-- <a href="" class="doc-ask">提问</a> --></div>
+									<div class="doc-ask_box"><a href="" class="doc-ask">提问</a></div>
 									<div class="doc-ins">擅长xxx，获奖xxx</div>
 								</div>
 							</li>
@@ -884,7 +759,7 @@
 								</div>
 								<div class="doc-con authentic">
 									<div class="doc-name">刘能<i></i></div>
-									<div class="doc-ask_box"><a href="" class="doc-follow">关注</a><!-- <a href="" class="doc-ask">提问</a> --></div>
+									<div class="doc-ask_box"><a href="" class="doc-ask">提问</a></div>
 									<div class="doc-ins">擅长xxx，获奖xxx</div>
 								</div>
 							</li>
@@ -894,7 +769,7 @@
 								</div>
 								<div class="doc-con">
 									<div class="doc-name">刘能<i></i></div>
-									<div class="doc-ask_box"><a href="" class="doc-follow">关注</a><!-- <a href="" class="doc-ask">提问</a> --></div>
+									<div class="doc-ask_box"><a href="" class="doc-ask">提问</a></div>
 									<div class="doc-ins">擅长xxx，获奖xxx</div>
 								</div>
 							</li>
@@ -904,7 +779,7 @@
 								</div>
 								<div class="doc-con">
 									<div class="doc-name">刘能<i></i></div>
-									<div class="doc-ask_box"><a href="" class="doc-follow">关注</a><!-- <a href="" class="doc-ask">提问</a> --></div>
+									<div class="doc-ask_box"><a href="" class="doc-ask">提问</a></div>
 									<div class="doc-ins">擅长xxx，获奖xxx</div>
 								</div>
 							</li>

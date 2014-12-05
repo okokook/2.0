@@ -1,6 +1,24 @@
 define(function  (require,exports,module) {
 	require('common');
+	require('post-handle');
+	var template = require('template');
+	var initPagination = require('Pagination');
 	var dialog = require('dialog');
+	//分页初始化
+	function Pagecallback(event,page){
+		$.getJSON(OP_CONFIG.pageURL,{page:page}).done(function(data){
+			var html = template(OP_CONFIG.pageTem,data);
+			$('.group-comment .bd ul').html(html);
+		})
+	}
+
+	if (OP_CONFIG.totalPages > 1) {
+
+		$('#pagination').twbsPagination({
+			onPageClick: Pagecallback
+		});
+
+	}
 
 	function quickDialog (con) {
 		var d = dialog({
@@ -63,4 +81,5 @@ define(function  (require,exports,module) {
 		
 		d.show();
 	});
+
 })
