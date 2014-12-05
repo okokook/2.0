@@ -1,0 +1,10 @@
+{{each list as value i}}
+	<li data-id="{{value.postId}}" class="post-item">
+		<div class="post-item_photo">
+			<a href="{{value.authorLink}}" class="cardInfo" data-id="{{value.authorId}}">
+				<img src="{{value.authorPicLink}}" alt="{{value.authorName}}">
+			</a>
+		</div>
+		<div class="post-item_con">
+		<a class="post-item_author cardInfo" href="{{value.authorLink}}" data-id="{{value.authorId}}">{{value.authorName}}</a>
+		<div class="post-text">{{value.postCon}}</div>
