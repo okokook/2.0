@@ -54,7 +54,7 @@ define(function  (require,exports,module) {
 	//下一页
 	function Pagecallback(event,page){
 		var url = $('.timeline-cat .J-selected').data('url');
-		var tem = $('.timeline-cat .J-selected').data('tem');
+		var tem = $('.timeline-cat .J-selected').data('template');
 		$('html,body').animate({
 				'scrollTop': 0
 			}, 200, function() {
@@ -62,9 +62,11 @@ define(function  (require,exports,module) {
 			});
 		showLoading();
 		$.getJSON(url,{page:page}).done(function(data){
-			var html = template(tem,data);
+			console.log(data);
+			var htmltem = template(tem,data);
+			
 			hideLoading()
-			$('.my-post ul').html(html);
+			$('.my-post ul').html(htmltem);
 		})
 	}
 
