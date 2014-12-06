@@ -4103,7 +4103,7 @@ p.guests_risk {
 	li{
 		float: left;
 		width: 220px;
-		background: #dbdbdb;
+		background: #ddd;
 		height: 46px;
 		line-height: 46px;
 		vertical-align: top;
@@ -4112,11 +4112,18 @@ p.guests_risk {
 		&.first{
 			border-radius: 3px 0 0 3px;
 		}
+		&.dark .icon{
+			background: url(./images/a2.png) no-repeat;
+		}
 		&.third .icon{
 			background: #f6f6f6 url(./images/a4.png) no-repeat;
 		}
+		&.third.selected .icon{
+			background: #f6f6f6 url(./images/a6.png) no-repeat;
+		}
 		&.selected{
 			background: #22a95b;
+			color: #fff;
 		}
 		.num{
 			color: #fff;

@@ -134,7 +134,8 @@
 						<div class="clicked edit-box_wrapper" style="display: block;">
 							<div class="editor-content">
 								<div class="editor-post_con ">
-									<textarea class="con-wrapper" placeholder="输入内容" id="content-input">向 @张一航 提问:</textarea>
+								<!-- 注意 以下data-placeholder中的内容与textarea中的内容相同 -->
+									<textarea class="con-wrapper" placeholder="输入内容" data-placeholder="向 @张一航 提问:" id="content-input">向 @张一航 提问:</textarea>
 								</div>
 								<div class="img-upload_box">
 									<div id="uploader">
@@ -158,8 +159,9 @@
 					</div>
 					<div class="my-timeline">
 						<div class="timeline-cat">
-							<a href="" class="cat-item J-selected" data-id="tag">嘉宾回答</a>
-							<a href="" class="cat-item" data-id="follow">帮友提问</a>
+							<!-- 以下data-url中的数据许后台填写  为这两个栏目下的后天地址 -->
+							<a href="" class="cat-item J-selected" data-url="xxx" data-template = "pro-ans-template">嘉宾回答</a>
+							<a href="" class="cat-item" data-url="xxx" data-template = "patient-ask-template">帮友提问</a>
 						</div>
 						<div class="my-post">
 							<div class="post-bd">
@@ -310,84 +312,16 @@ seajs.use('mock', function(Mock){
 
     //帖子数据模拟
     Mock.mock('test3',{
-    	'page':33,
-    	"type":'tag',
     	"list":[
     			{
-	    			"postType":"post",
 	    			"postId":"234",//帖子唯一标识
 	    			"authorLink":"www.baidu.com",//作者的空间链接
 	    			"authorId":"342",//作者id
 	    			"authorPicLink":"http://www.manyoubang.com/cache/user/0/0/48/a1c9b4f4b5_48_48.jpg",//作者头像链接
 	    			"authorName":"淑女范",//作者姓名
-	    			"isRepost":false,//帖子是否为转发 取值为布尔值 true 或false 对应转发 原创
-	    			"postTitle":"活在你心内 分开也在一起",//帖子题目
-	    			"postLink":"www.baidu.com",//帖子链接
 	    			"hasExpand":true,//帖子是否有展开收缩 有为ture 无为false 同上转发
 	    			"postCon_a":"<p>活在你心内 分开也在一起</p>",//帖子收缩内容 可能含有图片 
 	    			"postCon_b":"<p>活在你心内 分开也在一起,</p><p>活在你心内 分开也在一起</p>",//帖子全部内容
-	    			"postTime":"11-09 02:04",//帖子时间
-	    			"postGroLink":"www.xxx.xx",//帖子所属小组链接
-	    			"postGroName":"糖尿病",//帖子所属小组
-	    			"hashuged":true,//此贴是否之前被拥抱过
-	    			"hugNum":"4",//拥抱的个数
-	    			"hasCollected":false,//此贴是否之前被收藏过
-	    			"repostNum":"4",//转发数量
-	    			"hasComment":'comment',//此贴是否被评论过
-	    			"CommentNum":"5"//评论个数
-	    		},
-	    		{
-	    			"postType":"medcine",
-	    			"postId":"234",//帖子唯一标识
-	    			"authorLink":"www.baidu.com",//作者的空间链接
-	    			"authorId":"342",//作者id
-	    			"authorPicLink":"http://www.manyoubang.com/cache/user/0/0/48/a1c9b4f4b5_48_48.jpg",//作者头像链接
-	    			"authorName":"淑女范",//作者姓名
-	    			"isRepost":true,//帖子是否为转发 取值为布尔值 true 或false 对应转发 原创
-	    			"postCon":'我也用过这种疗法 效果确实不错<a href="" class="repost-user-name cardInfo" data-id="342">//@李明:</a>我之前用过这种疗法，效果不错。',//转发的评论
-	    			"medLink":"http://www.manyoubang.com/cure-yaowu-ts-detail-id-29-groupid-34.html",
-	    			"medName":"强的痛",//药品名称
-	    			"commonMedname":"鼻炎康片",//药品通用名称 有写 无不写
-	    			"allNum":4.5,//综合均值
-	    			"effectNum":3.6,//药效均值
-	    			"effectPer":'70%',//药效百分比
-	    			"safetyNum":4.5,//安全度均值
-	    			"safetyPer":'89%',//安全度百分比
-	    			"priceNum":4.5,//价格均值
-	    			"pricePer":'85%',//价格百分比
-	    			"oritime":'11-01 22:22',//原评论时间
-	    			"oriLink":"xxx",//药物页面
-	    			"oricomment":6,//药物评论个数
-	    			"postTime":"11-09 02:04",//帖子时间
-	    			"postGroLink":"www.xxx.xx",//帖子所属小组链接
-	    			"postGroName":"糖尿病",//帖子所属小组
-	    			"hashuged":true,//此贴是否之前被拥抱过
-	    			"hugNum":"4",//拥抱的个数
-	    			"hasCollected":false,//此贴是否之前被收藏过
-	    			"repostNum":"4",//转发数量
-	    			"hasComment":'comment',//此贴是否被评论过
-	    			"CommentNum":"5"//评论个数
-	    		},
-	    		{
-	    			"postType":"therapy",
-	    			"postId":"234",//帖子唯一标识
-	    			"authorLink":"www.baidu.com",//作者的空间链接
-	    			"authorId":"342",//作者id
-	    			"authorPicLink":"http://www.manyoubang.com/cache/user/0/0/48/a1c9b4f4b5_48_48.jpg",//作者头像链接
-	    			"authorName":"淑女范",//作者姓名
-	    			"isRepost":true,//帖子是否为转发 取值为布尔值 true 或false 对应转发 原创
-	    			"postCon":'我也用过这种疗法 效果确实不错<a href="" class="repost-user-name cardInfo" data-id="342">//@李明:</a>我之前用过这种疗法，效果不错。',//转发的评论
-	    			"reauthorLink":"xxxx",//原帖作者链接
-	    			"reauthorId":"768",//原帖id
-	    			"reauthorName":"孤身张",//原帖作者姓名
-	    			"repostLink":"xxx",//疗法页面链接
-	    			"repostTitle":"血糖自我检测日记",//疗法名称
-	    			"hashelp":"有帮助",//疗法是否有帮助
-	    			"useTime":"一个月",//疗法使用时间
-	    			"therapycon":"我刚开始吃瑞易宁效果还是很不错的，各项检查控制的比较理想，但是后来就没效果了，血糖降不下来，我也知道血糖与各个方面有关系，但是最后还是停了。",//评论疗法内容
-	    			"oritime":'11-01 22:22',//原评论时间
-	    			"oriLink":"xxx",//药物页面
-	    			"oricomment":6,//药物评论个数
 	    			"postTime":"11-09 02:04",//帖子时间
 	    			"postGroLink":"www.xxx.xx",//帖子所属小组链接
 	    			"postGroName":"糖尿病",//帖子所属小组

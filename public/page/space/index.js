@@ -19,14 +19,14 @@ define(function(require, exports, module) {
 
 	//下一页
 	function Pagecallback(event, page) {
-			loadData(cat, 0, page);
 			isScrolled = 0;
 			$('#pagination').hide();
 			$('html,body').animate({
 				'scrollTop': 0
-			}, 500, function() {
+			}, 200, function() {
 
-			})
+			});
+			loadData(cat, 0, page);
 		}
 
 	initPagination(OP_CONFIG.totalPages,Pagecallback);

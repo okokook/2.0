@@ -1,0 +1,11 @@
+{{each f as value i}}
+	<div class="user-item">
+		<div class="avator"><a href="{{value.path}}"><img src="{{value.face}}" alt="{{value.username}}"></a></div>
+		<div class="info-wrapper">
+			<div class="name">{{value.username}}</div>
+			<div class="follow-btn" data-id="{{value.userid}}">
+				+加关注
+			</div>
+		</div>
+	</div>
+{{/each}}

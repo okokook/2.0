@@ -1,4 +1,4 @@
-/*TMODJS:{"version":1,"md5":"e5fd6368c0b271bab12f3e60dbd3388f"}*/
+/*TMODJS:{"version":2,"md5":"34cb0cfcda8165640a67c33bfc904e46"}*/
 template('interview-item-template',function($data,$filename) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,list=$data.list,value=$data.value,i=$data.i,$string=$utils.$string,$out='';$each(list,function(value,i){
 $out+=' <li data-id="';

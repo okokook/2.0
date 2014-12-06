@@ -1,6 +1,7 @@
-/*TMODJS:{"version":2,"md5":"157d5168ea9b401a5f52f83042726eec"}*/
-template('add-post-template',function($data,$filename) {
-'use strict';var $utils=this,$helpers=$utils.$helpers,$string=$utils.$string,value=$data.value,postTitle=$data.postTitle,$out='';$out+='<li data-id="';
+/*TMODJS:{"version":3,"md5":"e2e95c2424f50428435d1526adfe095a"}*/
+template('patient-ask-template',function($data,$filename) {
+'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,list=$data.list,value=$data.value,i=$data.i,$string=$utils.$string,$out='';$each(list,function(value,i){
+$out+=' <li data-id="';
 $out+=$string(value.postId);
 $out+='" class="post-item"> <div class="post-item_photo"><a href="';
 $out+=$string(value.authorLink);
@@ -16,11 +17,7 @@ $out+='" data-id="';
 $out+=$string(value.authorId);
 $out+='">';
 $out+=$string(value.authorName);
-$out+='</a> <div class="post-ops"> <i class="icon"></i> <ul class="ops-menu"> <li><a href="" class="editPost">修改</a></li> <li><a href="" class="removePost">删除</a></li> </ul> </div> <h2><a href="';
-$out+=$string(value.postLink);
-$out+='" class="post-title-text">';
-$out+=$string(postTitle);
-$out+='</a></h2> ';
+$out+='</a> <div class="post-ops"> <i class="icon"></i> <ul class="ops-menu"> <li><a href="" class="editPost">修改</a></li> <li><a href="" class="removePost">删除</a></li> </ul> </div> ';
 if(value.hasExpand){
 $out+=' <div class="post-item_pro"> ';
 $out+=$string(value.postCon_a);
@@ -60,6 +57,7 @@ $out+='</span>)</a> <a class="post-comment last" href="javascript:;" title="我�
 $out+=$string(value.hasComment);
 $out+='">评论(<span class="num">';
 $out+=$string(value.CommentNum);
-$out+='</span>)</a> <a href="javascript:;" class="post-comment_up last">收起评论</a> </div> </div> </div> </li>';
+$out+='</span>)</a> <a href="javascript:;" class="post-comment_up last">收起评论</a> </div> </div> </div> </li> ';
+});
 return new String($out);
 });

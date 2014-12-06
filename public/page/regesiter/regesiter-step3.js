@@ -33,7 +33,7 @@ define(function  (require, exports, module) {
 		data.times = parseInt($ele.data('num'));
 
 		$.getJSON('test2',{data:data}).done(function  (data) {
-			var html = template('recom-template',data);
+			var html = template('suggest-people-template',data);
 			$wrapper.find('.user-list-bd').html(html);
 
 			var num = parseInt($ele.data('num'))+1;

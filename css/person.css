@@ -3443,7 +3443,7 @@ p.guests_risk {
   .step-tip-wrapper li {
     float: left;
     width: 220px;
-    background: #dbdbdb;
+    background: #ddd;
     height: 46px;
     line-height: 46px;
     vertical-align: top;
@@ -3451,10 +3451,15 @@ p.guests_risk {
     list-style: none; }
     .step-tip-wrapper li.first {
       border-radius: 3px 0 0 3px; }
+    .step-tip-wrapper li.dark .icon {
+      background: url(./images/a2.png) no-repeat; }
     .step-tip-wrapper li.third .icon {
       background: #f6f6f6 url(./images/a4.png) no-repeat; }
+    .step-tip-wrapper li.third.selected .icon {
+      background: #f6f6f6 url(./images/a6.png) no-repeat; }
     .step-tip-wrapper li.selected {
-      background: #22a95b; }
+      background: #22a95b;
+      color: #fff; }
     .step-tip-wrapper li .num {
       color: #fff;
       font-size: 22px;
