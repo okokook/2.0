@@ -2067,7 +2067,6 @@ textarea.repost-con:focus {
 	.bd {
 		overflow: hidden;
 		zoom: 1;
-		min-height: 600px;
 	}
 }
 .setting {
@@ -4096,5 +4095,41 @@ p.guests_risk {
 		font-size: 14px;
 		font-family: $st;
 		text-align: center;
+	}
+}
+.step-tip-wrapper{
+	margin-bottom: 15px;
+	overflow: hidden;
+	li{
+		float: left;
+		width: 220px;
+		background: #dbdbdb;
+		height: 46px;
+		line-height: 46px;
+		vertical-align: top;
+		padding-left: 8px;
+		list-style: none;
+		&.first{
+			border-radius: 3px 0 0 3px;
+		}
+		&.third .icon{
+			background: #f6f6f6 url(./images/a4.png) no-repeat;
+		}
+		&.selected{
+			background: #22a95b;
+		}
+		.num{
+			color: #fff;
+			font-size: 22px;
+			font-weight: bold;
+			margin-right: 6px;
+			vertical-align: top;
+		}
+		.icon{
+			float: right;
+			width: 30px;
+			height: 46px;
+			background: url(./images/a1.png) no-repeat;
+		}
 	}
 }

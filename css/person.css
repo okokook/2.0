@@ -1711,8 +1711,7 @@ textarea.repost-con:focus {
     font-family: "Microsoft YaHei", Arial, sans-serif; }
   .my-setting .bd, .my-middle .health .bd {
     overflow: hidden;
-    zoom: 1;
-    min-height: 600px; }
+    zoom: 1; }
 
 .setting .my-middle {
   background: url(./img/setting-bg.png) repeat-y; }
@@ -3437,5 +3436,35 @@ p.guests_risk {
     font-size: 14px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: center; }
+
+.step-tip-wrapper {
+  margin-bottom: 15px;
+  overflow: hidden; }
+  .step-tip-wrapper li {
+    float: left;
+    width: 220px;
+    background: #dbdbdb;
+    height: 46px;
+    line-height: 46px;
+    vertical-align: top;
+    padding-left: 8px;
+    list-style: none; }
+    .step-tip-wrapper li.first {
+      border-radius: 3px 0 0 3px; }
+    .step-tip-wrapper li.third .icon {
+      background: #f6f6f6 url(./images/a4.png) no-repeat; }
+    .step-tip-wrapper li.selected {
+      background: #22a95b; }
+    .step-tip-wrapper li .num {
+      color: #fff;
+      font-size: 22px;
+      font-weight: bold;
+      margin-right: 6px;
+      vertical-align: top; }
+    .step-tip-wrapper li .icon {
+      float: right;
+      width: 30px;
+      height: 46px;
+      background: url(./images/a1.png) no-repeat; }
 
 /*# sourceMappingURL=person.css.map */
