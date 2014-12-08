@@ -95,7 +95,6 @@
 					<div class="my-nav">
 						<ul>
 							<li><a href="index.html">我的主页<i class="icon1"></i></a></li>
-							
 							<li><a href="my-topic.html">我的话题<i class="icon4"></i></a></li>
 							<li><a href="my-comment.html">评论我的<i class="icon8"></i></a></li>
 							<li><a href="my-replay.html">我回复的<i class="icon9"></i></a></li>
@@ -117,8 +116,10 @@
 							<div class="pic"><a href=""><img src="http://www.manyoubang.com/cache/user/0/0/48/a1c9b4f4b5_48_48.jpg" alt=""></a></div>
 							<div class="con-wrapper">
 								<div class="con-hd">
-									<a href="" class="name">张一航</a>
-									<div class="question un-question">进行中</div>
+									<a href="" class="name cardInfo" data-id="xxx">张一航</a>
+									<div class="question questioning">进行中</div>
+									<!-- 已结束的代码 -->
+									<!-- <div class="question un-question">已结束</div> -->
 								</div>
 								<div class="con-bd">
 									<h2><a href="">麻醉师真的只是手术时打一针？</a></h2>
@@ -240,7 +241,9 @@
 			<!-- 侧边栏开始 -->
 			<div class="cright sider">
 				<div class="interview_time">
-					<img src="http://assets.imedao.com/images/interview_nostart.png" width="60" height="65">
+					<img src="/css/img/tiwenzhong.png">
+					<!-- 已结束时的代码 -->
+					<!-- <img src="/css/img/yijieshu.png"> -->
 					<p>访谈时间：<span>11月27日 15:00 - 16:00</span></p>
 				</div>
 				<div class="widget">
@@ -248,10 +251,10 @@
 					<div class="fixit"></div>
 					<ul style="border-top:none" class="rightSider-list">
 						<li style="position:relative">
-							<div class="headpic"><a href="/1613023863"><img src="http://photo.xueqiu.com/community/201410/1416969041248-1416969111557.jpg!50x50.png" width="48" height="48"></a></div>
+							<div class="headpic"><a href="/1613023863" data-id="xxx" class="cardInfo"><img src="http://photo.xueqiu.com/community/201410/1416969041248-1416969111557.jpg!50x50.png" width="48" height="48"></a></div>
 							<div class="content">
-								<a href="/1613023863" target="_blank" class="head_text"><span class="screen_name">邹钧</span></a>
-								<div uid="1613023863" uname="邹钧" class="op addFriendBtn"><b>＋</b>加关注</div>
+								<a href="/1613023863" target="_blank" class="head_text cardInfo" data-id="xxx"><span class="screen_name">邹钧</span></a>
+								<div data-id="1613023863" uname="邹钧" class="op addFriendBtn">+加关注</div>
 							</div>
 						</li>
 					</ul>
@@ -263,12 +266,12 @@
 					<ul style="border-top:none" class="rightSider-list">
 						<li style="position:relative">
 							<div class="headpic">
-								<a href="/5652802984"><img src="http://www.manyoubang.com/cache/user/0/5/48/f636263f95_48_48.png" width="48" height="48"></a>
+								<a href="/5652802984" data-id="xxx" class="cardInfo"><img src="http://www.manyoubang.com/cache/user/0/5/48/f636263f95_48_48.png" width="48" height="48"></a>
 							</div>
 							<div class="content">
-								<a href="/5652802984" target="_blank" class="head_text"><span class="screen_name">访谈小秘书</span></a>
-								<div uid="5652802984" uname="访谈小秘书" class="op addFriendBtn">
-									<b>＋</b>加关注
+								<a href="/5652802984" target="_blank" class="head_text cardInfo" data-id="xxx"><span class="screen_name">访谈小秘书</span></a>
+								<div data-id="5652802984" uname="访谈小秘书" class="op addFriendBtn">
+									+加关注
 								</div>
 							</div>
 						</li>
@@ -312,6 +315,33 @@ seajs.use('mock', function(Mock){
 
     //帖子数据模拟
     Mock.mock('test3',{
+    	"list":[
+    			{
+	    			"postId":"234",//帖子唯一标识
+	    			"authorLink":"www.baidu.com",//作者的空间链接
+	    			"authorId":"342",//作者id
+	    			"authorPicLink":"http://www.manyoubang.com/cache/user/0/0/48/a1c9b4f4b5_48_48.jpg",//作者头像链接
+	    			"authorName":"淑女范",//作者姓名
+	    			"rehasExpand":true,//帖子是否有展开收缩 有为ture 无为false 同上转发
+	    			"postCon":"你这种情况属于脑血栓复发，要抓紧治疗",
+	    			"repostCon_a":'<p>向@张一航提问：11月1日《焦点访谈》刚刚播出“麻醉医生猝死事件调查”，时隔两日，巢湖康平妇产医院发生麻醉医生被捅事件，种种事件不得不让麻醉医生们心寒。</p>',//帖子收缩内容 可能含有图片 
+	    			"repostCon_b":"<p>活在你心内 分开也在一起,</p><p>活在你心内 分开也在一起</p>",//帖子全部内容
+	    			"postTime":"11-09 02:04",//帖子时间
+	    			"postGroLink":"www.xxx.xx",//帖子所属小组链接
+	    			"postGroName":"糖尿病",//帖子所属小组
+	    			"hashuged":true,//此贴是否之前被拥抱过
+	    			"hugNum":"4",//拥抱的个数
+	    			"hasCollected":false,//此贴是否之前被收藏过
+	    			"repostNum":"4",//转发数量
+	    			"hasComment":'comment',//此贴是否被评论过
+	    			"CommentNum":"5"//评论个数
+	    		}
+	    	]
+    	
+    });
+
+    //帖子数据模拟
+    Mock.mock('test4',{
     	"list":[
     			{
 	    			"postId":"234",//帖子唯一标识

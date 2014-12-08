@@ -1,606 +1,674 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="/css/timeline.css">
-        <script>
-             var OP_CONFIG={"module":"health-doc","page":"index"};
-        </script>
-    </head>
+<head>
+<meta  charset="utf-8">
+<meta name="robots" content="all" />
+<title>我的个人中心 慢友帮—中国最大慢性病病友互帮社区</title>
+<meta name="keywords" content="慢性病,慢性病论坛,慢性病治疗" />
+<meta name="description" content="慢友帮是目前中国最大的慢性病病友交流家园。慢友帮论坛为网友提供慢性病预防知识,治疗经验方法等交流服务,是结识病友、分享经验、相互勉励的公益性网络平台。" />
+<link rel="shortcut icon" href="http://www.manyoubang.com/favicon.ico">
+<link rel="stylesheet" href="/css/base.css" />
+<link rel="stylesheet" href="/css/person.css">
+<link rel="stylesheet" href="/css/timeline.css">
+<script>
+     var OP_CONFIG={"module":"health-doc","page":"index"};
+</script>
+</head>
 <body>
-<!--  网页内容 -->
-    <div class="container">
-        <!-- 时序栏中所有的年份月份全载入 -->
-        <div class="scrubber" id="scrubber">
-            <a href="javascript:;" data-year="now">现在</a>
-            <a href="javascript:;" data-year="2014" class="s_year" id="scrubber_year_2014">2014</a>
-            <ul>
-                <li><a href="#" class="s_month 2014_month" data-month="10" data-year="2014" id="scrubber_month_2014_10">10月</a></li>
-                <li> <a href="#" class="s_month 2014_month" data-month="3" data-year="2014"
-                id="scrubber_month_2014_3">3月</a></li>
-            </ul>
-            <a href="javascript:;" data-year="2013" class="s_year" id="scrubber_year_2013">2013</a>
-            <ul>
-                <li> <a href="#" class="s_month 2013_month" data-month="10" data-year="2013" id="scrubber_month_2013_10">10月</a></li>
-                <li><a href="#" class="s_month 2013_month" data-month="3" data-year="2013"
-                id="scrubber_month_2013_3">3月</a></li>
-            </ul>
-            <a href="javascript:;" data-year="born">出生</a>
+<!-- 头部 -->
+<div class="header">
+    <div class="header-content container">
+        <div class="left">
+            <a href="http://www.manyoubang.com/" title="慢友帮—中国最大慢性病病友互帮社区"><img src="/images/logo.png"  alt="慢友帮—中国最大慢性病病友互帮社区"  class="logo"></a>
         </div>
-        <div class="content" id="content">
-            <div class="c_year" id="content_year_2014" data-year="2014">2014</div>
-            <div class="c_month" id="poster_2014_10">
-                <div class="c_month_text">10月</div>
-                <ol>
-                    <li>
-                        <div class="c_item c_item_left" class="item_month_2014_10">
-                            <div class="c_i_icon_arrow"></div>
-                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                            <div class="easy-operate">
-                                <a href="" class="edit" title="编辑">编辑</a>
-                                <a href="" class="remove" title="删除">删除</a>
-                            </div>
-                            <div class="c_i_head">
-                                <div class="c_i_head_title">
-                                    <div class="c_i_head_title_icon">初<br/>&nbsp;&nbsp;&nbsp;五</div>
-                                    2014-3-31
-                                    <div class="c_i_head_cat">健康记录</div>
-                                </div>
-                                <div class="c_i_head_intro">
-                                    <i class="ui_ico quote_before"></i>
-                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
-                                    <i class="ui_ico quote_after"></i>
-                                </div>
-                            </div>
-                            <div class="c_i_media">
-                            </div>
-                            <div class="c_i_footer">
-                                <div class="c_i_footer_info">
-                                        <a href="javascript:void(0)" class="op_zan" title="赞">
-                                            <i class="ui_ico ico_zan"></i>(32906)</a>
-                                        <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                            收藏</a>
-                                        <a href="javascript:void(0)" class="op_pin" title="评论">
-                                            评论(883)</a>
-                                </div>
-                            </div>
-                        </div>
+        <div class="nav">
+            <ul>
+                <li class="cur"><a href="#">我的主页</a></li>
+                <li><a href="square.html">广场</a></li>       
+                <li ><a href="group.html">小组</a></li>
+                <li ><a href="feed.html">专题</a></li>
+                <li ><a href="searchfriend.html">找病友</a></li>
+            </ul>
+        </div>
+        <div class="tsearch">
+            <form method="GET" action="search.html">
+                <input type="hidden" name="app" value="search" />
+                <input type="hidden" name="ac" value="s" />
+                <input type="text" class="inputtext" id="searchkw" name="kw" value="" placeholder="小组 | 话题 | 用户">
+
+                <input id="searchto" type="submit" class="searchbt" value=" " />
+            </form>
+        </div>
+        <div class="user-box-wrapper">
+                <ul class="user-box"> 
+                    <li class="user-name">二哥e</li>
+                    <li class="user-info">
+                        <a href="javascript:void(0)" class="user-info_icon"><i class="message-num">5</i></a>
+                        <div class="user-info_popup">
+                            <a href="http://www.manyoubang.com/message-my.html">评论我的(<span class="num-color">2</span>)</a>
+                            <a href="http://www.manyoubang.com/message-my.html">私信我的(<span class="num-color">3</span>)</a>
+                            <a href="http://www.manyoubang.com/user-login-ts-out.html">退出</a></div>
                     </li>
-                    <li>
-                        <div class="c_item c_item_right" class="item_month_20143">
-                            <div class="c_i_icon_arrow"></div>
-                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                            <div class="easy-operate">
-                                <a href="" class="edit" title="编辑">编辑</a>
-                                <a href="" class="remove" title="删除">删除</a>
-                            </div>
-                            <div class="c_i_head">
-                                <div class="c_i_head_title">
-                                    <div class="c_i_head_title_icon">初<br/>&nbsp;&nbsp;&nbsp;五</div>
-                                    2014-3-31
-                                    <div class="c_i_head_cat">健康记录</div>
-                                </div>
-                                <div class="c_i_head_intro">
-                                    <i class="ui_ico quote_before"></i>
-                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
-                                    <i class="ui_ico quote_after"></i>
-                                </div>
-                            </div>
-                            <div class="c_i_media">
-                            </div>
-                            <div class="c_i_footer">
-                                <div class="c_i_footer_info">
-                                        <a href="javascript:void(0)" class="op_zan" title="赞">
-                                            <i class="ui_ico ico_zan"></i>(32906)</a>
-                                        <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                            收藏</a>
-                                        <a href="javascript:void(0)" class="op_pin" title="评论">
-                                            评论(883)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="c_item c_item_left" class="item_month_20143">
-                            <div class="c_i_icon_arrow"></div>
-                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                            <div class="easy-operate">
-                                <a href="" class="edit" title="编辑">编辑</a>
-                                <a href="" class="remove" title="删除">删除</a>
-                            </div>
-                            <div class="c_i_head">
-                                <div class="c_i_head_title">
-                                    <div class="c_i_head_title_icon">初<br/>&nbsp;&nbsp;&nbsp;五</div>
-                                    2014-3-31
-                                    <div class="c_i_head_cat">健康记录</div>
-                                </div>
-                                <div class="c_i_head_intro">
-                                    <i class="ui_ico quote_before"></i>
-                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
-                                    <i class="ui_ico quote_after"></i>
-                                </div>
-                            </div>
-                            <div class="c_i_media">
-                            </div>
-                            <div class="c_i_footer">
-                                <div class="c_i_footer_info">
-                                        <a href="javascript:void(0)" class="op_zan" title="赞">
-                                            <i class="ui_ico ico_zan"></i>(32906)</a>
-                                        <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                            收藏</a>
-                                        <a href="javascript:void(0)" class="op_pin" title="评论">
-                                            评论(883)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="c_item c_item_right" class="item_month_20143">
-                            <div class="c_i_icon_arrow"></div>
-                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                            <div class="easy-operate">
-                                <a href="" class="edit" title="编辑">编辑</a>
-                                <a href="" class="remove" title="删除">删除</a>
-                            </div>
-                            <div class="c_i_head">
-                                <div class="c_i_head_title">
-                                    <div class="c_i_head_title_icon">初<br/>&nbsp;&nbsp;&nbsp;五</div>
-                                    2014-3-31
-                                    <div class="c_i_head_cat">健康记录</div>
-                                </div>
-                                <div class="c_i_head_intro">
-                                    <i class="ui_ico quote_before"></i>
-                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
-                                    <i class="ui_ico quote_after"></i>
-                                </div>
-                            </div>
-                            <div class="c_i_media">
-                            </div>
-                            <div class="c_i_footer">
-                                <div class="c_i_footer_info">
-                                        <a href="javascript:void(0)" class="op_zan" title="赞">
-                                            <i class="ui_ico ico_zan"></i>(32906)</a>
-                                        <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                            收藏</a>
-                                        <a href="javascript:void(0)" class="op_pin" title="评论">
-                                            评论(883)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-            <div class="c_month" id="poster_2014_3">
-                <div class="c_month_text">3月</div>
-                <ol>
-                    <li>
-                        <div class="c_item c_item_left" class="item_month_2014_10">
-                            <div class="c_i_icon_arrow"></div>
-                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                            <div class="easy-operate">
-                                <a href="" class="edit" title="编辑">编辑</a>
-                                <a href="" class="remove" title="删除">删除</a>
-                            </div>
-                            <div class="c_i_head">
-                                <div class="c_i_head_title">
-                                    <div class="c_i_head_title_icon">初<br/>&nbsp;&nbsp;&nbsp;五</div>
-                                    2014-3-31
-                                    <div class="c_i_head_cat">健康记录</div>
-                                </div>
-                                <div class="c_i_head_intro">
-                                    <i class="ui_ico quote_before"></i>
-                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
-                                    <i class="ui_ico quote_after"></i>
-                                </div>
-                            </div>
-                            <div class="c_i_media">
-                            </div>
-                            <div class="c_i_footer">
-                                <div class="c_i_footer_info">
-                                        <a href="javascript:void(0)" class="op_zan" title="赞">
-                                            <i class="ui_ico ico_zan"></i>(32906)</a>
-                                        <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                            收藏</a>
-                                        <a href="javascript:void(0)" class="op_pin" title="评论">
-                                            评论(883)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="c_item c_item_right" class="item_month_20143">
-                            <div class="c_i_icon_arrow"></div>
-                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                            <div class="easy-operate">
-                                <a href="" class="edit" title="编辑">编辑</a>
-                                <a href="" class="remove" title="删除">删除</a>
-                            </div>
-                            <div class="c_i_head">
-                                <div class="c_i_head_title">
-                                    <div class="c_i_head_title_icon">初<br/>&nbsp;&nbsp;&nbsp;五</div>
-                                    2014-3-31
-                                    <div class="c_i_head_cat">健康记录</div>
-                                </div>
-                                <div class="c_i_head_intro">
-                                    <i class="ui_ico quote_before"></i>
-                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
-                                    <i class="ui_ico quote_after"></i>
-                                </div>
-                            </div>
-                            <div class="c_i_media">
-                            </div>
-                            <div class="c_i_footer">
-                                <div class="c_i_footer_info">
-                                        <a href="javascript:void(0)" class="op_zan" title="赞">
-                                            <i class="ui_ico ico_zan"></i>(32906)</a>
-                                        <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                            收藏</a>
-                                        <a href="javascript:void(0)" class="op_pin" title="评论">
-                                            评论(883)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="c_item c_item_left" class="item_month_20143">
-                            <div class="c_i_icon_arrow"></div>
-                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                            <div class="easy-operate">
-                                <a href="" class="edit" title="编辑">编辑</a>
-                                <a href="" class="remove" title="删除">删除</a>
-                            </div>
-                            <div class="c_i_head">
-                                <div class="c_i_head_title">
-                                    <div class="c_i_head_title_icon">初<br/>&nbsp;&nbsp;&nbsp;五</div>
-                                    2014-3-31
-                                    <div class="c_i_head_cat">健康记录</div>
-                                </div>
-                                <div class="c_i_head_intro">
-                                    <i class="ui_ico quote_before"></i>
-                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
-                                    <i class="ui_ico quote_after"></i>
-                                </div>
-                            </div>
-                            <div class="c_i_media">
-                            </div>
-                            <div class="c_i_footer">
-                                <div class="c_i_footer_info">
-                                        <a href="javascript:void(0)" class="op_zan" title="赞">
-                                            <i class="ui_ico ico_zan"></i>(32906)</a>
-                                        <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                            收藏</a>
-                                        <a href="javascript:void(0)" class="op_pin" title="评论">
-                                            评论(883)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="c_item c_item_right" class="item_month_20143">
-                            <div class="c_i_icon_arrow"></div>
-                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                            <div class="easy-operate">
-                                <a href="" class="edit" title="编辑">编辑</a>
-                                <a href="" class="remove" title="删除">删除</a>
-                            </div>
-                            <div class="c_i_head">
-                                <div class="c_i_head_title">
-                                    <div class="c_i_head_title_icon">初<br/>&nbsp;&nbsp;&nbsp;五</div>
-                                    2014-3-31
-                                    <div class="c_i_head_cat">健康记录</div>
-                                </div>
-                                <div class="c_i_head_intro">
-                                    <i class="ui_ico quote_before"></i>
-                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
-                                    <i class="ui_ico quote_after"></i>
-                                </div>
-                            </div>
-                            <div class="c_i_media">
-                            </div>
-                            <div class="c_i_footer">
-                                <div class="c_i_footer_info">
-                                        <a href="javascript:void(0)" class="op_zan" title="赞">
-                                            <i class="ui_ico ico_zan"></i>(32906)</a>
-                                        <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                            收藏</a>
-                                        <a href="javascript:void(0)" class="op_pin" title="评论">
-                                            评论(883)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-            <div class="c_year" id="content_year_2013" data-year="2013">2013</div>
-            <div class="c_month" id="poster_2013_10">
-                <div class="c_month_text">10月</div>
-                <ol>
-                    <li>
-                        <div class="c_item c_item_left" class="item_month_2013_10">
-                            <div class="c_i_icon_arrow"></div>
-                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                            <div class="easy-operate">
-                                <a href="" class="edit" title="编辑">编辑</a>
-                                <a href="" class="remove" title="删除">删除</a>
-                            </div>
-                            <div class="c_i_head">
-                                <div class="c_i_head_title">
-                                    <div class="c_i_head_title_icon">初<br/>&nbsp;&nbsp;&nbsp;五</div>
-                                    2014-3-31
-                                    <div class="c_i_head_cat">健康记录</div>
-                                </div>
-                                <div class="c_i_head_intro">
-                                    <i class="ui_ico quote_before"></i>
-                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
-                                    <i class="ui_ico quote_after"></i>
-                                </div>
-                            </div>
-                            <div class="c_i_media">
-                            </div>
-                            <div class="c_i_footer">
-                                <div class="c_i_footer_info">
-                                        <a href="javascript:void(0)" class="op_zan" title="赞">
-                                            <i class="ui_ico ico_zan"></i>(32906)</a>
-                                        <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                            收藏</a>
-                                        <a href="javascript:void(0)" class="op_pin" title="评论">
-                                            评论(883)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="c_item c_item_right" class="item_month_2013_3">
-                            <div class="c_i_icon_arrow"></div>
-                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                            <div class="easy-operate">
-                                <a href="" class="edit" title="编辑">编辑</a>
-                                <a href="" class="remove" title="删除">删除</a>
-                            </div>
-                            <div class="c_i_head">
-                                <div class="c_i_head_title">
-                                    <div class="c_i_head_title_icon">初<br/>&nbsp;&nbsp;&nbsp;五</div>
-                                    2014-3-31
-                                    <div class="c_i_head_cat">健康记录</div>
-                                </div>
-                                <div class="c_i_head_intro">
-                                    <i class="ui_ico quote_before"></i>
-                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
-                                    <i class="ui_ico quote_after"></i>
-                                </div>
-                            </div>
-                            <div class="c_i_media">
-                            </div>
-                            <div class="c_i_footer">
-                                <div class="c_i_footer_info">
-                                        <a href="javascript:void(0)" class="op_zan" title="赞">
-                                            <i class="ui_ico ico_zan"></i>(32906)</a>
-                                        <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                            收藏</a>
-                                        <a href="javascript:void(0)" class="op_pin" title="评论">
-                                            评论(883)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="c_item c_item_left" class="item_month_20143">
-                            <div class="c_i_icon_arrow"></div>
-                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                            <div class="easy-operate">
-                                <a href="" class="edit" title="编辑">编辑</a>
-                                <a href="" class="remove" title="删除">删除</a>
-                            </div>
-                            <div class="c_i_head">
-                                <div class="c_i_head_title">
-                                    <div class="c_i_head_title_icon">初<br/>&nbsp;&nbsp;&nbsp;五</div>
-                                    2014-3-31
-                                    <div class="c_i_head_cat">健康记录</div>
-                                </div>
-                                <div class="c_i_head_intro">
-                                    <i class="ui_ico quote_before"></i>
-                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
-                                    <i class="ui_ico quote_after"></i>
-                                </div>
-                            </div>
-                            <div class="c_i_media">
-                            </div>
-                            <div class="c_i_footer">
-                                <div class="c_i_footer_info">
-                                        <a href="javascript:void(0)" class="op_zan" title="赞">
-                                            <i class="ui_ico ico_zan"></i>(32906)</a>
-                                        <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                            收藏</a>
-                                        <a href="javascript:void(0)" class="op_pin" title="评论">
-                                            评论(883)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="c_item c_item_right" class="item_month_20143">
-                            <div class="c_i_icon_arrow"></div>
-                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                            <div class="easy-operate">
-                                <a href="" class="edit" title="编辑">编辑</a>
-                                <a href="" class="remove" title="删除">删除</a>
-                            </div>
-                            <div class="c_i_head">
-                                <div class="c_i_head_title">
-                                    <div class="c_i_head_title_icon">初<br/>&nbsp;&nbsp;&nbsp;五</div>
-                                    2014-3-31
-                                    <div class="c_i_head_cat">健康记录</div>
-                                </div>
-                                <div class="c_i_head_intro">
-                                    <i class="ui_ico quote_before"></i>
-                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
-                                    <i class="ui_ico quote_after"></i>
-                                </div>
-                            </div>
-                            <div class="c_i_media">
-                            </div>
-                            <div class="c_i_footer">
-                                <div class="c_i_footer_info">
-                                        <a href="javascript:void(0)" class="op_zan" title="赞">
-                                            <i class="ui_ico ico_zan"></i>(32906)</a>
-                                        <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                            收藏</a>
-                                        <a href="javascript:void(0)" class="op_pin" title="评论">
-                                            评论(883)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-            <div class="c_month" id="poster_2013_3">
-                <div class="c_month_text">3月</div>
-                <ol>
-                    <li>
-                        <div class="c_item c_item_left" class="item_month_2013_3">
-                            <div class="c_i_icon_arrow"></div>
-                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                            <div class="easy-operate">
-                                <a href="" class="edit" title="编辑">编辑</a>
-                                <a href="" class="remove" title="删除">删除</a>
-                            </div>
-                            <div class="c_i_head">
-                                <div class="c_i_head_title">
-                                    <div class="c_i_head_title_icon">初<br/>&nbsp;&nbsp;&nbsp;五</div>
-                                    2014-3-31
-                                    <div class="c_i_head_cat">健康记录</div>
-                                </div>
-                                <div class="c_i_head_intro">
-                                    <i class="ui_ico quote_before"></i>
-                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
-                                    <i class="ui_ico quote_after"></i>
-                                </div>
-                            </div>
-                            <div class="c_i_media">
-                            </div>
-                            <div class="c_i_footer">
-                                <div class="c_i_footer_info">
-                                        <a href="javascript:void(0)" class="op_zan" title="赞">
-                                            <i class="ui_ico ico_zan"></i>(32906)</a>
-                                        <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                            收藏</a>
-                                        <a href="javascript:void(0)" class="op_pin" title="评论">
-                                            评论(883)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="c_item c_item_right" class="item_month_20143">
-                            <div class="c_i_icon_arrow"></div>
-                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                            <div class="easy-operate">
-                                <a href="" class="edit" title="编辑">编辑</a>
-                                <a href="" class="remove" title="删除">删除</a>
-                            </div>
-                            <div class="c_i_head">
-                                <div class="c_i_head_title">
-                                    <div class="c_i_head_title_icon">初<br/>&nbsp;&nbsp;&nbsp;五</div>
-                                    2014-3-31
-                                    <div class="c_i_head_cat">健康记录</div>
-                                </div>
-                                <div class="c_i_head_intro">
-                                    <i class="ui_ico quote_before"></i>
-                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
-                                    <i class="ui_ico quote_after"></i>
-                                </div>
-                            </div>
-                            <div class="c_i_media">
-                            </div>
-                            <div class="c_i_footer">
-                                <div class="c_i_footer_info">
-                                        <a href="javascript:void(0)" class="op_zan" title="赞">
-                                            <i class="ui_ico ico_zan"></i>(32906)</a>
-                                        <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                            收藏</a>
-                                        <a href="javascript:void(0)" class="op_pin" title="评论">
-                                            评论(883)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="c_item c_item_left" class="item_month_20143">
-                            <div class="c_i_icon_arrow"></div>
-                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                            <div class="easy-operate">
-                                <a href="" class="edit" title="编辑">编辑</a>
-                                <a href="" class="remove" title="删除">删除</a>
-                            </div>
-                            <div class="c_i_head">
-                                <div class="c_i_head_title">
-                                    <div class="c_i_head_title_icon">初<br/>&nbsp;&nbsp;&nbsp;五</div>
-                                    2014-3-31
-                                    <div class="c_i_head_cat">健康记录</div>
-                                </div>
-                                <div class="c_i_head_intro">
-                                    <i class="ui_ico quote_before"></i>
-                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
-                                    <i class="ui_ico quote_after"></i>
-                                </div>
-                            </div>
-                            <div class="c_i_media">
-                            </div>
-                            <div class="c_i_footer">
-                                <div class="c_i_footer_info">
-                                        <a href="javascript:void(0)" class="op_zan" title="赞">
-                                            <i class="ui_ico ico_zan"></i>(32906)</a>
-                                        <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                            收藏</a>
-                                        <a href="javascript:void(0)" class="op_pin" title="评论">
-                                            评论(883)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="c_item c_item_right" class="item_month_20143">
-                            <div class="c_i_icon_arrow"></div>
-                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                            <div class="easy-operate">
-                                <a href="" class="edit" title="编辑">编辑</a>
-                                <a href="" class="remove" title="删除">删除</a>
-                            </div>
-                            <div class="c_i_head">
-                                <div class="c_i_head_title">
-                                    <div class="c_i_head_title_icon">初<br/>&nbsp;&nbsp;&nbsp;五</div>
-                                    2014-3-31
-                                    <div class="c_i_head_cat">健康记录</div>
-                                </div>
-                                <div class="c_i_head_intro">
-                                    <i class="ui_ico quote_before"></i>
-                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
-                                    <i class="ui_ico quote_after"></i>
-                                </div>
-                            </div>
-                            <div class="c_i_media">
-                            </div>
-                            <div class="c_i_footer">
-                                <div class="c_i_footer_info">
-                                        <a href="javascript:void(0)" class="op_zan" title="赞">
-                                            <i class="ui_ico ico_zan"></i>(32906)</a>
-                                        <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                            收藏</a>
-                                        <a href="javascript:void(0)" class="op_pin" title="评论">
-                                            评论(883)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-            <div class="c_year" id="poster_year_born">出生</div>
-            <div class="clear c_month" id="c_month_0_0"></div>
+                    <li class="user-setting"><a href="http://www.manyoubang.com/user-set-ts-base.html" title="设置"></a></li>
+                </ul>
         </div>
     </div>
+    <div class="greenbg"></div>
+</div>
+<!-- 头部结束 -->
+
+<!--中间推荐热区-->
+<div class="container-wrapper">
+    <div class="container my-health">
+        <div class="my-middle">
+            <!-- 主内容区开始 -->
+            <div class="cleft health">
+                <div class="hd">
+                    健康信息
+                    <div class="health-cat-wrapper">
+                        <span>显示</span>
+                        <a href="" class="cat-item J-selected">全部</a>
+                        <a href="" class="cat-item">检查记录</a>
+                        <a href="" class="cat-item">不适记录</a>
+                        <a href="" class="cat-item">服药记录</a>
+                        <a href="" class="cat-item">病史纪录</a>
+                        <a href="" class="cat-item">用药提醒</a>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="headpic-wrapper">
+                        <img src="" alt="" class="headpic">
+                    </div>
+                    <div class="content">
+                        <div class="item">
+                            姓名:<span>王家碧</span>
+                        </div>
+                        <div class="item">
+                            年龄:<span>35</span>性别:<span>男</span>血型:<span>AB</span>身高:<span>170厘米</span>体重:<span>70公斤</span>身份:<span>患者本人</span>
+                        </div>
+                        .
+                    </div>
+                </div>
+                <div class="bd">
+                        <!-- 时序栏中所有的年份月份全载入 -->
+                        <div class="scrubber" id="scrubber">
+                            <a href="javascript:;" data-year="now">现在</a>
+                            <a href="javascript:;" data-year="2014" class="s_year" id="scrubber_year_2014">2014</a>
+                            <ul>
+                                <li><a href="#" class="s_month 2014_month" data-month="10" data-year="2014" id="scrubber_month_2014_10">10月</a></li>
+                                <li> <a href="#" class="s_month 2014_month" data-month="3" data-year="2014"
+                                id="scrubber_month_2014_3">3月</a></li>
+                            </ul>
+                            <a href="javascript:;" data-year="2013" class="s_year" id="scrubber_year_2013">2013</a>
+                            <ul>
+                                <li> <a href="#" class="s_month 2013_month" data-month="10" data-year="2013" id="scrubber_month_2013_10">10月</a></li>
+                                <li><a href="#" class="s_month 2013_month" data-month="3" data-year="2013"
+                                id="scrubber_month_2013_3">3月</a></li>
+                            </ul>
+                            <a href="javascript:;" data-year="born">出生</a>
+                        </div>
+                        <div class="content" id="content">
+                            <div class="c_year" id="content_year_2014" data-year="2014">2014</div>
+                            <div class="c_month" id="poster_2014_10">
+                                <div class="c_month_text">10月</div>
+                                <ol>
+                                    <li>
+                                        <div class="c_item c_item_left" class="item_month_2014_10">
+                                            <div class="c_i_icon_arrow"></div>
+                                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                                            <div class="easy-operate">
+                                               <!--  <a href="" class="edit" title="编辑">编辑</a> -->
+                                                <a href="" class="remove" title="删除"></a>
+                                            </div>
+                                            <div class="c_i_head">
+                                                <div class="c_i_head_title">
+                                                    <div class="c_i_head_title_icon icon311"></div>
+                                                    2014-3-31
+                                                    <div class="c_i_head_cat">用药提醒</div>
+                                                </div>
+                                                <div class="c_i_head_intro">
+                                                    药物名称：瑞怡宁 开始时间： 2014-09-10 重复： 每天 提醒时间： 10:30 20:20
+                                                </div>
+                                            </div>
+                                            <div class="c_i_media">
+                                            </div>
+                                            <div class="c_i_footer">
+                                                <div class="c_i_footer_info">
+                                                        <a href="javascript:void(0)" class="op_zan" title="赞">
+                                                            <i class="ui_ico ico_zan"></i>(32906)</a>
+                                                        <a href="javascript:void(0)" class="op_pin" title="评论">
+                                                            评论(883)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="c_item c_item_right" class="item_month_20143">
+                                            <div class="c_i_icon_arrow"></div>
+                                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                                            <div class="easy-operate">
+                                               <!--  <a href="" class="edit" title="编辑">编辑</a> -->
+                                                <a href="" class="remove" title="删除"></a>
+                                            </div>
+                                            <div class="c_i_head">
+                                                <div class="c_i_head_title">
+                                                    <div class="c_i_head_title_icon icon312"></div>
+                                                    2014-3-31
+                                                    <div class="c_i_head_cat">服药记录</div>
+                                                </div>
+                                                <div class="c_i_head_intro">
+                                                    开始时间：2014-01-01 结束时间：2014-02-02 药物名称：瑞怡宁胶囊 服药频次：一天三次 服药数量：每次三片 药物规格：每包500g 给药方式：注射 
+                                                </div>
+                                            </div>
+                                            <div class="c_i_media">
+                                            </div>
+                                            <div class="c_i_footer">
+                                                <div class="c_i_footer_info">
+                                                        <a href="javascript:void(0)" class="op_zan" title="赞">
+                                                            <i class="ui_ico ico_zan"></i>(32906)</a>
+                                                        <a href="javascript:void(0)" class="op_pin" title="评论">
+                                                            评论(883)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="c_item c_item_left" class="item_month_20143">
+                                            <div class="c_i_icon_arrow"></div>
+                                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                                            <div class="easy-operate">
+                                               <!--  <a href="" class="edit" title="编辑">编辑</a> -->
+                                                <a href="" class="remove" title="删除"></a>
+                                            </div>
+                                            <div class="c_i_head">
+                                                <div class="c_i_head_title">
+                                                    <div class="c_i_head_title_icon icon313"></div>
+                                                    2014-3-31
+                                                    <div class="c_i_head_cat">不适记录</div>
+                                                </div>
+                                                <div class="c_i_head_intro">
+                                                    开始时间: 2014-10-26 肝部疼痛
+                                                </div>
+                                            </div>
+                                            <div class="c_i_media">
+                                            </div>
+                                            <div class="c_i_footer">
+                                                <div class="c_i_footer_info">
+                                                        <a href="javascript:void(0)" class="op_zan" title="赞">
+                                                            <i class="ui_ico ico_zan"></i>(32906)</a>
+                                                        <a href="javascript:void(0)" class="op_pin" title="评论">
+                                                            评论(883)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="c_item c_item_right" class="item_month_20143">
+                                            <div class="c_i_icon_arrow"></div>
+                                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                                            <div class="easy-operate">
+                                               <!--  <a href="" class="edit" title="编辑">编辑</a> -->
+                                                <a href="" class="remove" title="删除"></a>
+                                            </div>
+                                            <div class="c_i_head">
+                                                <div class="c_i_head_title">
+                                                    <div class="c_i_head_title_icon icon314"></div>
+                                                    2014-3-31
+                                                    <div class="c_i_head_cat">检查记录</div>
+                                                </div>
+                                                <div class="c_i_head_intro">
+                                                    <a href="javascript:;" data-id="xxx" class="-evaluterecord">点击查看表格</a>
+                                                </div>
+                                            </div>
+                                            <div class="c_i_media">
+                                            </div>
+                                            <div class="c_i_footer">
+                                                <div class="c_i_footer_info">
+                                                        <a href="javascript:void(0)" class="op_zan" title="赞">
+                                                            <i class="ui_ico ico_zan"></i>(32906)</a>
+                                                        <a href="javascript:void(0)" class="op_pin" title="评论">
+                                                            评论(883)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="c_month" id="poster_2014_3">
+                                <div class="c_month_text">3月</div>
+                                <ol>
+                                    <li>
+                                        <div class="c_item c_item_left" class="item_month_2014_10">
+                                            <div class="c_i_icon_arrow"></div>
+                                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                                            <div class="easy-operate">
+                                               <!--  <a href="" class="edit" title="编辑">编辑</a> -->
+                                                <a href="" class="remove" title="删除"></a>
+                                            </div>
+                                            <div class="c_i_head">
+                                                <div class="c_i_head_title">
+                                                    <div class="c_i_head_title_icon icon315"></div>
+                                                    2014-3-31
+                                                    <div class="c_i_head_cat">病史记录</div>
+                                                </div>
+                                                <div class="c_i_head_intro">
+                                                    开始时间: 2014-10-26 肝炎
+                                                </div>
+                                            </div>
+                                            <div class="c_i_media">
+                                            </div>
+                                            <div class="c_i_footer">
+                                                <div class="c_i_footer_info">
+                                                        <a href="javascript:void(0)" class="op_zan" title="赞">
+                                                            <i class="ui_ico ico_zan"></i>(32906)</a>
+                                                        <a href="javascript:void(0)" class="op_pin" title="评论">
+                                                            评论(883)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="c_item c_item_right" class="item_month_20143">
+                                            <div class="c_i_icon_arrow"></div>
+                                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                                            <div class="easy-operate">
+                                               <!--  <a href="" class="edit" title="编辑">编辑</a> -->
+                                                <a href="" class="remove" title="删除"></a>
+                                            </div>
+                                            <div class="c_i_head">
+                                                <div class="c_i_head_title">
+                                                    <div class="c_i_head_title_icon"></div>
+                                                    2014-3-31
+                                                    <div class="c_i_head_cat">健康记录</div>
+                                                </div>
+                                                <div class="c_i_head_intro">
+                                                    <i class="ui_ico quote_before"></i>
+                                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
+                                                    <i class="ui_ico quote_after"></i>
+                                                </div>
+                                            </div>
+                                            <div class="c_i_media">
+                                            </div>
+                                            <div class="c_i_footer">
+                                                <div class="c_i_footer_info">
+                                                        <a href="javascript:void(0)" class="op_zan" title="赞">
+                                                            <i class="ui_ico ico_zan"></i>(32906)</a>
+                                                        <a href="javascript:void(0)" class="op_pin" title="评论">
+                                                            评论(883)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="c_item c_item_left" class="item_month_20143">
+                                            <div class="c_i_icon_arrow"></div>
+                                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                                            <div class="easy-operate">
+                                               <!--  <a href="" class="edit" title="编辑">编辑</a> -->
+                                                <a href="" class="remove" title="删除"></a>
+                                            </div>
+                                            <div class="c_i_head">
+                                                <div class="c_i_head_title">
+                                                    <div class="c_i_head_title_icon"></div>
+                                                    2014-3-31
+                                                    <div class="c_i_head_cat">健康记录</div>
+                                                </div>
+                                                <div class="c_i_head_intro">
+                                                    <i class="ui_ico quote_before"></i>
+                                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
+                                                    <i class="ui_ico quote_after"></i>
+                                                </div>
+                                            </div>
+                                            <div class="c_i_media">
+                                            </div>
+                                            <div class="c_i_footer">
+                                                <div class="c_i_footer_info">
+                                                        <a href="javascript:void(0)" class="op_zan" title="赞">
+                                                            <i class="ui_ico ico_zan"></i>(32906)</a>
+                                                        <a href="javascript:void(0)" class="op_pin" title="评论">
+                                                            评论(883)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="c_item c_item_right" class="item_month_20143">
+                                            <div class="c_i_icon_arrow"></div>
+                                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                                            <div class="easy-operate">
+                                               <!--  <a href="" class="edit" title="编辑">编辑</a> -->
+                                                <a href="" class="remove" title="删除"></a>
+                                            </div>
+                                            <div class="c_i_head">
+                                                <div class="c_i_head_title">
+                                                    <div class="c_i_head_title_icon"></div>
+                                                    2014-3-31
+                                                    <div class="c_i_head_cat">健康记录</div>
+                                                </div>
+                                                <div class="c_i_head_intro">
+                                                    <i class="ui_ico quote_before"></i>
+                                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
+                                                    <i class="ui_ico quote_after"></i>
+                                                </div>
+                                            </div>
+                                            <div class="c_i_media">
+                                            </div>
+                                            <div class="c_i_footer">
+                                                <div class="c_i_footer_info">
+                                                        <a href="javascript:void(0)" class="op_zan" title="赞">
+                                                            <i class="ui_ico ico_zan"></i>(32906)</a>
+                                                        <a href="javascript:void(0)" class="op_pin" title="评论">
+                                                            评论(883)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="c_year" id="content_year_2013" data-year="2013">2013</div>
+                            <div class="c_month" id="poster_2013_10">
+                                <div class="c_month_text">10月</div>
+                                <ol>
+                                    <li>
+                                        <div class="c_item c_item_left" class="item_month_2013_10">
+                                            <div class="c_i_icon_arrow"></div>
+                                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                                            <div class="easy-operate">
+                                               <!--  <a href="" class="edit" title="编辑">编辑</a> -->
+                                                <a href="" class="remove" title="删除"></a>
+                                            </div>
+                                            <div class="c_i_head">
+                                                <div class="c_i_head_title">
+                                                    <div class="c_i_head_title_icon"></div>
+                                                    2014-3-31
+                                                    <div class="c_i_head_cat">健康记录</div>
+                                                </div>
+                                                <div class="c_i_head_intro">
+                                                    <i class="ui_ico quote_before"></i>
+                                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
+                                                    <i class="ui_ico quote_after"></i>
+                                                </div>
+                                            </div>
+                                            <div class="c_i_media">
+                                            </div>
+                                            <div class="c_i_footer">
+                                                <div class="c_i_footer_info">
+                                                        <a href="javascript:void(0)" class="op_zan" title="赞">
+                                                            <i class="ui_ico ico_zan"></i>(32906)</a>
+                                                        <a href="javascript:void(0)" class="op_pin" title="评论">
+                                                            评论(883)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="c_item c_item_right" class="item_month_2013_3">
+                                            <div class="c_i_icon_arrow"></div>
+                                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                                            <div class="easy-operate">
+                                               <!--  <a href="" class="edit" title="编辑">编辑</a> -->
+                                                <a href="" class="remove" title="删除"></a>
+                                            </div>
+                                            <div class="c_i_head">
+                                                <div class="c_i_head_title">
+                                                    <div class="c_i_head_title_icon"></div>
+                                                    2014-3-31
+                                                    <div class="c_i_head_cat">健康记录</div>
+                                                </div>
+                                                <div class="c_i_head_intro">
+                                                    <i class="ui_ico quote_before"></i>
+                                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
+                                                    <i class="ui_ico quote_after"></i>
+                                                </div>
+                                            </div>
+                                            <div class="c_i_media">
+                                            </div>
+                                            <div class="c_i_footer">
+                                                <div class="c_i_footer_info">
+                                                        <a href="javascript:void(0)" class="op_zan" title="赞">
+                                                            <i class="ui_ico ico_zan"></i>(32906)</a>
+                                                        <a href="javascript:void(0)" class="op_pin" title="评论">
+                                                            评论(883)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="c_item c_item_left" class="item_month_20143">
+                                            <div class="c_i_icon_arrow"></div>
+                                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                                            <div class="easy-operate">
+                                               <!--  <a href="" class="edit" title="编辑">编辑</a> -->
+                                                <a href="" class="remove" title="删除"></a>
+                                            </div>
+                                            <div class="c_i_head">
+                                                <div class="c_i_head_title">
+                                                    <div class="c_i_head_title_icon"></div>
+                                                    2014-3-31
+                                                    <div class="c_i_head_cat">健康记录</div>
+                                                </div>
+                                                <div class="c_i_head_intro">
+                                                    <i class="ui_ico quote_before"></i>
+                                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
+                                                    <i class="ui_ico quote_after"></i>
+                                                </div>
+                                            </div>
+                                            <div class="c_i_media">
+                                            </div>
+                                            <div class="c_i_footer">
+                                                <div class="c_i_footer_info">
+                                                        <a href="javascript:void(0)" class="op_zan" title="赞">
+                                                            <i class="ui_ico ico_zan"></i>(32906)</a>
+                                                        <a href="javascript:void(0)" class="op_pin" title="评论">
+                                                            评论(883)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="c_item c_item_right" class="item_month_20143">
+                                            <div class="c_i_icon_arrow"></div>
+                                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                                            <div class="easy-operate">
+                                               <!--  <a href="" class="edit" title="编辑">编辑</a> -->
+                                                <a href="" class="remove" title="删除"></a>
+                                            </div>
+                                            <div class="c_i_head">
+                                                <div class="c_i_head_title">
+                                                    <div class="c_i_head_title_icon"></div>
+                                                    2014-3-31
+                                                    <div class="c_i_head_cat">健康记录</div>
+                                                </div>
+                                                <div class="c_i_head_intro">
+                                                    <i class="ui_ico quote_before"></i>
+                                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
+                                                    <i class="ui_ico quote_after"></i>
+                                                </div>
+                                            </div>
+                                            <div class="c_i_media">
+                                            </div>
+                                            <div class="c_i_footer">
+                                                <div class="c_i_footer_info">
+                                                        <a href="javascript:void(0)" class="op_zan" title="赞">
+                                                            <i class="ui_ico ico_zan"></i>(32906)</a>
+                                                        <a href="javascript:void(0)" class="op_pin" title="评论">
+                                                            评论(883)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="c_month" id="poster_2013_3">
+                                <div class="c_month_text">3月</div>
+                                <ol>
+                                    <li>
+                                        <div class="c_item c_item_left" class="item_month_2013_3">
+                                            <div class="c_i_icon_arrow"></div>
+                                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                                            <div class="easy-operate">
+                                               <!--  <a href="" class="edit" title="编辑">编辑</a> -->
+                                                <a href="" class="remove" title="删除"></a>
+                                            </div>
+                                            <div class="c_i_head">
+                                                <div class="c_i_head_title">
+                                                    <div class="c_i_head_title_icon"></div>
+                                                    2014-3-31
+                                                    <div class="c_i_head_cat">健康记录</div>
+                                                </div>
+                                                <div class="c_i_head_intro">
+                                                    <i class="ui_ico quote_before"></i>
+                                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
+                                                    <i class="ui_ico quote_after"></i>
+                                                </div>
+                                            </div>
+                                            <div class="c_i_media">
+                                            </div>
+                                            <div class="c_i_footer">
+                                                <div class="c_i_footer_info">
+                                                        <a href="javascript:void(0)" class="op_zan" title="赞">
+                                                            <i class="ui_ico ico_zan"></i>(32906)</a>
+                                                        <a href="javascript:void(0)" class="op_pin" title="评论">
+                                                            评论(883)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="c_item c_item_right" class="item_month_20143">
+                                            <div class="c_i_icon_arrow"></div>
+                                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                                            <div class="easy-operate">
+                                               <!--  <a href="" class="edit" title="编辑">编辑</a> -->
+                                                <a href="" class="remove" title="删除"></a>
+                                            </div>
+                                            <div class="c_i_head">
+                                                <div class="c_i_head_title">
+                                                    <div class="c_i_head_title_icon"></div>
+                                                    2014-3-31
+                                                    <div class="c_i_head_cat">健康记录</div>
+                                                </div>
+                                                <div class="c_i_head_intro">
+                                                    <i class="ui_ico quote_before"></i>
+                                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
+                                                    <i class="ui_ico quote_after"></i>
+                                                </div>
+                                            </div>
+                                            <div class="c_i_media">
+                                            </div>
+                                            <div class="c_i_footer">
+                                                <div class="c_i_footer_info">
+                                                        <a href="javascript:void(0)" class="op_zan" title="赞">
+                                                            <i class="ui_ico ico_zan"></i>(32906)</a>
+                                                        <a href="javascript:void(0)" class="op_pin" title="评论">
+                                                            评论(883)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="c_item c_item_left" class="item_month_20143">
+                                            <div class="c_i_icon_arrow"></div>
+                                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                                            <div class="easy-operate">
+                                               <!--  <a href="" class="edit" title="编辑">编辑</a> -->
+                                                <a href="" class="remove" title="删除"></a>
+                                            </div>
+                                            <div class="c_i_head">
+                                                <div class="c_i_head_title">
+                                                    <div class="c_i_head_title_icon"></div>
+                                                    2014-3-31
+                                                    <div class="c_i_head_cat">健康记录</div>
+                                                </div>
+                                                <div class="c_i_head_intro">
+                                                    <i class="ui_ico quote_before"></i>
+                                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
+                                                    <i class="ui_ico quote_after"></i>
+                                                </div>
+                                            </div>
+                                            <div class="c_i_media">
+                                            </div>
+                                            <div class="c_i_footer">
+                                                <div class="c_i_footer_info">
+                                                        <a href="javascript:void(0)" class="op_zan" title="赞">
+                                                            <i class="ui_ico ico_zan"></i>(32906)</a>
+                                                        <a href="javascript:void(0)" class="op_pin" title="评论">
+                                                            评论(883)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="c_item c_item_right" class="item_month_20143">
+                                            <div class="c_i_icon_arrow"></div>
+                                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                                            <div class="easy-operate">
+                                               <!--  <a href="" class="edit" title="编辑">编辑</a> -->
+                                                <a href="" class="remove" title="删除"></a>
+                                            </div>
+                                            <div class="c_i_head">
+                                                <div class="c_i_head_title">
+                                                    <div class="c_i_head_title_icon"></div>
+                                                    2014-3-31
+                                                    <div class="c_i_head_cat">健康记录</div>
+                                                </div>
+                                                <div class="c_i_head_intro">
+                                                    <i class="ui_ico quote_before"></i>
+                                                    在这春林初盛，草长莺飞的日子，QQ空间愿你关掉电脑，放下手机，与三五好友相约青山绿水中，感受春天带来的勃勃生机···
+                                                    <i class="ui_ico quote_after"></i>
+                                                </div>
+                                            </div>
+                                            <div class="c_i_media">
+                                            </div>
+                                            <div class="c_i_footer">
+                                                <div class="c_i_footer_info">
+                                                        <a href="javascript:void(0)" class="op_zan" title="赞">
+                                                            <i class="ui_ico ico_zan"></i>(32906)</a>
+                                                        <a href="javascript:void(0)" class="op_pin" title="评论">
+                                                            评论(883)</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="c_year" id="poster_year_born">出生</div>
+                            <div class="clear c_month" id="c_month_0_0"></div>
+                        </div>
+                </div>
+            </div>
+            <!-- 主内容区结束 -->
+
+            <!-- 侧边栏开始 -->
+            <div class="cright sider">
+                <!-- 健康工具箱 -->
+                <div class="health-toolBar">
+                    <ul>
+                        <li><a href=""><i class="icon21"></i><span>检查</span></a></li>
+                        <li><a href=""><i class="icon22"></i><span>不适记录</span></a></li>
+                        <li><a href=""><i class="icon23"></i><span>服药</span></a></li>
+                        <li><a href=""><i class="icon24"></i><span>病史</span></a></li>
+                        <li><a href=""><i class="icon25"></i><span>用药提醒</span></a></li>
+                        <li><a href=""><i class="icon26"></i><span>工具箱</span></a></li>
+                    </ul>
+                    <a href="" class="health_doc_btn">个人健康档案</a>
+                </div>
+            </div>
+            <!-- 侧边栏结束 -->
+        </div>
+    </div>
+</div>
+<!-- 中间推荐结束 -->
+
+<!-- 尾部开始 -->
+<div class="footer">
+
+    <div class="container">
+    <a href="http://www.manyoubang.com/home-info-key-about.html">关于我们</a> | <a href="http://www.manyoubang.com/home-info-key-agreement.html">免责声明</a> | <a href="http://www.manyoubang.com/home-info-key-privacy.html">隐私申明</a> | <a href="http://www.manyoubang.com/home-info-key-job.html">加入我们</a> | <a href="http://app.soujibing.com/">手机客户端</a><br>
+    Copyright © 2013-2015　www.manyoubang.com　All rights reserved 浙ICP备12043549号 
+    </div>
+</div>
+<!-- 尾部结束 -->
     <script id="see-all_template" type="text/html">
         <ol>
                 {{each list as value i}}
@@ -655,5 +723,5 @@
     <script>
         seajs.use("/public/page/"+OP_CONFIG.module+"/"+OP_CONFIG.page);
     </script>
-</body>
+    </body>
 </html>

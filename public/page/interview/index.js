@@ -6,6 +6,7 @@ define(function  (require,exports,module) {
 	var initPagination = require('page');
 	var dialog = require('dialog');
 	require('autosize');
+	require('cardFace');
 	$('#content-input').autosize();
 	var imgupload = require('imgupload');
 	//@他人
@@ -53,6 +54,11 @@ define(function  (require,exports,module) {
 	}
 	//下一页
 	function Pagecallback(event,page){
+		loadData(page);
+	}
+
+	//加载数据
+	function loadData (page) {
 		var url = $('.timeline-cat .J-selected').data('url');
 		var tem = $('.timeline-cat .J-selected').data('template');
 		$('html,body').animate({
@@ -61,13 +67,21 @@ define(function  (require,exports,module) {
 
 			});
 		showLoading();
-		$.getJSON(url,{page:page}).done(function(data){
-			console.log(data);
-			var htmltem = template(tem,data);
-			
-			hideLoading()
-			$('.my-post ul').html(htmltem);
-		})
+		if (page) {
+			$.getJSON(url,{page:page}).done(function(data){
+				var htmltem = template(tem,data);
+				hideLoading()
+				$('.my-post ul').html(htmltem);
+			})
+		} else {
+			$.getJSON(url).done(function(data){
+				var htmltem = template(tem,data);
+				hideLoading()
+				$('.my-post ul').html(htmltem);
+				initPagination(data.totalPages,Pagecallback)
+			})
+		}
+		
 	}
 
 	initPagination(OP_CONFIG.totalPages,Pagecallback);
@@ -102,6 +116,15 @@ define(function  (require,exports,module) {
 		}
 	}
 
+	//切换
+	$('.my-timeline .cat-item').click(function (e){
+		e.preventDefault();
+		var $ele = $(this);
+		$('.my-timeline .cat-item').removeClass('J-selected');
+		$ele.addClass('J-selected');
+		loadData();
+	})
+
 	$('.btn-submit').click(function(e) {
 			e.preventDefault();
 			if ($(this).data('repeat') == true) {
@@ -129,6 +152,7 @@ define(function  (require,exports,module) {
 			})
 		})
 
+
 	$(document)
 			.on('click', '.upload-img', function() { //上传图片
 				$('.img-upload_box').css({
@@ -141,6 +165,15 @@ define(function  (require,exports,module) {
 			})
 			.on('click', '.pic-add-btn', function(e) {
 				$('input[type="file"]').click();
+			})
+			.on('click','.addFriendBtn',function (e){
+				e.preventDefault();
+				var $ele = $(this);
+				var uid = $ele.data('id');
+
+				$.getJSON('test3',{id:uid}).done(function (){
+					$ele.text('已关注');
+				})
 			})
 
 })

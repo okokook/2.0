@@ -191,6 +191,36 @@
 .icon60 {
   background: url(./images/211.png) no-repeat; }
 
+.icon99 {
+  background: url(./images/99.png) no-repeat; }
+
+.icon119 {
+  background: url(./images/119.png) no-repeat; }
+
+.icon120 {
+  background: url(./images/120.png) no-repeat; }
+
+.icon121 {
+  background: url(./images/121.png) no-repeat; }
+
+.icon122 {
+  background: url(./images/122.png) no-repeat; }
+
+.icon311 {
+  background: url(./images/311.png) no-repeat; }
+
+.icon312 {
+  background: url(./images/312.png) no-repeat; }
+
+.icon313 {
+  background: url(./images/313.png) no-repeat; }
+
+.icon314 {
+  background: url(./images/314.png) no-repeat; }
+
+.icon315 {
+  background: url(./images/315.png) no-repeat; }
+
 .color-ephis {
   color: #333; }
 
@@ -1193,6 +1223,7 @@ textarea.repost-con:focus {
     zoom: 1;
     font-family: Verdana, "Microsoft YaHei", sans-serif; }
     .sider .recommend-post .hd .hd-item {
+      display: inline-block;
       font-size: 16px;
       line-height: 52px;
       padding: 0 12px; }
@@ -1711,7 +1742,8 @@ textarea.repost-con:focus {
     font-family: "Microsoft YaHei", Arial, sans-serif; }
   .my-setting .bd, .my-middle .health .bd {
     overflow: hidden;
-    zoom: 1; }
+    zoom: 1;
+    position: relative; }
 
 .setting .my-middle {
   background: url(./img/setting-bg.png) repeat-y; }
@@ -3471,5 +3503,41 @@ p.guests_risk {
       width: 30px;
       height: 46px;
       background: url(./images/a1.png) no-repeat; }
+
+.document .text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.document .doc-item {
+  line-height: 24px;
+  margin-top: 10px; }
+.document strong {
+  font-weight: bold;
+  margin-right: 6px; }
+
+.btn-share {
+  margin-top: 20px;
+  display: inline-block;
+  height: 28px;
+  width: 85px;
+  text-align: center;
+  line-height: 28px;
+  color: #fff;
+  border-radius: 3px;
+  background: #599ff4;
+  cursor: pointer;
+  float: right; }
+  .btn-share:hover {
+    background: #2180f5; }
+
+.health-cat-wrapper {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  color: #888;
+  font-weight: normal;
+  font-size: 14px; }
+  .health-cat-wrapper .cat-item {
+    margin-left: 8px; }
+    .health-cat-wrapper .cat-item.J-selected {
+      color: #1d831c; }
 
 /*# sourceMappingURL=person.css.map */
