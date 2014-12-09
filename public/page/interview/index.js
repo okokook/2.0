@@ -101,8 +101,11 @@ define(function  (require,exports,module) {
 		$('.editor-post_footer .upload-img').show();
 		$('.img-upload_box').css({
 			'height':0,
-			'overflow':'hidden'
+			'overflow':'hidden',
+			'padding':0,
+			'border':'none'
 		});
+		$('.file-item').remove();
 	}
 
 	//发布框重置

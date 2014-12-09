@@ -221,6 +221,12 @@
 .icon315 {
   background: url(./images/315.png) no-repeat; }
 
+.icon411 {
+  background: url(./images/411.png) no-repeat; }
+
+.icon412 {
+  background: url(./images/412.png) no-repeat; }
+
 .color-ephis {
   color: #333; }
 
@@ -533,7 +539,7 @@ textarea.repost-con:focus {
     .my-shareBox .editor-post_con .con-wrapper {
       border: none;
       width: 100%;
-      height: 200px;
+      height: 100px;
       overflow-y: auto;
       resize: none; }
       .my-shareBox .editor-post_con .con-wrapper:focus {
@@ -3539,5 +3545,85 @@ p.guests_risk {
     margin-left: 8px; }
     .health-cat-wrapper .cat-item.J-selected {
       color: #1d831c; }
+
+.info {
+  margin-top: 25px;
+  overflow: hidden;
+  background: url(./img/spine.png) repeat-y 122px; }
+  .info .headpic-wrapper {
+    float: left;
+    width: 114px;
+    border: 1px solid #bbb;
+    padding: 1px;
+    margin-left: 5px;
+    margin-right: 10px; }
+    .info .headpic-wrapper img {
+      display: block;
+      width: 114px;
+      height: 114px; }
+  .info .info-content {
+    margin-left: 120px; }
+    .info .info-content .item {
+      margin-bottom: 20px;
+      color: #999;
+      font-size: 14px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+      .info .info-content .item span {
+        color: #333;
+        margin-right: 15px;
+        margin-left: 4px; }
+    .info .info-content .submit {
+      text-align: center;
+      margin-top: 15px; }
+    .info .info-content .btn-submit {
+      width: 170px;
+      height: 50px;
+      line-height: 50px;
+      display: inline-block;
+      color: #fff;
+      font-size: 20px; }
+      .info .info-content .btn-submit.un-reach-condition {
+        background: #b3b3b3; }
+      .info .info-content .btn-submit.reach-conditon {
+        background: #39a338;
+        cursor: pointer; }
+    .info .info-content .submit-per {
+      color: #1d831c;
+      margin-top: 10px; }
+    .info .info-content .submit-tip {
+      color: #999;
+      margin-top: 10px; }
+  .info .edit-box {
+    width: auto;
+    margin: 25px 0 0 40px;
+    padding: 15px; }
+
+.evaluate-record {
+  color: #1d831c; }
+
+.user-change-wrapper ul, .user-change-wrapper li {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+.user-change-wrapper .nav-first {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .user-change-wrapper .nav-first .hd {
+    height: 34px;
+    line-height: 34px;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    color: #888; }
+    .user-change-wrapper .nav-first .hd i {
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 8px;
+      left: 50px; }
+  .user-change-wrapper .nav-first li {
+    line-height: 36px;
+    text-align: center; }
+  .user-change-wrapper .nav-first .selected {
+    color: #1d831c; }
 
 /*# sourceMappingURL=person.css.map */

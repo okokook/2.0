@@ -77,16 +77,51 @@
                 </div>
                 <div class="info">
                     <div class="headpic-wrapper">
-                        <img src="" alt="" class="headpic">
+                        <img src="" alt="">
                     </div>
-                    <div class="content">
+                    <div class="info-content">
                         <div class="item">
                             姓名:<span>王家碧</span>
                         </div>
                         <div class="item">
                             年龄:<span>35</span>性别:<span>男</span>血型:<span>AB</span>身高:<span>170厘米</span>体重:<span>70公斤</span>身份:<span>患者本人</span>
                         </div>
-                        .
+                        <div class="submit">
+                            <div class="btn-submit un-reach-condition">提交健康档案</div>
+                            <p class="submit-per">当前完成(50%)</p>
+                            <p class="submit-tip">(当健康档案资料完成度>=80%时,可以向医生提交健康档案)</p>
+                        </div>
+                        <div class="c_item edit-box">
+                            <div class="c_i_icon_arrow"></div>
+                            <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
+                            <div class="my-shareBox">
+                                <div class="clicked edit-box_wrapper" style="display:block;">
+                                    <div class="editor-content">
+                                        <div class="editor-post_con ">
+                                            <textarea class="con-wrapper" placeholder="快速记录关于您健康的点点滴滴..." id="content-input"></textarea>
+                                        </div>
+                                        <div class="img-upload_box">
+                                            <div id="uploader">
+                                                <ul class="queueList">
+                                                <li class="pic-add-btn"><i>+</i></li>
+                                                </ul>
+                                                <p class="upload-tip">最多上传<em>8</em>张图片，每张大小不能超过<em>1M</em></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="editor-post_footer">
+                                    <span class="emotion" title="添加表情"><i></i><i class="hover"></i>表情</span>
+                                    <span class="upload-img" title="添加图片"><i></i><i class="hover"></i>图片</span><div id="filePicker"></div>
+                                    <div class="r">
+                                    <span class="toDoc-wrapper"><input type="checkbox" id="toDoc" value="true" name="toDoc"><label for="toDoc">抄送给医生</label> </span>
+                                        <span class="submit-wrapper">
+                                            <a href="" class="btn-submit">发布</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="bd">
@@ -217,7 +252,7 @@
                                                     <div class="c_i_head_cat">检查记录</div>
                                                 </div>
                                                 <div class="c_i_head_intro">
-                                                    <a href="javascript:;" data-id="xxx" class="-evaluterecord">点击查看表格</a>
+                                                    <a href="javascript:;" data-id="xxx" class="evaluate-record">点击查看表格</a>
                                                 </div>
                                             </div>
                                             <div class="c_i_media">
@@ -233,6 +268,7 @@
                                         </div>
                                     </li>
                                 </ol>
+                                <div class="clear"></div>
                             </div>
                             <div class="c_month" id="poster_2014_3">
                                 <div class="c_month_text">3月</div>
@@ -364,6 +400,7 @@
                                         </div>
                                     </li>
                                 </ol>
+                                <div class="clear"></div>
                             </div>
                             <div class="c_year" id="content_year_2013" data-year="2013">2013</div>
                             <div class="c_month" id="poster_2013_10">
@@ -498,6 +535,7 @@
                                         </div>
                                     </li>
                                 </ol>
+                                <div class="clear"></div>
                             </div>
                             <div class="c_month" id="poster_2013_3">
                                 <div class="c_month_text">3月</div>
@@ -631,9 +669,11 @@
                                         </div>
                                     </li>
                                 </ol>
+                                <div class="clear"></div>
                             </div>
                             <div class="c_year" id="poster_year_born">出生</div>
                             <div class="clear c_month" id="c_month_0_0"></div>
+                            <div class="clear"></div>
                         </div>
                 </div>
             </div>
@@ -653,6 +693,25 @@
                     </ul>
                     <a href="" class="health_doc_btn">个人健康档案</a>
                 </div>
+                <div class="user-change-wrapper">
+                    <ul>
+                        <li class="nav-first">
+                            <div class="hd"><i class="icon412"></i>个人档案信息</div>
+                            <ul>
+                                <li><i></i><a href="" class="selected">自己</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-first">
+                            <div class="hd"><i class="icon411"></i>亲友档案信息</div>
+                            <ul>
+                                <li><i></i><a href="">李四</a></li>
+                                <li><i></i><a href="">张三</a></li>
+                                <li><i></i><a href="">王五</a></li>
+                                <li><i></i><a href="">胡兰</a></li>
+                            </ul>
+                        </li>
+                    </ul>     
+                </div>
             </div>
             <!-- 侧边栏结束 -->
         </div>
@@ -669,55 +728,6 @@
     </div>
 </div>
 <!-- 尾部结束 -->
-    <script id="see-all_template" type="text/html">
-        <ol>
-                {{each list as value i}}
-                <li>
-                    <div class="c_item c_item_left" class="{{value.time}}">
-                        <div class="c_i_icon_arrow"></div>
-                        <div class="c_i_icon_dot"><div class="c_i_icon_dot_child"></div></div>
-                        <div class="easy-operate">
-                            <a href="{{value.edit_link}}" class="edit" title="编辑">编辑</a>
-                            <a href="javascript:;" class="remove" title="删除">删除</a>
-                        </div>
-                        <div class="c_i_head">
-                            <div class="c_i_head_title">
-                                <div class="c_i_head_title_icon {{value.cat_icon}}"></div>
-                                2014-3-31
-                                <div class="c_i_head_cat">{{value.cat}}</div>
-                            </div>
-                            {{if value.con_spl}}
-                            <div class="c_i_head_intro spl">
-                                <i class="ui_ico quote_before"></i>
-                                {{value.con_spl}}
-                                <i class="ui_ico quote_after"></i>
-                            </div>
-                            {{else}}
-                            <div class="c_i_head_intro all">
-                                <i class="ui_ico quote_before"></i>
-                                {{value.con_spl}}
-                                <i class="ui_ico quote_after"></i>
-                            </div>
-                            {{/if}}
-                        </div>
-                        <div class="c_i_media">
-                        {{value.media}}
-                        </div>
-                        <div class="c_i_footer">
-                            <div class="c_i_footer_info">
-                                    <a href="javascript:void(0)" class="op_zan" title="喜欢">
-                                        <i class="ui_ico ico_zan"></i>{{value.like_num}}</a>
-                                    <a href="javascript:void(0)" class="op_collect" title="收藏">
-                                        收藏</a>
-                                    <a href="javascript:void(0)" class="op_pin" title="评论">
-                                        评论({{value.com_num}})</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                {{/each}}
-        </ol>
-    </script>
     <script src="/public/lib/seajs/sea.js"></script>
     <script src="/public/lib/seajs/sea_config.js"></script>
     <script>

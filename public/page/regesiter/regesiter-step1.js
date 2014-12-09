@@ -37,8 +37,9 @@ define(function  (require,exports,module) {
 		    data.sy2 = selection.y2;
 		    data.sw = selection.width;
 		    data.sh = selection.height;
-			data.iw = $('#preview img').width();
-			data.ih = $('#preview img').height();	    
+			data.iw = $('#photo img').width();
+			data.ih = $('#photo img').height();
+			console.log(data);	    
 
 		}
 
@@ -73,19 +74,19 @@ define(function  (require,exports,module) {
 			        $img.attr( 'src', src );
 			        $('#preview img').attr("src",src);
 			        imgarea = $('#photo').imgAreaSelect({ aspectRatio: '1:1', handles: true,
-			                        fadeSpeed: 200, onSelectChange: preview ,x1: 0, y1: 0, x2: 200, y2: 200 });
+			                        fadeSpeed: 200,onInit:preview, onSelectChange: preview ,x1: 0, y1: 0, x2: 200, y2: 200 });
 			    }, 300,300);
 
 			});
 
 			
 
-			$('.save').click(function  (e) {
+			$('.btn-save').click(function  (e) {
 				e.preventDefault();
 				if (isAjax == 1) {
 					return;
 				}
-
+				data.url = $('#preview img').attr('src');
 				data.sex = $('input[name="gender"]:checked').val();
 				data.province = $('#province').val();
 				data.city = $('#city').val();

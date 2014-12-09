@@ -28,7 +28,6 @@
         .content{
             min-height:1000px;
             padding-left: 160px;
-            padding-top:50px;
             background:url(./img/spine.png) repeat-y  122px 0;
             position: relative;
             overflow: hidden;
@@ -50,7 +49,9 @@
             left:-90px;
             clear: both;
         }
-        
+        .c_month .clear{
+            clear: both;
+        }
         .c_month:after{content:'';display: table;}
         .c_item{width:270px;background: #fbfbfb;height: auto;margin: 20px 10px 0 0;position: relative;border-radius: 4px;color: #888;}
         .c_item_left{float: left;clear: left;}
