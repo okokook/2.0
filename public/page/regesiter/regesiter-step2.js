@@ -119,7 +119,7 @@ define(function  (require,exports,module) {
 		})
 
 		//一键关注
-		$('.tag-follow-all').click(function (e){
+		$(document).on('click','.tag-follow-all',function (e){
 			e.preventDefault();
 			var $li = $(this).closest('.tagItem');
 			$li.find('.tagItem-bd a').click();
