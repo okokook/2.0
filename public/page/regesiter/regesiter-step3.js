@@ -1,5 +1,6 @@
 define(function  (require, exports, module) {
 	var dialog = require('dialog');
+	var template = require('template');
 	var data = {};
 	var followData = {};
 
