@@ -3,7 +3,7 @@ define(function  (require,exports,module) {
 	var data={};
 	$(function  () {
 		// 右侧选择标签
-		$('.tag-box .bd').on('click','a',function  (e) {
+		$('.tag-box .bd').on('click','.tagItem-bd a',function  (e) {
 			e.preventDefault();
 			var $ele = $(this);
 			var id = $ele.data('id');
@@ -122,7 +122,7 @@ define(function  (require,exports,module) {
 		$('.tag-follow-all').click(function (e){
 			e.preventDefault();
 			var $li = $(this).closest('.tagItem');
-			$li.find('.tagItem-bd a').not('.selected').click();
+			$li.find('.tagItem-bd a').click();
 		})
 	});
 	
@@ -178,7 +178,7 @@ define(function  (require,exports,module) {
 		  		var html = " ";
 				html+='<li>'
 				$.each(data,function (key,value) {
-					html+='<div class="tagItem"><div class="tagItem-hd">'+key+'</div><div class="tagItem-bd">';
+					html+='<div class="tagItem"><div class="tagItem-hd">'+key+'<a href="" class="tag-follow-all">一键关注</a></div><div class="tagItem-bd">';
 					$.each(value,function  (index,value) {
 						$.each(value,function  (key,value) {
 							html+='<a href="" data-id="'+key+'">'+value+'</a>';

@@ -78,6 +78,9 @@ define(function(require, exports, module) {
 		if ($('.queueList li').length) {
 			resetimg();
 		}
+		$('.btn-submit').data('cat',' ');
+		$('.tip-doc').show();
+		$('.tip-share').hide();
 	}
 
 	$(function() {
@@ -135,6 +138,8 @@ define(function(require, exports, module) {
 
 		$('.btn-submit').click(function(e) {
 			e.preventDefault();
+			var data = {};
+			var url = '';//后台补充 为帖子的后台地址
 			if ($(this).data('repeat') == true) {
 				return;
 			}
@@ -159,23 +164,58 @@ define(function(require, exports, module) {
 				quickdialog('请输入内容');
 				return;
 			}
+
 			var postGroup = $('.editor-post_group .J-clicked').data('id');
 			var toDoc = $('#toDoc').prop('checked');
 			$(this).data('repeat', true);
-			$.getJSON('test', {
+			data.postGroup = postGroup;
+			data.postTitle = postTitle;
+			data.postCon = postCon;
+			data.toDoc = toDoc;
+			data.imgList = imgupload.imgList;
 
-				postGroup: postGroup,
-				postTitle: postTitle,
-				postCon: postCon,
-				toDoc: toDoc,
-				imgList: imgupload.imgList
+			if ($(this).data('cat') == 'doc-ask') {
+				url = ''//此处url为医生提问的地址，
+				data.docId = $('.doc-ask.active').data('id');
+			}
+			$.getJSON(url, data).done(function(data) {
 
-			}).always(function(data) {
-
+				quickdialog('发帖成功');
 				resetShareBox(data);
 
 			})
 		})
+		
+		$('.doctor-answer .bd').on('click','.doc-ask',function  (e) {
+			e.preventDefault();
+			resetShareBox();
+			$('.doc-ask').removeClass('active');
+			$(this).addClass('active');
+			$('.btn-submit').data('cat','doc-ask');
+			$('.tip-doc').hide();
+			$('.tip-share').show();
+			$('.changwen').click();
+		});
+
+		/*医生刷新 
+		数据格式
+		 {
+			list:[
+				  {img_link:'http://www.baidu.com',doc_name:"lineng",doc_id:'dfa',doc_ins:"dasfsdfasasdfasafsd"},
+				  {img_link:'http://www.baidu.com',doc_name:"lineng",doc_id:'dfa',doc_ins:"dasfsdfasasdfasafsd"},
+				  {img_link:'http://www.baidu.com',doc_name:"lineng",doc_id:'dfa',doc_ins:"dasfsdfasasdfasafsd"},
+				  {img_link:'http://www.baidu.com',doc_name:"lineng",doc_id:'dfa',doc_ins:"dasfsdfasasdfasafsd"}
+				 ]};*/
+		
+
+		$('.refresh').click(function (e) {
+			var url = '';
+			e.preventDefault();
+			$.getJSON('test2').done(function  (data) {
+				var html = template('doc-ask',data);
+				$('.doctor-answer .bd').html(html); 
+			});
+		});
 
 
 		$(document)
@@ -226,6 +266,7 @@ define(function(require, exports, module) {
 
 				$('#content-input').addClass('cw');
 				$(this).hide().next().show();
+				$('body').scrollTop(0);
 
 			})
 			.on('click', '.cw-back', function() {
