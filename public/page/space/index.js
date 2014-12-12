@@ -20,13 +20,10 @@ define(function(require, exports, module) {
 	//下一页
 	function Pagecallback(event, page) {
 		isScrolled = 0;
+		second = 0;
 		$('#pagination').hide();
-		$('html,body').animate({
-			'scrollTop': 0
-		}, 200, function() {
-
-		});
-		loadData(cat, 0, page);
+		$('body').scrollTop(0);
+		loadData(cat, page);
 	}
 
 	initPagination(OP_CONFIG.totalPages, Pagecallback);
@@ -318,7 +315,7 @@ define(function(require, exports, module) {
 
 		if ($(".bg-loading").length == 0) {
 
-			$(".my-post").prepend('<div class="bg-loading"></div>')
+			$(".my-post .post-bd").prepend('<div class="bg-loading"></div>')
 		}
 
 		$(".bg-loading").css({
@@ -342,51 +339,35 @@ define(function(require, exports, module) {
 		var t = $(document).scrollTop();
 		var h = $(document).height()
 		var wh = $(window).height()
-		if (t >= h - wh - 50) {
+		console.log(t);
+		if (t >= h - wh - 150) {
 			var cat = $('.cat-item.J-selected').data('id');
-			loadData(cat, 1, Page);
+			loadData(cat, Page);
+			isScrolled = 1;
 		}
 	}
 
 
 
-	function loadData(cat, second, page) {
+	function loadData(cat,page) {
 		if (isAjax) {
 			return;
 		}
 
 		if (second == 1) {
-			$(".my-post").append('<a href="javascript:void(0)" class="js-next"></a>')
+			$(".my-post .post-bd").append('<a href="javascript:void(0)" class="js-next"></a>')
 		} else {
 			showLoading()
 		}
 
-		if (cat == 'tag') {
 			var url = 'test3';
 			var id = $('.tag-wrapper.show .J-selected').data('id');
 			var data = {
 				page: page,
 				id: id,
-				second: second
+				second: second,
+				cat:cat
 			}
-		} else if (cat == "follow") {
-
-			var url = 'xxx';
-			var id = "follow";
-			var data = {
-				page: page,
-				id: id,
-				second: second
-			}
-		} else {
-			var url = 'xxx';
-			var id = "doc-ans";
-			var data = {
-				page: page,
-				id: id,
-				second: second
-			}
-		}
 
 		isAjax = 1;
 
@@ -403,21 +384,23 @@ define(function(require, exports, module) {
 			if (second == 0) {
 
 				hideLoading()
-				$('.my-post').html(html);
+				$('.my-post .post-bd').html(html);
 				second = 1;
 
 				if (eventName == 'click') {
 					$('#pagination').empty().removeData("twbs-pagination").unbind("page");
 					initPagination(data.page, Pagecallback);
+					eventName = '';
+
 				}
 
-
 			} else {
+
 				$('.js-next').remove();
-				$('.my-post').append(html);
-				console.log('test');
+				$('.my-post .post-bd').append(html);
 				$('#pagination').show();
 				isScrolled = 1;
+				second = 0;
 			}
 		})
 	}
@@ -431,16 +414,15 @@ define(function(require, exports, module) {
 
 		e.preventDefault();
 		eventName = 'click';
+
 		var $ele = $(this),
 			id = $ele.data('id');
-		if ($ele.hasClass('J-selected')) {
-			return;
-		}
-		isScrolled = 0;
 		$('.tag-item.J-selected').removeClass('J-selected');
 		$ele.addClass('J-selected');
 		$('#pagination').hide();
-		loadData('tag', 0, 1);
+		second = 0;
+		isScrolled = 0;
+		loadData('tag', 1);
 
 	})
 
@@ -448,12 +430,9 @@ define(function(require, exports, module) {
 		e.preventDefault();
 		var $ele = $(this);
 		cat = $ele.data('id');
-		if ($ele.hasClass('J-selected')) {
-			return;
-		}
 		isScrolled = 0;
+		second = 0;
 		eventName = 'click';
-
 		$('.timeline-cat .J-selected').removeClass('J-selected');
 		$ele.addClass('J-selected');
 
@@ -462,9 +441,9 @@ define(function(require, exports, module) {
 			$('.tag-cat_wrapper .tag-cat').eq(0).click();
 		} else {
 			$('.tag-select-wrapper').hide();
+			loadData(cat,1);
 		}
 
-		loadData(cat);
 	});
 
 	$(document).on('click','.tag-cat_wrapper .tag-cat',function (e){
