@@ -93,6 +93,7 @@ define(function  (require,exports,module) {
 			$.getJSON('test5',{id:id}).done(function  () {
 				$ele.closest('.followed').removeClass('followed').addClass('follow');
 			})
+			return false;
 		})
 		.on('click','.addFriend',function  (e) {
 			e.preventDefault();
@@ -103,6 +104,7 @@ define(function  (require,exports,module) {
 			$.getJSON('test1',{id:id}).done(function  () {
 				$ele.closest('.follow').removeClass('follow').addClass('followed');
 			})
+			return false;
 		})
 		.on('click','.send-msg',function  () {
 			var id =$(this).data('id');

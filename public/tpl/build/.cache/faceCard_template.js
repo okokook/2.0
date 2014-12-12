@@ -1,4 +1,4 @@
-/*TMODJS:{"version":5,"md5":"ca82f7a94b87934e1224c66f9fae53d9"}*/
+/*TMODJS:{"version":7,"md5":"b521ba6d2dc1dbb281de062b2a5a80d5"}*/
 template('faceCard_template',function($data,$filename) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$string=$utils.$string,spaceLink=$data.spaceLink,picLink=$data.picLink,personName=$data.personName,spacLink=$data.spacLink,sex=$data.sex,loc=$data.loc,groupLink=$data.groupLink,groupNum=$data.groupNum,followLink=$data.followLink,followNum=$data.followNum,fansLink=$data.fansLink,fansNum=$data.fansNum,profile=$data.profile,isFollowed=$data.isFollowed,uid=$data.uid,$out='';$out+='<div class="tooltip-inner"> <div class="info"> <div class="card"> <div class="headpic"> <a href="';
 $out+=$string(spaceLink);
@@ -46,6 +46,12 @@ $out+=' </div> <div class="send-msg-wrapper"><a href="javascript:;" data-uid="';
 $out+=$string(uid);
 $out+='" data-user="';
 $out+=$string(personName);
-$out+='" class="send-msg">私信</a></div> </div> </div>';
+$out+='" class="send-msg">@';
+if(sex == "男"){
+$out+='他';
+}else{
+$out+='她';
+}
+$out+='</a></div> </div> </div>';
 return new String($out);
 });

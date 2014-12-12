@@ -3880,9 +3880,6 @@ font-weight: normal;
   .tooltip-inner .info .content {
     margin-left: 64px;
     line-height: 12px; }
-    .tooltip-inner .info .content .item{
-    	margin-bottom: 5px;
-    }
     .tooltip-inner .info .content .item a{
     	color: #3ba354;
     }

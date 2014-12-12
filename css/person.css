@@ -3051,8 +3051,8 @@ textarea.repost-con:focus {
     .tooltip-inner .headpic a {
       display: inline-block; }
     .tooltip-inner .headpic img {
-      width: 48px;
-      height: 48px; }
+      width: 52px;
+      height: 52px; }
   .tooltip-inner .info .content {
     margin-left: 64px;
     line-height: 18px; }
@@ -3548,54 +3548,54 @@ p.guests_risk {
     .health-cat-wrapper .cat-item.J-selected {
       color: #1d831c; }
 
-.info {
+.health .info {
   margin-top: 25px;
   overflow: hidden;
   background: url(./img/spine.png) repeat-y 122px; }
-  .info .headpic-wrapper {
+  .health .info .headpic-wrapper {
     float: left;
     width: 114px;
     border: 1px solid #bbb;
     padding: 1px;
     margin-left: 5px;
     margin-right: 10px; }
-    .info .headpic-wrapper img {
+    .health .info .headpic-wrapper img {
       display: block;
       width: 114px;
       height: 114px; }
-  .info .info-content {
+  .health .info .info-content {
     margin-left: 120px; }
-    .info .info-content .item {
+    .health .info .info-content .item {
       margin-bottom: 20px;
       color: #999;
       font-size: 14px;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-      .info .info-content .item span {
+      .health .info .info-content .item span {
         color: #333;
         margin-right: 15px;
         margin-left: 4px; }
-    .info .info-content .submit {
+    .health .info .info-content .submit {
       text-align: center;
       margin-top: 15px; }
-    .info .info-content .btn-submit {
+    .health .info .info-content .btn-submit {
       width: 170px;
       height: 50px;
       line-height: 50px;
       display: inline-block;
       color: #fff;
       font-size: 20px; }
-      .info .info-content .btn-submit.un-reach-condition {
+      .health .info .info-content .btn-submit.un-reach-condition {
         background: #b3b3b3; }
-      .info .info-content .btn-submit.reach-conditon {
+      .health .info .info-content .btn-submit.reach-conditon {
         background: #39a338;
         cursor: pointer; }
-    .info .info-content .submit-per {
+    .health .info .info-content .submit-per {
       color: #1d831c;
       margin-top: 10px; }
-    .info .info-content .submit-tip {
+    .health .info .info-content .submit-tip {
       color: #999;
       margin-top: 10px; }
-  .info .edit-box {
+  .health .info .edit-box {
     width: auto;
     margin: 25px 0 0 40px;
     padding: 15px; }

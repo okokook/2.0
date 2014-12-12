@@ -12,24 +12,24 @@ define(function(require, exports, module) {
 	atwho(obj);
 
 	//图片上传
-	var uploadObj ={
-		url:'test'
+	var uploadObj = {
+		url: 'test'
 	}
 	imgupload.imgupload(uploadObj);
 
 	//下一页
 	function Pagecallback(event, page) {
-			isScrolled = 0;
-			$('#pagination').hide();
-			$('html,body').animate({
-				'scrollTop': 0
-			}, 200, function() {
+		isScrolled = 0;
+		$('#pagination').hide();
+		$('html,body').animate({
+			'scrollTop': 0
+		}, 200, function() {
 
-			});
-			loadData(cat, 0, page);
-		}
+		});
+		loadData(cat, 0, page);
+	}
 
-	initPagination(OP_CONFIG.totalPages,Pagecallback);
+	initPagination(OP_CONFIG.totalPages, Pagecallback);
 	$('#pagination').hide();
 
 	//提示框
@@ -44,8 +44,8 @@ define(function(require, exports, module) {
 	}
 
 	//帖子添加到首页
-	function addPost(data){
-		var htmltem = template('post-list',data);
+	function addPost(data) {
+		var htmltem = template('post-list', data);
 		var $ele = $('<div id="template-post" style="display:none;"></div>').append(htmltem);
 		$('body').append($ele);
 		var html = $('#template-post ul').html();
@@ -55,18 +55,18 @@ define(function(require, exports, module) {
 	}
 
 	//图片重置
-	function resetimg(){
+	function resetimg() {
 		imgupload.reset();
 		$('.editor-post_footer .upload-img').show();
 		$('.img-upload_box').css({
-			'height':0,
-			'overflow':'hidden'
+			'height': 0,
+			'overflow': 'hidden'
 		});
 	}
 
 	//发布框重置
-	function resetShareBox(data){
-		
+	function resetShareBox(data) {
+
 		$('.my-shareBox .clicked').hide();
 		$('.my-shareBox .un-clicked').show();
 		var html = addPost(data);
@@ -78,7 +78,7 @@ define(function(require, exports, module) {
 		if ($('.queueList li').length) {
 			resetimg();
 		}
-		$('.btn-submit').data('cat',' ');
+		$('.btn-submit').data('cat', ' ');
 		$('.tip-doc').show();
 		$('.tip-share').hide();
 	}
@@ -122,7 +122,7 @@ define(function(require, exports, module) {
 			$('#content-input').autosize();
 		})
 
-		
+
 
 		//标签 小组expand
 		$('.tag-cat_wrapper .expand,.tag-wrapper .expand').click(function(e) {
@@ -133,13 +133,12 @@ define(function(require, exports, module) {
 
 
 
-
 		//主评论框确认
 
 		$('.btn-submit').click(function(e) {
 			e.preventDefault();
 			var data = {};
-			var url = '';//后台补充 为帖子的后台地址
+			var url = ''; //后台补充 为帖子的后台地址
 			if ($(this).data('repeat') == true) {
 				return;
 			}
@@ -175,7 +174,7 @@ define(function(require, exports, module) {
 			data.imgList = imgupload.imgList;
 
 			if ($(this).data('cat') == 'doc-ask') {
-				url = ''//此处url为医生提问的地址，
+				url = '' //此处url为医生提问的地址，
 				data.docId = $('.doc-ask.active').data('id');
 			}
 			$.getJSON(url, data).done(function(data) {
@@ -185,13 +184,13 @@ define(function(require, exports, module) {
 
 			})
 		})
-		
-		$('.doctor-answer .bd').on('click','.doc-ask',function  (e) {
+
+		$('.doctor-answer .bd').on('click', '.doc-ask', function(e) {
 			e.preventDefault();
 			resetShareBox();
 			$('.doc-ask').removeClass('active');
 			$(this).addClass('active');
-			$('.btn-submit').data('cat','doc-ask');
+			$('.btn-submit').data('cat', 'doc-ask');
 			$('.tip-doc').hide();
 			$('.tip-share').show();
 			$('.changwen').click();
@@ -206,14 +205,14 @@ define(function(require, exports, module) {
 				  {img_link:'http://www.baidu.com',doc_name:"lineng",doc_id:'dfa',doc_ins:"dasfsdfasasdfasafsd"},
 				  {img_link:'http://www.baidu.com',doc_name:"lineng",doc_id:'dfa',doc_ins:"dasfsdfasasdfasafsd"}
 				 ]};*/
-		
 
-		$('.refresh').click(function (e) {
+
+		$('.refresh').click(function(e) {
 			var url = '';
 			e.preventDefault();
-			$.getJSON('test2').done(function  (data) {
-				var html = template('doc-ask',data);
-				$('.doctor-answer .bd').html(html); 
+			$.getJSON('test2').done(function(data) {
+				var html = template('doc-ask', data);
+				$('.doctor-answer .bd').html(html);
 			});
 		});
 
@@ -258,11 +257,13 @@ define(function(require, exports, module) {
 					'left': 0,
 					'right': 0,
 					'background': '#fff',
-					'padding-bottom':"10px",
-					'border-bottom':'1px solid #999'
+					'padding-bottom': "10px",
+					'border-bottom': '1px solid #999'
 				});
 
-				$('.my-shareBox .editor-content').css({'border':'none'});
+				$('.my-shareBox .editor-content').css({
+					'border': 'none'
+				});
 
 				$('#content-input').addClass('cw');
 				$(this).hide().next().show();
@@ -287,159 +288,161 @@ define(function(require, exports, module) {
 					'position': 'static',
 					'width': 'auto',
 					'background': 'none',
-					'padding-bottom':"0",
-					'border-bottom':'none'
+					'padding-bottom': "0",
+					'border-bottom': 'none'
 				});
 
-				$('.my-shareBox .editor-content').css({'border':'1px solid #d8d8d8'});
+				$('.my-shareBox .editor-content').css({
+					'border': '1px solid #d8d8d8'
+				});
 
 				$('#content-input').removeClass('cw');
 				$(this).hide().prev().show();
 			})
 	})
 
-		var isAjax = 0;
-		var Page = 1;
-		var isScrolled = 0;
-		var second = 1;
-		var cat = 'tag';
-		var eventName = 'scroll'
-		var resetLoading = function() {
-			$(".bg-loading").css({
-				height: $(".my-post").height()
-			})
-		}
-
-		var showLoading = function() {
-			var h = $(".my-post").height() + 5;
-
-			if ($(".bg-loading").length == 0) {
-
-				$(".my-post").prepend('<div class="bg-loading"></div>')
-			}
-
-			$(".bg-loading").css({
-				height: h
-			}).fadeIn(100);
-		}
-
-		var hideLoading = function() {
-			isAjax = 0
-			setTimeout(function() {
-				$(".bg-loading").fadeOut(300);
-			}, 0)
-		}
-
-
-		var setFixed = function() {
-
-			if (isScrolled) {
-				return;
-			}
-			var t = $(document).scrollTop();
-			var h = $(document).height()
-			var wh = $(window).height()
-			if (t >= h - wh - 50) {
-				var cat = $('.cat-item.J-selected').data('id');
-				loadData(cat, 1, Page);
-			}
-		}
-
-		
-
-		function loadData(cat, second, page) {
-			if (isAjax) {
-				return;
-			}
-
-			if (second == 1) {
-				$(".my-post").append('<a href="javascript:void(0)" class="js-next"></a>')
-			} else {
-				showLoading()
-			}
-
-			if (cat == 'tag') {
-				var url = 'test3';
-				var id = $('.tag-wrapper.show .J-selected').data('id');
-				var data = {
-					page: page,
-					id: id,
-					second: second
-				}
-			} else if (cat == "follow") {
-
-				var url = 'xxx';
-				var id = "follow";
-				var data = {
-					page: page,
-					id: id,
-					second: second
-				}
-			} else {
-				var url = 'xxx';
-				var id = "doc-ans";
-				var data = {
-					page: page,
-					id: id,
-					second: second
-				}
-			}
-
-			isAjax = 1;
-
-			$.ajax({
-				url: url,
-				data: data,
-				method: "post",
-				dataType: "json",
-			}).done(function(data) {
-
-				isAjax = 0;
-				var html = template('post-list', data);
-
-				if (second == 0) {
-
-					hideLoading()
-					$('.my-post').html(html);
-					second = 1;
-
-					if (eventName == 'click') {
-						$('#pagination').empty().removeData("twbs-pagination").unbind("page");
-						initPagination(data.page,Pagecallback);
-					}
-
-
-				} else {
-					$('.js-next').remove();
-					$('.my-post').append(html);
-					console.log('test');
-					$('#pagination').show();
-					isScrolled = 1;
-				}
-			})
-		}
-
-
-		if (OP_CONFIG.page == "index") {
-			$(window).scroll(setFixed);
-		}
-
-		$(document).on('click', '.tag-item', function(e) {
-
-			e.preventDefault();
-			eventName = 'click';
-			var $ele = $(this),
-				id = $ele.data('id');
-			if ($ele.hasClass('J-selected')) {
-				return;
-			}
-			isScrolled = 0;
-			$('.tag-item.J-selected').removeClass('J-selected');
-			$ele.addClass('J-selected');
-			$('#pagination').hide();
-			loadData('tag', 0, 1);
-
+	var isAjax = 0;
+	var Page = 1;
+	var isScrolled = 0;
+	var second = 1;
+	var cat = 'tag';
+	var eventName = 'scroll'
+	var resetLoading = function() {
+		$(".bg-loading").css({
+			height: $(".my-post").height()
 		})
+	}
+
+	var showLoading = function() {
+		var h = $(".my-post").height() + 5;
+
+		if ($(".bg-loading").length == 0) {
+
+			$(".my-post").prepend('<div class="bg-loading"></div>')
+		}
+
+		$(".bg-loading").css({
+			height: h
+		}).fadeIn(100);
+	}
+
+	var hideLoading = function() {
+		isAjax = 0
+		setTimeout(function() {
+			$(".bg-loading").fadeOut(300);
+		}, 0)
+	}
+
+
+	var setFixed = function() {
+
+		if (isScrolled) {
+			return;
+		}
+		var t = $(document).scrollTop();
+		var h = $(document).height()
+		var wh = $(window).height()
+		if (t >= h - wh - 50) {
+			var cat = $('.cat-item.J-selected').data('id');
+			loadData(cat, 1, Page);
+		}
+	}
+
+
+
+	function loadData(cat, second, page) {
+		if (isAjax) {
+			return;
+		}
+
+		if (second == 1) {
+			$(".my-post").append('<a href="javascript:void(0)" class="js-next"></a>')
+		} else {
+			showLoading()
+		}
+
+		if (cat == 'tag') {
+			var url = 'test3';
+			var id = $('.tag-wrapper.show .J-selected').data('id');
+			var data = {
+				page: page,
+				id: id,
+				second: second
+			}
+		} else if (cat == "follow") {
+
+			var url = 'xxx';
+			var id = "follow";
+			var data = {
+				page: page,
+				id: id,
+				second: second
+			}
+		} else {
+			var url = 'xxx';
+			var id = "doc-ans";
+			var data = {
+				page: page,
+				id: id,
+				second: second
+			}
+		}
+
+		isAjax = 1;
+
+		$.ajax({
+			url: url,
+			data: data,
+			method: "post",
+			dataType: "json",
+		}).done(function(data) {
+
+			isAjax = 0;
+			var html = template('post-list', data);
+
+			if (second == 0) {
+
+				hideLoading()
+				$('.my-post').html(html);
+				second = 1;
+
+				if (eventName == 'click') {
+					$('#pagination').empty().removeData("twbs-pagination").unbind("page");
+					initPagination(data.page, Pagecallback);
+				}
+
+
+			} else {
+				$('.js-next').remove();
+				$('.my-post').append(html);
+				console.log('test');
+				$('#pagination').show();
+				isScrolled = 1;
+			}
+		})
+	}
+
+
+	if (OP_CONFIG.page == "index") {
+		$(window).scroll(setFixed);
+	}
+
+	$(document).on('click', '.tag-item', function(e) {
+
+		e.preventDefault();
+		eventName = 'click';
+		var $ele = $(this),
+			id = $ele.data('id');
+		if ($ele.hasClass('J-selected')) {
+			return;
+		}
+		isScrolled = 0;
+		$('.tag-item.J-selected').removeClass('J-selected');
+		$ele.addClass('J-selected');
+		$('#pagination').hide();
+		loadData('tag', 0, 1);
+
+	})
 
 	$(document).on('click', '.timeline-cat .cat-item', function(e) {
 		e.preventDefault();
@@ -463,4 +466,12 @@ define(function(require, exports, module) {
 
 		loadData(cat);
 	});
+
+	$(document).on('click','.tag-cat_wrapper .tag-cat',function (e){
+		e.preventDefault();
+		var index = $(this).index();
+		$('.tag-select-wrapper .tag-cat').removeClass('J-selected').eq(index).addClass('J-selected');
+		$('.tag-select-wrapper .tab-item').removeClass('show').eq(index).addClass('show');
+		$('.tag-select-wrapper .tab-item:visible .tag-item').eq(0).click();
+	})
 })

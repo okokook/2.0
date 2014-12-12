@@ -35,7 +35,7 @@ define(function  (require, exports, module) {
 
 		$.getJSON('test2',{data:data}).done(function  (data) {
 			var html = template('suggest-people-template',data);
-			$wrapper.find('.user-list-bd').html(html);
+			$wrapper.find('.user-list-wrapper').html(html);
 
 			var num = parseInt($ele.data('num'))+1;
 			$ele.data('num',num);
