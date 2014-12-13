@@ -233,7 +233,8 @@ define(function(require, exports, module) {
 				$('input[type="file"]').click();
 			})
 			.on('click', '.changwen', function(e) {
-				$('.header,.my-box,.my-recommend,.my-timeline,#pagination,.sider,.footer').hide();
+				$('.header,.my-box,.my-recommend,.my-timeline,.sider,.footer').hide();
+				$('#pagination').css({height:0});
 				$('body').css({
 					'padding-top': '0',
 					'background': '#f5f5f5'
@@ -246,10 +247,12 @@ define(function(require, exports, module) {
 					'background': "#fff"
 				});
 
+				$('.container-wrapper>.container').addClass('narrow-width');
+
 				$('.my-shareBox .editor-post_footer').css({
 					'position': 'fixed',
 					'top': '10px',
-					'width': '970px',
+					'width': '670px',
 					'margin': '0 auto 10px',
 					'left': 0,
 					'right': 0,
@@ -269,10 +272,12 @@ define(function(require, exports, module) {
 			})
 			.on('click', '.cw-back', function() {
 				$('.header,.my-box,.my-recommend,.my-timeline,#pagination,.sider,.footer').show();
+				$('#pagination').css({height:'auto'});
 				$('body').css({
 					'padding-top': '65px',
 					'background': '#fff'
 				});
+				$('.container-wrapper>.container').removeClass('narrow-width');
 
 				$('.my-middle .cleft').css({
 					'width': '753px',

@@ -121,6 +121,7 @@ $st: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		background: $bluehover;
 	}
 }
+
 @mixin input {
 	border: 1px solid #ccc;
 	border-radius: 3px;
@@ -134,6 +135,7 @@ $st: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	clip: rect(1px 1px 1px 1px);
 	clip: rect(1px, 1px, 1px, 1px);
 }
+
 .icon1 {
 	background: url(./images/icon-1.png) no-repeat
 }
@@ -327,15 +329,15 @@ textarea.repost-con:focus {
 		border-top: 2px solid $hgn;
 	}
 	.my-pro {
-		padding: 25px 10px 5px;
+		padding: 5px 10px 0;
 	}
 	.my-photo {
 		img {
 			display: block;
 			margin: 0 auto;
-			width: 90px;
-			height: 90px;
-			border-radius: 45px;
+			width: 70px;
+			height: 70px;
+			border-radius: 35px;
 			margin-bottom: 5px;
 		}
 		span {
@@ -349,7 +351,7 @@ textarea.repost-con:focus {
 	.my-authentication, .my-level {
 		overflow: hidden;
 		zoom: 1;
-		margin-bottom: 10px;
+		margin-bottom: 6px;
 		span {
 			line-height: 20px;
 			font-size: 12px;
@@ -393,18 +395,26 @@ textarea.repost-con:focus {
 	}
 }
 .my-follow {
-	margin-bottom: 15px;
-	a {
-		display: block;
-		position: relative;
-		height: 35px;
-		line-height: 35px;
-		padding-left: 60px;
-		border-bottom: 1px solid #e6e6e6;
-		font-size: 18px;
+	margin-bottom: 5px;
+	.icon-wrapper{
+		line-height: 30px;
+	}
+	.up-icon,.down-icon{
+	}
+	.down-group{
+		display: none;
+	}
+	ul a {
+			display: block;
+			position: relative;
+			height: 30px;
+			line-height: 30px;
+			padding-left: 60px;
+			border-bottom: 1px solid #e6e6e6;
+			font-size: 14px;
 		i {
 			position: absolute;
-			top: 10px;
+			top: 8px;
 			left: 29px;
 			width: 15px;
 			height: 15px;
@@ -420,7 +430,6 @@ textarea.repost-con:focus {
 }
 .my-nav {
 	ul {
-		padding: 12px 0;
 		margin-bottom: -1px;
 		border-top: 1px solid #e6e6e6;
 		border-bottom: 1px solid #e6e6e6;
@@ -428,7 +437,7 @@ textarea.repost-con:focus {
 	a {
 		display: block;
 		position: relative;
-		line-height: 34px;
+		line-height: 30px;
 		padding-left: 60px;
 		&:hover, &.selected {
 			background-color: #e6f1e6;
@@ -437,7 +446,7 @@ textarea.repost-con:focus {
 			position: absolute;
 			width: 18px;
 			height: 18px;
-			top: 8px;
+			top: 6px;
 			left: 28px;
 			overflow: hidden;
 		}
@@ -1555,6 +1564,9 @@ textarea.repost-con:focus {
 	margin: 20px 0;
 	border-radius: 4px;
 	overflow: hidden;
+}
+.index-pagination{
+	display: none;
 }
 .pagination>li {
 	// display: inline;

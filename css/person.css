@@ -279,13 +279,13 @@ textarea.repost-con:focus {
   float: left;
   border-top: 2px solid #39a338; }
 .my-middle .my-pro {
-  padding: 25px 10px 5px; }
+  padding: 5px 10px 0; }
 .my-middle .my-photo img {
   display: block;
   margin: 0 auto;
-  width: 90px;
-  height: 90px;
-  border-radius: 45px;
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
   margin-bottom: 5px; }
 .my-middle .my-photo span {
   display: block;
@@ -296,7 +296,7 @@ textarea.repost-con:focus {
 .my-middle .my-authentication, .my-middle .my-level {
   overflow: hidden;
   zoom: 1;
-  margin-bottom: 10px; }
+  margin-bottom: 6px; }
   .my-middle .my-authentication span, .my-middle .my-level span {
     line-height: 20px;
     font-size: 12px;
@@ -333,36 +333,39 @@ textarea.repost-con:focus {
     line-height: 16px; }
 
 .my-follow {
-  margin-bottom: 15px; }
-  .my-follow a {
+  margin-bottom: 5px; }
+  .my-follow .icon-wrapper {
+    line-height: 30px; }
+  .my-follow .down-group {
+    display: none; }
+  .my-follow ul a {
     display: block;
     position: relative;
-    height: 35px;
-    line-height: 35px;
+    height: 30px;
+    line-height: 30px;
     padding-left: 60px;
     border-bottom: 1px solid #e6e6e6;
-    font-size: 18px; }
-    .my-follow a i {
+    font-size: 14px; }
+    .my-follow ul a i {
       position: absolute;
-      top: 10px;
+      top: 8px;
       left: 29px;
       width: 15px;
       height: 15px;
       background: url(./images/circle.png) no-repeat; }
-    .my-follow a.last {
+    .my-follow ul a.last {
       border-bottom: none; }
   .my-follow a:hover, .my-follow a.selected {
     background-color: #e6f1e6; }
 
 .my-nav ul {
-  padding: 12px 0;
   margin-bottom: -1px;
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6; }
 .my-nav a {
   display: block;
   position: relative;
-  line-height: 34px;
+  line-height: 30px;
   padding-left: 60px; }
   .my-nav a:hover, .my-nav a.selected {
     background-color: #e6f1e6; }
@@ -370,7 +373,7 @@ textarea.repost-con:focus {
     position: absolute;
     width: 18px;
     height: 18px;
-    top: 8px;
+    top: 6px;
     left: 28px;
     overflow: hidden; }
 
@@ -1271,6 +1274,9 @@ textarea.repost-con:focus {
   margin: 20px 0;
   border-radius: 4px;
   overflow: hidden; }
+
+.index-pagination {
+  display: none; }
 
 .pagination > li {
   float: left; }
