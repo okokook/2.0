@@ -637,7 +637,7 @@ textarea.repost-con:focus {
 			float: left;
 			padding: 0 5px;
 			margin-right: 10px;
-			outline: 1px solid #3ba354;
+			outline: 1px solid #d8d8d8;
 			&.J-clicked, &:hover {
 				color: #fff;
 				background: #3ba354;
@@ -1002,6 +1002,27 @@ textarea.repost-con:focus {
 	font-family: 'Sim Sun', sans-serif;
 	line-height: 24px;
 }
+.post-expand, .post-packUp {
+	color: $gn;
+	display: block;
+	vertical-align: top;
+	line-height: 16px;
+	height: 16px;
+	margin-top: 8px;
+	i {
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		margin-right: 5px;
+		overflow: hidden;
+	}
+}
+.post-expand i {
+	background: url(./images/post-down.png) no-repeat;
+}
+.post-packUp i {
+	background: url(./images/post-up.png) no-repeat;
+}
 .post-item_pro {
 	line-height: 21px;
 	font-size: 14px;
@@ -1014,6 +1035,9 @@ textarea.repost-con:focus {
 		font-size: 14px;
 		line-height: 21px;
 		color: #333;
+	}
+	.no-answer{
+		color: #888;
 	}
 	img {
 		max-width: 100%;
@@ -1045,27 +1069,7 @@ textarea.repost-con:focus {
 	&.see-all {
 		display: none;
 	}
-	.post-expand, .post-packUp {
-		color: $gn;
-		display: block;
-		vertical-align: top;
-		line-height: 16px;
-		height: 16px;
-		margin-top: 12px;
-		i {
-			display: inline-block;
-			width: 16px;
-			height: 16px;
-			margin-right: 5px;
-			overflow: hidden;
-		}
-	}
-	.post-expand i {
-		background: url(./images/post-down.png) no-repeat;
-	}
-	.post-packUp i {
-		background: url(./images/post-up.png) no-repeat;
-	}
+	
 }
 .repost-user-name {
 	color: $gn;
@@ -1294,6 +1298,9 @@ textarea.repost-con:focus {
 				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 			}
 		}
+	}
+	.doctor-answer{
+		margin-top: 12px;
 	}
 	.hot-topic, .doc-rec {
 		ul {
@@ -3797,34 +3804,60 @@ textarea.repost-con:focus {
 				position: relative;
 				margin-bottom: 8px;
 				.name {
-					margin-right: 10px;
 					color: $gn;
 					font-size: 16px;
 				}
 				.info {
-					color: #999;
-					font-size: 12px;
+					color: #333;
+					font-size: 14px;
 				}
 				.question {
 					display: none;
 					position: absolute;
-					color: $gn;
+					color: #fff;
 					right: 0;
 					top: 1px;
 					font-size: 14px;
+					line-height: 22px;
+					padding: 0 10px;
 					cursor: pointer;
+					background: $gn;
 				}
 			}
 			&:hover .question{
 				display: block;
 			}
 			.con-bd {
-				font-size: 14px;
 				font-family: $st;
 				line-height: 22px;
+				padding: 6px 0;
 			}
+			.con-down{display: none;}
 			.more-info {
 				color: $gn;
+			}
+			.con-ft{
+				font-size: 12px;
+				overflow: hidden;
+				.last-consult{
+					float: left;
+					color: #888;
+				}
+				.ops{
+					float: right;
+				}
+				.num{
+					color: #e46b2d;
+					font-size: 14px;
+					margin:0 5px;
+				}
+				.consult-record{
+					color: $gn;
+					margin-left: 8px;
+				}
+			}
+			.post-expand, .post-packUp{
+				margin-top: 4px;
 			}
 		}
 	}

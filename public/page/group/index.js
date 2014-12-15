@@ -66,7 +66,6 @@ $(function  () {
 		}
 		event.preventDefault();
 
-		
 		var title=$('.getmore .title').text()=="展开看详情"?"收起详情":"展开看详情";
 		if (title=="收起详情") {
 			$('.tabcontent  .cur .show').hide();

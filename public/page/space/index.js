@@ -40,6 +40,114 @@ define(function(require, exports, module) {
 		}, 1000);
 	}
 
+	//选择提示
+	function selectTip(con) {
+		var d = common.dialog({
+			skin: 'select-dialog',
+			title: '提示',
+			content: con,
+			okValue: '确定',
+			ok: function() {
+				backNormal();
+			},
+			cancelValue: '取消',
+			cancel: function() {}
+		});
+		d.show();
+	}
+
+	//首页展示
+	function backNormal() {
+		resetShareBox();
+
+		$('.header,.my-box,.my-recommend,.my-timeline,#pagination,.sider,.footer').show();
+		if (OP_CONFIG.page =='my-doc') {
+			$('.my-con_hd,.doc-list').show();
+			$('.my-shareBox').hide();
+		}
+		if (OP_CONFIG.page =='consult-record') {
+			$('.my-con_hd,.my-post').show();
+			$('.my-shareBox').hide();
+		}
+		$('#pagination').css({height:'auto'});
+		$('body').css({
+			'padding-top': '65px',
+			'background': '#fff'
+		});
+		$('.container-wrapper>.container').removeClass('narrow-width');
+
+		$('.my-middle .cleft').css({
+			'width': '753px',
+			'float': 'left',
+			'padding-top': '0',
+			'background': "none"
+		});
+
+		$('.my-shareBox .editor-post_footer').css({
+			'position': 'static',
+			'width': 'auto',
+			'background': 'none',
+			'padding-bottom': "0",
+			'border-bottom': 'none'
+		});
+
+		$('.my-shareBox .editor-content').css({
+			'border': '1px solid #d8d8d8'
+		});
+
+		$('#content-input').removeClass('cw');
+		$(this).hide().prev().show();
+	}
+
+	//长文展示
+	function showChangwen() {
+
+		$('.header,.my-box,.my-recommend,.my-timeline,.sider,.footer').hide();
+		if (OP_CONFIG.page =='my-doc') {
+			$('.my-con_hd,.doc-list').hide();
+			$('.my-shareBox').show();
+		}
+		if (OP_CONFIG.page =='consult-record') {
+			$('.my-con_hd,.my-post').hide();
+			$('.my-shareBox').show();
+		}
+		$('#pagination').css({height:0});
+		$('body').css({
+			'padding-top': '0',
+			'background': '#f5f5f5'
+		});
+
+		$('.my-middle .cleft').css({
+			'width': 'auto',
+			'float': 'none',
+			'padding-top': '50px',
+			'background': "#fff"
+		});
+
+		$('.container-wrapper>.container').addClass('narrow-width');
+
+		$('.my-shareBox .editor-post_footer').css({
+			'position': 'fixed',
+			'top': '10px',
+			'width': '670px',
+			'margin': '0 auto 10px',
+			'left': 0,
+			'right': 0,
+			'background': '#fff',
+			'padding-bottom': "10px",
+			'border-bottom': '1px solid #999'
+		});
+
+		$('.my-shareBox .editor-content').css({
+			'border': 'none'
+		});
+
+		$('#content-input').addClass('cw');
+		$('.changwen').hide().next().show();
+		$('body').scrollTop(0);
+
+	}
+
 	//帖子添加到首页
 	function addPost(data) {
 		var htmltem = template('post-list', data);
@@ -212,8 +320,6 @@ define(function(require, exports, module) {
 				$('.doctor-answer .bd').html(html);
 			});
 		});
-
-
 		$(document)
 			.on('click', '.group-item', function() { //选择小组逻辑
 				$('.group-item').removeClass('J-clicked');
@@ -233,73 +339,11 @@ define(function(require, exports, module) {
 				$('input[type="file"]').click();
 			})
 			.on('click', '.changwen', function(e) {
-				$('.header,.my-box,.my-recommend,.my-timeline,.sider,.footer').hide();
-				$('#pagination').css({height:0});
-				$('body').css({
-					'padding-top': '0',
-					'background': '#f5f5f5'
-				});
-
-				$('.my-middle .cleft').css({
-					'width': 'auto',
-					'float': 'none',
-					'padding-top': '50px',
-					'background': "#fff"
-				});
-
-				$('.container-wrapper>.container').addClass('narrow-width');
-
-				$('.my-shareBox .editor-post_footer').css({
-					'position': 'fixed',
-					'top': '10px',
-					'width': '670px',
-					'margin': '0 auto 10px',
-					'left': 0,
-					'right': 0,
-					'background': '#fff',
-					'padding-bottom': "10px",
-					'border-bottom': '1px solid #999'
-				});
-
-				$('.my-shareBox .editor-content').css({
-					'border': 'none'
-				});
-
-				$('#content-input').addClass('cw');
-				$(this).hide().next().show();
-				$('body').scrollTop(0);
-
+				showChangwen();
 			})
 			.on('click', '.cw-back', function() {
-				$('.header,.my-box,.my-recommend,.my-timeline,#pagination,.sider,.footer').show();
-				$('#pagination').css({height:'auto'});
-				$('body').css({
-					'padding-top': '65px',
-					'background': '#fff'
-				});
-				$('.container-wrapper>.container').removeClass('narrow-width');
-
-				$('.my-middle .cleft').css({
-					'width': '753px',
-					'float': 'left',
-					'padding-top': '0',
-					'background': "none"
-				});
-
-				$('.my-shareBox .editor-post_footer').css({
-					'position': 'static',
-					'width': 'auto',
-					'background': 'none',
-					'padding-bottom': "0",
-					'border-bottom': 'none'
-				});
-
-				$('.my-shareBox .editor-content').css({
-					'border': '1px solid #d8d8d8'
-				});
-
-				$('#content-input').removeClass('cw');
-				$(this).hide().prev().show();
+				var con = '你确定要返回吗？返回后本页未发表的内容将会被清除'
+				selectTip(con);
 			})
 	})
 
@@ -314,7 +358,6 @@ define(function(require, exports, module) {
 			height: $(".my-post").height()
 		})
 	}
-
 	var showLoading = function() {
 		var h = $(".my-post").height() + 5;
 
@@ -351,8 +394,6 @@ define(function(require, exports, module) {
 			isScrolled = 1;
 		}
 	}
-
-
 
 	function loadData(cat,page) {
 		if (isAjax) {
@@ -409,7 +450,6 @@ define(function(require, exports, module) {
 			}
 		})
 	}
-
 
 	if (OP_CONFIG.page == "index") {
 		$(window).scroll(setFixed);

@@ -10,18 +10,13 @@ define(function  (require,exports,module) {
 	var offsetTop = $('.app-wrapper').offset().top;
 	var thumbnailWidth = 70 ,thumbnailHeight = 70 ;
 
-
 	// 初始化Web Uploader
 	var uploader = WebUploader.create({
 
-
-	   
 	    swf: 'public/component/base/webuploader/Uploader.swf',
-
 	    auto:true,
 	    fileNumLimit:8,
 	    fileSingleSizeLimit:1*1024*1024,
-
 	    // 文件接收服务端。
 	    server: 'http://webuploader.duapp.com/server/fileupload.php',
 
@@ -43,7 +38,6 @@ define(function  (require,exports,module) {
 	            '</li>'
 	            ),
 	        $img = $li.find('img');
-
 
 	    // $list为容器jQuery实例
 	    $('.queueList').append( $li );

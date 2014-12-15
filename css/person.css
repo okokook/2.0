@@ -23,9 +23,9 @@
   line-height: 12px;
   vertical-align: top;
   padding: 0 8px;
-  color: #333333; }
+  color: #333; }
   .post-item_info .info-ops a:hover, .quick-comment_ops a:hover {
-    color: black; }
+    color: #000; }
   .post-item_info .info-ops a.last, .quick-comment_ops a.last {
     border-right: none;
     padding-right: 0; }
@@ -524,7 +524,7 @@ textarea.repost-con:focus {
       float: left;
       padding: 0 5px;
       margin-right: 10px;
-      outline: 1px solid #3ba354; }
+      outline: 1px solid #d8d8d8; }
       .my-shareBox .editor-post_group a.J-clicked, .my-shareBox .editor-post_group a:hover {
         color: #fff;
         background: #3ba354; }
@@ -602,7 +602,7 @@ textarea.repost-con:focus {
     .my-shareBox .editor-post_footer label {
       margin-right: 50px;
       font-size: 12px;
-      color: #888888; }
+      color: #888; }
     .my-shareBox .editor-post_footer .tip-share {
       display: none; }
     .my-shareBox .editor-post_footer .submit-wrapper .btn-submit {
@@ -779,7 +779,7 @@ textarea.repost-con:focus {
   display: block; }
 
 .post-title-text {
-  color: #333333;
+  color: #333;
   font-size: 20px;
   line-height: 20px;
   font-family: "Microsoft YaHei", Arial, sans-serif;
@@ -827,6 +827,26 @@ textarea.repost-con:focus {
   font-family: 'Sim Sun', sans-serif;
   line-height: 24px; }
 
+.post-expand, .post-packUp {
+  color: #1d831c;
+  display: block;
+  vertical-align: top;
+  line-height: 16px;
+  height: 16px;
+  margin-top: 8px; }
+  .post-expand i, .post-packUp i {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    overflow: hidden; }
+
+.post-expand i {
+  background: url(./images/post-down.png) no-repeat; }
+
+.post-packUp i {
+  background: url(./images/post-up.png) no-repeat; }
+
 .post-item_pro {
   line-height: 21px;
   font-size: 14px;
@@ -839,6 +859,8 @@ textarea.repost-con:focus {
     font-size: 14px;
     line-height: 21px;
     color: #333; }
+  .post-item_pro .no-answer {
+    color: #888; }
   .post-item_pro img {
     max-width: 100%;
     display: block;
@@ -862,23 +884,6 @@ textarea.repost-con:focus {
     margin: 0 8px 0 4px; }
   .post-item_pro.see-all {
     display: none; }
-  .post-item_pro .post-expand, .post-item_pro .post-packUp {
-    color: #1d831c;
-    display: block;
-    vertical-align: top;
-    line-height: 16px;
-    height: 16px;
-    margin-top: 12px; }
-    .post-item_pro .post-expand i, .post-item_pro .post-packUp i {
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      margin-right: 5px;
-      overflow: hidden; }
-  .post-item_pro .post-expand i {
-    background: url(./images/post-down.png) no-repeat; }
-  .post-item_pro .post-packUp i {
-    background: url(./images/post-up.png) no-repeat; }
 
 .repost-user-name {
   color: #1d831c;
@@ -1066,6 +1071,8 @@ textarea.repost-con:focus {
         display: block;
         color: #000;
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  .sider .doctor-answer {
+    margin-top: 12px; }
   .sider .hot-topic ul, .sider .doc-rec ul {
     list-style-type: disc;
     list-style-position: inside; }
@@ -1289,7 +1296,7 @@ textarea.repost-con:focus {
   line-height: 1.428571429;
   text-decoration: none;
   background-color: #fff;
-  border: 1px solid #dddddd; }
+  border: 1px solid #ddd; }
 
 .pagination > li:first-child > a, .pagination > li:first-child > span {
   margin-left: 0;
@@ -1301,7 +1308,7 @@ textarea.repost-con:focus {
   border-bottom-right-radius: 4px; }
 
 .pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
-  background-color: #eeeeee; }
+  background-color: #eee; }
 
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
   z-index: 2;
@@ -1314,7 +1321,7 @@ textarea.repost-con:focus {
   color: #999;
   cursor: not-allowed;
   background-color: #fff;
-  border-color: #dddddd; }
+  border-color: #ddd; }
 
 .post-item .list {
   overflow: hidden;
@@ -1546,9 +1553,9 @@ textarea.repost-con:focus {
     border-radius: 3px;
     background: #599ff4;
     color: #fff;
-    border: 1px solid #2180f5; }
+    border: 1px solid #2180F5; }
     .msg-more_box .btn_s:hover {
-      background: #2180f5; }
+      background: #2180F5; }
   .msg-more_box .send_private_msgno textarea {
     color: #595959;
     height: 24px;
@@ -1824,7 +1831,7 @@ textarea.repost-con:focus {
   background: #599ff4;
   cursor: pointer; }
   .setting .my-setting input[type="submit"]:hover, .setting .my-setting .save:hover {
-    background: #2180f5; }
+    background: #2180F5; }
 .setting .my-setting .face-setting + .save {
   margin: 20px 0 20px 70px;
   display: none; }
@@ -2036,7 +2043,7 @@ textarea.repost-con:focus {
   .setting .my-setting .idBinding-setting .bind-btn a {
     color: #599ff4; }
   .setting .my-setting .idBinding-setting .bind-btn a:hover {
-    color: #2180f5; }
+    color: #2180F5; }
   .setting .my-setting .idBinding-setting .bind-btn span {
     margin-right: 15px; }
 
@@ -2361,7 +2368,7 @@ textarea.repost-con:focus {
           margin-bottom: 15px;
           font-family: "Microsoft YaHei", Arial, sans-serif; }
           .space-main .space-wrapper .nav-con li .title a {
-            color: black; }
+            color: #000; }
         .space-main .space-wrapper .nav-con li .info {
           color: #999;
           margin-bottom: 10px; }
@@ -2542,7 +2549,7 @@ textarea.repost-con:focus {
     overflow: hidden;
     width: 0;
     height: 100%;
-    background: #dd1144 url(./images/progress.png) repeat-x;
+    background: #d14 url(./images/progress.png) repeat-x;
     -webit-transition: width 200ms linear;
     -moz-transition: width 200ms linear;
     -o-transition: width 200ms linear;
@@ -2555,19 +2562,19 @@ textarea.repost-con:focus {
     animation: progressmove 2s linear infinite;
     -webkit-transform: translateZ(0); }
 @-webkit-keyframes progressmove {
-  #uploader 0%  {
+  0% {
     background-position: 0 0; }
-  #uploader 100%  {
+  100% {
     background-position: 17px 0; } }
 @-moz-keyframes progressmove {
-  #uploader 0%  {
+  0% {
     background-position: 0 0; }
-  #uploader 100%  {
+  100% {
     background-position: 17px 0; } }
 @keyframes progressmove {
-  #uploader 0%  {
+  0% {
     background-position: 0 0; }
-  #uploader 100%  {
+  100% {
     background-position: 17px 0; } }
   #uploader a.travis {
     position: relative;
@@ -2854,7 +2861,7 @@ textarea.repost-con:focus {
   background: #599ff4;
   cursor: pointer; }
   .my-health .save:hover {
-    background: #2180f5; }
+    background: #2180F5; }
 .my-health .disease-history .item-wrapper, .my-health .inspection .item-wrapper {
   padding-top: 20px; }
 .my-health .disease-history .short-wrapper, .my-health .inspection .short-wrapper {
@@ -2980,7 +2987,7 @@ textarea.repost-con:focus {
     background: url(./images/chahao.png) no-repeat; }
 
 .my-recommend .first a {
-  color: #333333; }
+  color: #333; }
 
 .my-middle .btn.btn-success {
   padding: 5px 10px;
@@ -3091,13 +3098,13 @@ textarea.repost-con:focus {
 
 .atwho-view .cur {
   background: #36F;
-  color: white; }
+  color: #fff; }
 
 .atwho-view .cur small {
-  color: white; }
+  color: #fff; }
 
 .atwho-view strong {
-  color: #3366ff; }
+  color: #36F; }
 
 .atwho-view .cur strong {
   color: #fff;
@@ -3173,28 +3180,49 @@ textarea.repost-con:focus {
       position: relative;
       margin-bottom: 8px; }
       .doc-list li .con-wrapper .con-hd .name {
-        margin-right: 10px;
         color: #1d831c;
         font-size: 16px; }
       .doc-list li .con-wrapper .con-hd .info {
-        color: #999;
-        font-size: 12px; }
+        color: #333;
+        font-size: 14px; }
       .doc-list li .con-wrapper .con-hd .question {
         display: none;
         position: absolute;
-        color: #1d831c;
+        color: #fff;
         right: 0;
         top: 1px;
         font-size: 14px;
-        cursor: pointer; }
+        line-height: 22px;
+        padding: 0 10px;
+        cursor: pointer;
+        background: #1d831c; }
     .doc-list li .con-wrapper:hover .question {
       display: block; }
     .doc-list li .con-wrapper .con-bd {
-      font-size: 14px;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      line-height: 22px; }
+      line-height: 22px;
+      padding: 6px 0; }
+    .doc-list li .con-wrapper .con-down {
+      display: none; }
     .doc-list li .con-wrapper .more-info {
       color: #1d831c; }
+    .doc-list li .con-wrapper .con-ft {
+      font-size: 12px;
+      overflow: hidden; }
+      .doc-list li .con-wrapper .con-ft .last-consult {
+        float: left;
+        color: #888; }
+      .doc-list li .con-wrapper .con-ft .ops {
+        float: right; }
+      .doc-list li .con-wrapper .con-ft .num {
+        color: #e46b2d;
+        font-size: 14px;
+        margin: 0 5px; }
+      .doc-list li .con-wrapper .con-ft .consult-record {
+        color: #1d831c;
+        margin-left: 8px; }
+    .doc-list li .con-wrapper .post-expand, .doc-list li .con-wrapper .post-packUp {
+      margin-top: 4px; }
 
 .interview-list li {
   position: relative;
@@ -3370,7 +3398,7 @@ p.guests_risk {
   background-color: #3ba354;
   font-size: 22px;
   line-height: 56px;
-  color: white; }
+  color: #fff; }
 
 .post-item_pro .all-average {
   height: 110px; }
@@ -3540,7 +3568,7 @@ p.guests_risk {
   cursor: pointer;
   float: right; }
   .btn-share:hover {
-    background: #2180f5; }
+    background: #2180F5; }
 
 .health-cat-wrapper {
   position: absolute;

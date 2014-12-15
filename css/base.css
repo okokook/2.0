@@ -2424,14 +2424,10 @@ a.blue {
 	line-height: 60px;
 	color: #333;
 	padding: 0 10px;
-	height: 60px;
 }
 .user-box .user-info {
-	padding-top: 23px;
-	padding-bottom: 22px
-}
-.user-box .user-setting{
-
+	top: 23px;
+	line-height: 37px;
 }
 .user-box .user-info .user-info_icon {
 	position: relative;
