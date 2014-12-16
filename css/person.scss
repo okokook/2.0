@@ -4160,6 +4160,21 @@ p.guests_risk {
 		margin-bottom: 5px;
 	}
 }
+.doc-evaluate{
+	.item-con{
+		width: auto;
+		border-bottom: none;
+	}
+	textarea{
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		width: 100%;
+		height: 60px;
+		padding:8px;
+		resize:none;
+	}
+}
 .placeholder-tip{
 	margin-top: 30px;
 	text-align: center;
@@ -4353,4 +4368,42 @@ p.guests_risk {
 		}
 		.selected{color: $gn;}
 	}
+}
+.inspection-hd{
+	overflow: hidden;
+	border-bottom: 2px solid $gn;
+	a{
+		float: left;
+		line-height: 46px;
+		font-size: 18px;
+		font-family: $yh;
+		padding:0 10px;
+		&.selected{
+			background: #fafafa;
+		}
+	}
+}
+.inspection-bd{
+	table{width: 100%;}
+	tr:first-child{
+		font-size: 16px;
+		font-family: $st;
+	}
+	.inspection-item{
+		display: none;
+		&.selected{
+			display: block;
+		}
+		td{
+			line-height: 32px;
+			padding:0 5px;
+			text-align: center;
+			width: 33.3%;
+			font-family: $yh;
+		}
+	}
+
+}
+.inspection.select-dialog .ui-dialog-body{
+	padding:0;
 }

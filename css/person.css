@@ -23,9 +23,9 @@
   line-height: 12px;
   vertical-align: top;
   padding: 0 8px;
-  color: #333; }
+  color: #333333; }
   .post-item_info .info-ops a:hover, .quick-comment_ops a:hover {
-    color: #000; }
+    color: black; }
   .post-item_info .info-ops a.last, .quick-comment_ops a.last {
     border-right: none;
     padding-right: 0; }
@@ -602,7 +602,7 @@ textarea.repost-con:focus {
     .my-shareBox .editor-post_footer label {
       margin-right: 50px;
       font-size: 12px;
-      color: #888; }
+      color: #888888; }
     .my-shareBox .editor-post_footer .tip-share {
       display: none; }
     .my-shareBox .editor-post_footer .submit-wrapper .btn-submit {
@@ -779,7 +779,7 @@ textarea.repost-con:focus {
   display: block; }
 
 .post-title-text {
-  color: #333;
+  color: #333333;
   font-size: 20px;
   line-height: 20px;
   font-family: "Microsoft YaHei", Arial, sans-serif;
@@ -1296,7 +1296,7 @@ textarea.repost-con:focus {
   line-height: 1.428571429;
   text-decoration: none;
   background-color: #fff;
-  border: 1px solid #ddd; }
+  border: 1px solid #dddddd; }
 
 .pagination > li:first-child > a, .pagination > li:first-child > span {
   margin-left: 0;
@@ -1308,7 +1308,7 @@ textarea.repost-con:focus {
   border-bottom-right-radius: 4px; }
 
 .pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
-  background-color: #eee; }
+  background-color: #eeeeee; }
 
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
   z-index: 2;
@@ -1321,7 +1321,7 @@ textarea.repost-con:focus {
   color: #999;
   cursor: not-allowed;
   background-color: #fff;
-  border-color: #ddd; }
+  border-color: #dddddd; }
 
 .post-item .list {
   overflow: hidden;
@@ -1553,9 +1553,9 @@ textarea.repost-con:focus {
     border-radius: 3px;
     background: #599ff4;
     color: #fff;
-    border: 1px solid #2180F5; }
+    border: 1px solid #2180f5; }
     .msg-more_box .btn_s:hover {
-      background: #2180F5; }
+      background: #2180f5; }
   .msg-more_box .send_private_msgno textarea {
     color: #595959;
     height: 24px;
@@ -1831,7 +1831,7 @@ textarea.repost-con:focus {
   background: #599ff4;
   cursor: pointer; }
   .setting .my-setting input[type="submit"]:hover, .setting .my-setting .save:hover {
-    background: #2180F5; }
+    background: #2180f5; }
 .setting .my-setting .face-setting + .save {
   margin: 20px 0 20px 70px;
   display: none; }
@@ -2043,7 +2043,7 @@ textarea.repost-con:focus {
   .setting .my-setting .idBinding-setting .bind-btn a {
     color: #599ff4; }
   .setting .my-setting .idBinding-setting .bind-btn a:hover {
-    color: #2180F5; }
+    color: #2180f5; }
   .setting .my-setting .idBinding-setting .bind-btn span {
     margin-right: 15px; }
 
@@ -2368,7 +2368,7 @@ textarea.repost-con:focus {
           margin-bottom: 15px;
           font-family: "Microsoft YaHei", Arial, sans-serif; }
           .space-main .space-wrapper .nav-con li .title a {
-            color: #000; }
+            color: black; }
         .space-main .space-wrapper .nav-con li .info {
           color: #999;
           margin-bottom: 10px; }
@@ -2549,7 +2549,7 @@ textarea.repost-con:focus {
     overflow: hidden;
     width: 0;
     height: 100%;
-    background: #d14 url(./images/progress.png) repeat-x;
+    background: #dd1144 url(./images/progress.png) repeat-x;
     -webit-transition: width 200ms linear;
     -moz-transition: width 200ms linear;
     -o-transition: width 200ms linear;
@@ -2562,19 +2562,19 @@ textarea.repost-con:focus {
     animation: progressmove 2s linear infinite;
     -webkit-transform: translateZ(0); }
 @-webkit-keyframes progressmove {
-  0% {
+  #uploader 0%  {
     background-position: 0 0; }
-  100% {
+  #uploader 100%  {
     background-position: 17px 0; } }
 @-moz-keyframes progressmove {
-  0% {
+  #uploader 0%  {
     background-position: 0 0; }
-  100% {
+  #uploader 100%  {
     background-position: 17px 0; } }
 @keyframes progressmove {
-  0% {
+  #uploader 0%  {
     background-position: 0 0; }
-  100% {
+  #uploader 100%  {
     background-position: 17px 0; } }
   #uploader a.travis {
     position: relative;
@@ -2861,7 +2861,7 @@ textarea.repost-con:focus {
   background: #599ff4;
   cursor: pointer; }
   .my-health .save:hover {
-    background: #2180F5; }
+    background: #2180f5; }
 .my-health .disease-history .item-wrapper, .my-health .inspection .item-wrapper {
   padding-top: 20px; }
 .my-health .disease-history .short-wrapper, .my-health .inspection .short-wrapper {
@@ -2987,7 +2987,7 @@ textarea.repost-con:focus {
     background: url(./images/chahao.png) no-repeat; }
 
 .my-recommend .first a {
-  color: #333; }
+  color: #333333; }
 
 .my-middle .btn.btn-success {
   padding: 5px 10px;
@@ -3098,13 +3098,13 @@ textarea.repost-con:focus {
 
 .atwho-view .cur {
   background: #36F;
-  color: #fff; }
+  color: white; }
 
 .atwho-view .cur small {
-  color: #fff; }
+  color: white; }
 
 .atwho-view strong {
-  color: #36F; }
+  color: #3366ff; }
 
 .atwho-view .cur strong {
   color: #fff;
@@ -3398,7 +3398,7 @@ p.guests_risk {
   background-color: #3ba354;
   font-size: 22px;
   line-height: 56px;
-  color: #fff; }
+  color: white; }
 
 .post-item_pro .all-average {
   height: 110px; }
@@ -3492,6 +3492,18 @@ p.guests_risk {
     line-height: 24px;
     margin-bottom: 5px; }
 
+.doc-evaluate .item-con {
+  width: auto;
+  border-bottom: none; }
+.doc-evaluate textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  padding: 8px;
+  resize: none; }
+
 .placeholder-tip {
   margin-top: 30px;
   text-align: center;
@@ -3568,7 +3580,7 @@ p.guests_risk {
   cursor: pointer;
   float: right; }
   .btn-share:hover {
-    background: #2180F5; }
+    background: #2180f5; }
 
 .health-cat-wrapper {
   position: absolute;
@@ -3661,5 +3673,36 @@ p.guests_risk {
     text-align: center; }
   .user-change-wrapper .nav-first .selected {
     color: #1d831c; }
+
+.inspection-hd {
+  overflow: hidden;
+  border-bottom: 2px solid #1d831c; }
+  .inspection-hd a {
+    float: left;
+    line-height: 46px;
+    font-size: 18px;
+    font-family: "Microsoft YaHei", Arial, sans-serif;
+    padding: 0 10px; }
+    .inspection-hd a.selected {
+      background: #fafafa; }
+
+.inspection-bd table {
+  width: 100%; }
+.inspection-bd tr:first-child {
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.inspection-bd .inspection-item {
+  display: none; }
+  .inspection-bd .inspection-item.selected {
+    display: block; }
+  .inspection-bd .inspection-item td {
+    line-height: 32px;
+    padding: 0 5px;
+    text-align: center;
+    width: 33.3%;
+    font-family: "Microsoft YaHei", Arial, sans-serif; }
+
+.inspection.select-dialog .ui-dialog-body {
+  padding: 0; }
 
 /*# sourceMappingURL=person.css.map */

@@ -371,6 +371,7 @@ define(function(require, exports, module) {
 	function postSubmit(tid, ele) {
 		postEle = ele;
 		var $ele = ele.closest('.quick-submit_wrapper').prev('.input-con');
+		var toMyTopic = $ele.find('#toMyTopic').prop('checked');
 		var con = $ele.val().trim();
 		if (!con) {
 			$ele.focus();
@@ -384,7 +385,8 @@ define(function(require, exports, module) {
 		ele.text('提交中...').css('cursor', 'not-allowed');
 		$.getJSON('test6', {
 			con: con,
-			tid: tid
+			tid: tid,
+			toMyTopic: toMyTopic
 		}).done(
 			function(data) {
 				quickTip('评论成功');

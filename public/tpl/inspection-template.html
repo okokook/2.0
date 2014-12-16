@@ -1,0 +1,46 @@
+<div class="inspection-hd">
+	{{each list as value i}}
+		{{if i == 0}}
+		<a href="javascript:;" class="selected">{{value.cat}}</a>
+		{{else}}
+		{{<a href="javascript:;">{{value.cat}}</a>}}
+		{{/if}}
+	{{/each}}
+</div>
+<div class="inspection-bd">
+{{each list as value i}}
+	{{if i == 0}}
+	<div class="inspection-item selected">
+	{{else}}
+	<div class="inspection-item">
+	{{/if}}
+		<table>
+			<tr>
+				<td>项目名称</td>
+				<td>结果</td>
+				<td>参考值</td>
+			</tr>
+			{{each value.datas as value i}}
+				<tr>
+					<td>{{value.name}}</td>
+					<td>
+						{{value.realVal}}
+						{{if value.state == 'up'}}
+						<i class="up"></i>
+						{{else if value.state == 'normal'}}
+						<i class="normal"></i>
+						{{else}}
+						<i class="down"></i>
+						{{/if}}
+					</td>
+					<td>{{value.referVal}}</td>
+				</tr>
+			{{/each}}
+		</table>
+	</div>
+{{/each}}
+</div>
+
+
+
+
