@@ -10,7 +10,13 @@
 <link rel="stylesheet" href="/css/base.css" />
 <link rel="stylesheet" href="/css/person.css">
 <script>
-	 var OP_CONFIG={"module":"space","page":"my-topic","user_name":"草莓公主","user_pic":"www.baidu.com","user_link":"#"};
+	 var OP_CONFIG={
+	 	"module":"space",//静态无需改
+	 	"page":"my-topic",//静态无需改
+	 	"template":'my-topic-template',//静态无需改
+	 	'totalPages':22,//分页数目
+	 	'pageURL':'test10'//后台分页的地址
+	 };
 </script>
 </head>
 <body>
@@ -352,6 +358,7 @@
 								</li>
 							</ul>
 						</div>
+						<ul id='pagination'></ul>
 					</div>
 				</div>
 			</div>
@@ -598,6 +605,33 @@ seajs.use('mock', function(Mock){
     		"quick_con":"你是楼主的脑残粉"//评论内容
     	}]
     })
+
+    //帖子的下一页
+    //帖子数据模拟
+    Mock.mock('test10',{
+    	"list":[
+    			{
+	    			"postId":"234",//帖子唯一标识
+	    			"authorLink":"www.baidu.com",//作者的空间链接
+	    			"isRepost":false,//帖子是否为转发 取值为布尔值 true 或false 对应转发 原创
+	    			"postTitle":"活在你心内 分开也在一起",//帖子题目
+	    			"postLink":"www.baidu.com",//帖子链接
+	    			"hasExpand":true,//帖子是否有展开收缩 有为ture 无为false 同上转发
+	    			"postCon_a":"<p>活在你心内 分开也在一起</p>",//帖子收缩内容 可能含有图片 
+	    			"postCon_b":"<p>活在你心内 分开也在一起,</p><p>活在你心内 分开也在一起</p>",//帖子全部内容
+	    			"postTime":"11-09 02:04",//帖子时间
+	    			"postGroLink":"www.xxx.xx",//帖子所属小组链接
+	    			"postGroName":"糖尿病",//帖子所属小组
+	    			"hashuged":true,//此贴是否之前被拥抱过
+	    			"hugNum":"4",//拥抱的个数
+	    			"hasCollected":false,//此贴是否之前被收藏过
+	    			"repostNum":"4",//转发数量
+	    			"hasComment":'comment',//此贴是否被评论过
+	    			"CommentNum":"5"//评论个数
+	    		}
+	    	]
+    	
+    });
 })
 
 </script>

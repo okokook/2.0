@@ -1,0 +1,39 @@
+{{each list as value i}}
+	<li data-id="{{value.postId}}" class="post-item">
+	<div class="post-item_photo"><a href="{{value.authorLink}}" class="cardInfo" data-id="{{value.authorId}}"><img src="{{value.authorPicLink}}" alt="{{value.authorName}}"></a></div>
+		<div class="post-item_con post-repost_wrapper">
+			<a class="post-item_author cardInfo" href="{{value.authorLink}}" data-id="{{value.authorId}}">{{value.authorName}}</a>
+			<div class="post-text">{{value.postCon}}</div>
+			<div class="retweet-post">
+				<a class="post-item_author cardInfo" href="{{value.reauthorLink}}" data-id="{{value.reauthorId}}">{{value.reauthorName}}</a>
+				<h2><a href="{{value.repostLink}}" class="post-title-text">{{value.repostTitle}}</a></h2>
+					<div class="post-item_pro">
+						{{value.repostCon_a}}
+					</div>
+					<div class="post-item_pro see-all">
+						{{value.repostCon_b}}
+						<a href="javascript:;" class="post-packUp"><i></i>收起</a>
+					</div>
+				  <div class="original-post-info">
+				  	<span class="time">{{value.oritime}}</span>
+				  	<a href="{{value.postTitleLink}}">相关讨论({{value.oricomment}})</a>
+				  </div>
+			</div>
+			<div class="post-item_info">
+				<div class="info-group">{{value.postTime}} <span class="post-from">来自<a href="{{value.postGroLink}}">{{value.postGroName}}</a></span>
+					<a href="" class="reportPost">举报</a>
+				</div>
+				{{if value.isDialog}}
+					<div class="info-ops">
+					   <a href="" class="see-all_dialog" data-diaid="{{value.diaId}}">查看所有对话</a>
+					   <a href="" class="delete-comment last">删除</a>
+					  </div>
+				{{else}}
+				<div class="info-ops">
+					<a href="" class="delete-comment last">删除</a>
+				</div>
+				{{/if}}
+			</div>
+		</div>
+	</li>
+{{/each}}

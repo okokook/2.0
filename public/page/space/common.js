@@ -2,6 +2,9 @@ define(function(require, exports, module){
 	var template = require('template');
 	var dialog = require('dialog');
 	require('common');
+	if (OP_CONFIG.page !=='index') {
+		require('./loadData');
+	}
 
 	$(function  () {
 		//提问

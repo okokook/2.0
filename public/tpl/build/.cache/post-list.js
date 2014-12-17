@@ -1,4 +1,4 @@
-/*TMODJS:{"version":11,"md5":"c6ba7a57b2fa01f0efe565f13a8b2d1d"}*/
+/*TMODJS:{"version":12,"md5":"a636184381556b92ebf5410394aa5af7"}*/
 template('post-list',function($data,$filename) {
 'use strict';var $utils=this,$helpers=$utils.$helpers,$each=$utils.$each,list=$data.list,value=$data.value,i=$data.i,$string=$utils.$string,isMypost=$data.isMypost,postTitle=$data.postTitle,$out='';$out+='<ul> ';
 $each(list,function(value,i){
@@ -26,7 +26,7 @@ $out+='">';
 $out+=$string(value.authorName);
 $out+='</a> ';
 if(isMypost){
-$out+=' <div class="post-ops"> <i class="icon"></i> <ul class="ops-menu"> <li><a href="javascript:;" class="editPost">修改</a></li> <li><a href="javascript:;" class="removePost">删除</a></li> </ul> </div> ';
+$out+=' <div class="post-ops"> <i class="icon"></i> <ul class="ops-menu">  <li><a href="javascript:;" class="removePost">删除</a></li> </ul> </div> ';
 }
 $out+=' ';
 if(value.postType == "post"){
